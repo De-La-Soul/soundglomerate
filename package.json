@@ -4,7 +4,7 @@
   "description": "live music event search app",
   "main": "index.js",
   "dependencies": {
-    "jslint": "^0.9.3"
+    "jshint": "^2.8.0"
   },
   "devDependencies": {},
   "scripts": {
