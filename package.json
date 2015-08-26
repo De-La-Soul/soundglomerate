@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "live music event search app",
   "main": "index.js",
-  "dependencies": {
-    "jslint": "^0.9.3"
-  },
+ 
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
