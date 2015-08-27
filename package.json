@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "live music event search app",
   "main": "index.js",
- 
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/De-La-Soul-Thesis/issues"
   },
-  "homepage": "https://github.com/De-La-Soul-Thesis#readme"
+  "homepage": "https://github.com/De-La-Soul-Thesis#readme",
+  "dependencies": {
+    "jshint": "^2.8.0"
+  }
 }
