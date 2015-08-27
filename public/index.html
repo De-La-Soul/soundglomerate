@@ -1,2 +1,21 @@
-hello everyone!!! 
-SERVER WORKS
+<!DOCTYPE html>
+<!-- adding the ng-app= "soundGlomerate" is a driective to run the soundGlomerate module in the app.js file. This allows us to write expressions, which are dynamic values in html (numerical and string operations) -->
+<html ng-app= "soundGlomerate">
+<head>
+  <title>SoundGlomerate</title>
+  <!-- consider changing the href by downloading the library locally -->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+
+  <!-- consider changing the href by downloading the library locally -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+  <!-- this maybe superfluous -->
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <!-- this calls the app.js file -->
+  <script type="text/javascript" src="./js/app.js"></script>
+  <p>{{'hello' + ' you'}}</p>
+</body>
+</html>
+
+
