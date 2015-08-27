@@ -6,10 +6,15 @@
   "dependencies": {
     "jshint": "^2.8.0"
   },
+<<<<<<< HEAD
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-util": "^3.0.6"
   },
+=======
+
+  "devDependencies": {},
+>>>>>>> 85b5cf17d964ab8888988b4dd9b8826424042cb4
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/De-La-Soul-Thesis/issues"
   },
-  "homepage": "https://github.com/De-La-Soul-Thesis#readme"
+  "homepage": "https://github.com/De-La-Soul-Thesis#readme",
+  "dependencies": {
+    "jshint": "^2.8.0"
+  }
 }
