@@ -3,32 +3,35 @@
   "version": "1.0.0",
   "description": "live music event search app",
   "main": "index.js",
-  "dependencies": {
-    "jshint": "^2.8.0"
-  },
-<<<<<<< HEAD
-  "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-util": "^3.0.6"
-  },
-=======
-
-  "devDependencies": {},
->>>>>>> 85b5cf17d964ab8888988b4dd9b8826424042cb4
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/De-La-Soul-Thesis.git"
   },
   "author": "Claire Bendersky, Cristian Avalos, Musin Abdul-Musawwir, Phillip Ventura",
   "license": "ISC",
+  "homepage": "https://github.com/De-La-Soul-Thesis#readme",
+
+  "dependencies": {
+    "jshint": "^2.8.0",
+    "angular": "^1.4.3",
+    "bootstrap": "^3.3.5",
+    "express": "^4.13.3",
+  },
+
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.6",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.2.0"
+  },
+
   "bugs": {
     "url": "https://github.com/De-La-Soul-Thesis/issues"
-  },
-  "homepage": "https://github.com/De-La-Soul-Thesis#readme",
-  "dependencies": {
-    "jshint": "^2.8.0"
   }
 }
