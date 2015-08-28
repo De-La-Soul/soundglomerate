@@ -9,7 +9,8 @@
     "async":"^1.4.2",
     "async-series": "0.0.1",
     "jquery": "^1.7.4",
-    "request": "^2.60.0"
+    "request": "^2.60.0",
+    "eventful-node":"^1.1.1"
   },
   "devDependencies": {
     "gulp-concat": "^2.6.0",
