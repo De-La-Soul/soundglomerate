@@ -58,7 +58,19 @@ var app = angular.module('soundGlomerate', []);
             thumb: 'dummy-image-source2.jpg',
           }
         ]
-      }, 
+      },
+      reviews: [{
+        stars: 5,
+        body: 'I love this corny shit!',
+        author: 'joe@tohomas.com'
+      },
+      {
+        stars: 1,
+        body: 'Aweful!',
+        author: 'tim@hater.com'
+      }
+
+      ], 
       {
       name: 'pentagonal gem',
       price: 5,
