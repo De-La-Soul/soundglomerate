@@ -1,7 +1,13 @@
-'use strict';
+"use strict";
 
+var path = require('path');
 var express = require('express');
+var router = express.Router();
 
+var url = require('url');
+var request = require('request');
+
+var async = require('async-series');
 
 var app = express();
 var apiRouter = express.Router(); 

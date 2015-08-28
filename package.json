@@ -2,7 +2,9 @@
   "name": "de-la-soul",
   "version": "1.0.0",
   "description": "live music event search app",
+
   "main": "app.js",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,7 +18,10 @@
   "dependencies": {
     "eventbrite": "^0.1.6",
     "express": "^4.13.3",
-    "jshint": "^2.8.0"
+    "jshint": "^2.8.0",
+    "async":"^1.4.2",
+    "async-series": "0.0.1",
+    "request": "^2.60.0"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
