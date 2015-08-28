@@ -1,5 +1,14 @@
-var express = require('express');
+"use strict";
+/*jslint node: true */
+var path = require('path');
 
+var express = require('express');
+var router = express.Router();
+
+var url = require('url');
+var request = require('request');
+
+var async = require('async-series');
 
 var app = express();
 
