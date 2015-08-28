@@ -12,7 +12,7 @@
   <ul class="nav nav-pills">
   <!-- the statement ng-click="tab = 1" assigns a value of an expression to "tab" when it is clicked -->
   <!-- ng-class="{active:tab ===1}" highlights the tab (in blue) when a specific tab is clicked. tab 1 is highlighted when the page first renders because the default (ie ng-init) is set to tab 1 -->
-  <li ng-class="{active: panel.isSelected(1)}"> 
+  <li ng-class="{active: panel.isSelected(1)}" ng-repeat="product in stuff.product"> 
     <a href ng-click="panel.selectTab(1)">tab 1</a>
   </li>
   <li ng-class="{active: panel.isSelected(2)}">
@@ -27,12 +27,34 @@
   </ul>
   <!-- this displays the tab value. the value automatically updates when a tab is clicked and will not show up until a tab is clicked (ie two-way data binding!!!) -->
   {{tab}}
-</section>
-  
+
+
+
+
   <!-- when a tab is clicked, the tab value is set (and is printed, see above  line 19). the panel with the same tab number is rendered -->
   <div class="panel" ng-show="panel.isSelected(1)">
-    <h4>text here 111111</h4>
-    <blockquote>things here</blockquote>
+    <h4>Reviews</h4>
+    <li ng-repeat="review in product.review"></li>
+    <!-- <blockquote>
+    <b>stars:{{review.stars}}</b>
+    {{review.body}}
+    <cite>by: {{review.author}}</cite>
+    </blockquote> -->
+    <form name="reviewForm">
+      <blockquote>
+        <b>stars: {{review.stars}}</b> 
+        {{review.body}}
+        <cite>by: {{review.author}}</cite>
+      </blockquote>
+      <select ng-model="review.stars">
+        <option value="1">1 star</option>
+        <option value="2">2 stars</option>
+      </select>
+      <textarea ng-model="review.body"></textarea>
+      <label>by: </label>
+      <input ng-model="review.author" type="email" />
+      <input type="submit" value="Submit" />
+    </form>
   </div>
   <div class="panel" ng-show="panel.isSelected(2)">
     <h4>text here 22222</h4>
@@ -43,6 +65,9 @@
   <div class="panel" ng-show="panel.isSelected(4)">
     <h4>text here 444444</h4>
   </div>
+
+</section>
+  
 
 
   <!-- this is where we want to display the 'gem' info. ng-controller allows us to attach the LandingController (from app.js) to the html element. note: the directive is "ng-controller",  the controller name is "LandingController", the alias is "soundGlomerate" and 'as' is a reserved word.-->
