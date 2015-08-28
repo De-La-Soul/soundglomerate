@@ -1,2 +1,10 @@
+# OS generated files #
+######################
 node_modules
+bower_components
+
+
+# API Keys #
+######################
+config.json
 
