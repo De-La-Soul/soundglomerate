@@ -10,29 +10,29 @@ var path = require('path');
 var request = require('request');
 
 // eventful API
-var eventful = require('eventful-node');
 var keys = require(__dirname + '/../config.json');
-
-var app = express();
-
 
 var eventful = require('eventful-node');
 var client = new eventful.Client(keys.EVENTFUL_KEY);
 
 // /*ROUTING*/
 module.exports.requestHandler = function(route, req, res){
-		getData(req, res);
+		getEventfulData(req, res);
 };
 
-var getData = function(req,res){
+var getEventfulData = function(req,res){
 	client.searchEvents({keywords:'music', location:'Berkeley', date:'today'}, function(err, data){
 		if(!err){
 		console.log(data.search.events);
 		} else{
-			console.log('erro', err);
+			console.log('error', err);
 		}
 	});
 };
+
+
+
+
 
 
 

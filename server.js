@@ -11,7 +11,6 @@ var https = require('https');
 var router = require('./app/routes.js');
 
 
-
 var port = process.env.PORT || 8080;
 
 app.use(express.static(__dirname + '/public'));
@@ -28,6 +27,4 @@ app.get('/home', function(req, res){
 
 // *****************************************
 exports = module.exports = app;
-
-
 
