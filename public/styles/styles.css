@@ -23,9 +23,11 @@
     
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 200px) {
   body {
     background-color: black;
+    background: url(../assets/bgimage.jpg) no-repeat center center scroll;
+
   }
 }
 
