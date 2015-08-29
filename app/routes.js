@@ -24,7 +24,6 @@ module.exports.requestHandler = function(route, req, res){
 		getData(req, res);
 };
 
-
 var getData = function(req,res){
 	client.searchEvents({keywords:'music', location:'Berkeley', date:'today'}, function(err, data){
 		if(!err){
