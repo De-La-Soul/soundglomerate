@@ -7,26 +7,21 @@ var router = express.Router();
 // var url = require('url');
 // var async = require('async-series');
 var path = require('path');
-// var request = require('request');
+var request = require('request');
 
 // eventful API
-var eventful = require('eventful-node');
 var keys = require(__dirname + '/../config.json');
-var eventfulClient = new eventful.Client(keys.EVENTFUL_KEY);
 
+var eventful = require('eventful-node');
+var client = new eventful.Client(keys.EVENTFUL_KEY);
 
-//eventbrite API
-var eventbrite = require('eventbrite')({app_key: keys.EVENTBRITE_KEY}); 
-
-
-/*ROUTING*/
-module.exports.requestHandler = function(){
-		getEventfulData();
-		// getEventBriteData(); 
+// /*ROUTING*/
+module.exports.requestHandler = function(route, req, res){
+		getEventfulData(req, res);
 };
 
-var getEventfulData = function(){
-	eventfulClient.searchEvents({keywords:'music'}, function(err, data){
+var getEventfulData = function(req,res){
+	client.searchEvents({keywords:'music', location:'Berkeley', date:'today'}, function(err, data){
 		if(!err){
 		console.log(data.search.events);
 		} else{
@@ -35,21 +30,9 @@ var getEventfulData = function(){
 	});
 };
 
-// var getEventBriteData = function(){
-// 	var params = {
-// 		within: 10,
-// 		postal_code: 94602,
-// 		max: 10
-// 	};
 
-// 	eventbrite.event_search(params, function(error, data){
-// 		if(error){
-// 			return 'error processing request'
-// 		} else {
-// 			console.log(data.events);
-// 		} 
-// 	})
-// }
+
+
 
 
 
