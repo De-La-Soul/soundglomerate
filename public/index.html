@@ -64,6 +64,11 @@
       <input type="text" ng-model="search.location" placeholder="Enter a location" required/>
       <input type="text" ng-model="search.genre" placeholder="Enter a genre"/>
       <!-- This will be the search for the date -->
+
+<!-- 
+      notes for future date restrictions:
+        restrict min date search to today, max date search to something resonable
+ -->
       <input type=date ng-model="search.date" step=7 min=2014-09-08/> 
       <!-- Submit search results. The Location field is required -->
       <input type="submit" ng-click="update(search)" value="Submit" />
