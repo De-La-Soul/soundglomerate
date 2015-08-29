@@ -13,14 +13,18 @@ var router = require('./app/routes.js');
 
 var port = process.env.PORT || 8080;
 
-
 app.use(express.static(__dirname + '/public'));
 
 app.listen(port);
 
 console.log('Listenning to port', port);
 
-router.requestHandler();
+// routes will go here
+app.get('/home', function(req, res){
+	router.requestHandler('/home', req, res);
+});
 
+
+// *****************************************
 exports = module.exports = app;
 
