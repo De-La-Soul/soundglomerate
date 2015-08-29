@@ -11,7 +11,6 @@ var https = require('https');
 var router = require('./app/routes.js');
 
 
-
 var port = process.env.PORT || 8080;
 
 
@@ -24,6 +23,4 @@ console.log('Listenning to port', port);
 router.requestHandler();
 
 exports = module.exports = app;
-
-
 
