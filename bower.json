@@ -19,6 +19,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-ui-date": "~0.0.8"
+    "angular-ui-date": "~0.0.8",
+    "pickadate": "~3.5.6"
   }
 }

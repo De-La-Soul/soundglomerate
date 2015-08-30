@@ -6,6 +6,7 @@
   <!-- consider changing the href by downloading the library locally -->
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="styles/styles.css">
+<script type="text/javascript" src"../bower_components/pickdate/lib/picker.date.js"></script>
 </head>
 <body ng-controller="NavBarController as nbCtrl">
   <!-- <p>Date: <input type="text" id="datepicker"></p> -->
@@ -69,14 +70,14 @@
       notes for future date restrictions:
         restrict min date search to today, max date search to something resonable
  -->
-      <input type=date ng-model="search.date" step=7 min=2014-09-08/> 
+      <input type="date" ng-model="search.date" class="datepicker" placeholder="yyyy-MM-dd" min="2015-01-01" max="2113-12-31"/> 
+      
       <!-- Submit search results. The Location field is required -->
       <input type="submit" ng-click="update(search)" value="Submit" />
     </form>    
   </div>
 
 </section>
-
 
 
 
