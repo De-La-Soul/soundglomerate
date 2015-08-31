@@ -1,9 +1,10 @@
 (function(){
+'use strict';
 var app = angular.module('soundGlomerate', []);
 
 app.controller('NavBarController', function(){
   
-})
+});
 
 app.controller('SearchController', ['$scope', function($scope) {
   $scope.master = {};
