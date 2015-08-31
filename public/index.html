@@ -1,2 +1,92 @@
-hello everyone!!! 
-SERVER WORKS
+<!DOCTYPE html>
+<!-- adding the ng-app= "soundGlomerate" is a driective to run the soundGlomerate module in the app.js file. This allows us to write expressions, which are dynamic values in html (numerical and string operations) -->
+<html ng-app="soundGlomerate">
+<head>
+  <title>SoundGlomerate</title>
+  <!-- consider changing the href by downloading the library locally -->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/styles.css">
+<script type="text/javascript" src"../bower_components/pickdate/lib/picker.date.js"></script>
+</head>
+<body ng-controller="NavBarController as nbCtrl">
+  <!-- <p>Date: <input type="text" id="datepicker"></p> -->
+
+
+
+  <!-- Navigation bar -->
+<!-- Make navs used as navigation accessible
+  If you are using navs to provide a navigation bar, be sure to add a role="navigation" to the most logical parent container of the <ul>, or wrap a <nav> element around the whole navigation. Do not add the role to the <ul> itself, as this would prevent it from being announced as an actual list by assistive technologies. -->
+  <section role="navigation">
+    <ul class="nav nav-pills">
+<!-- 
+    tabs across the top of the homepage. note: currently there are no panels
+  -->
+  <li ng-class="{active: panel.isSelected(1)}"> 
+    <a href ng-click="panel.selectTab(1)">Home</a>
+  </li>
+  <li ng-class="{active: panel.isSelected(2)}">
+    <a href ng-click="panel.selectTab(2)">Search</a>
+  </li>
+  <li ng-class="{active: panel.isSelected(3)}">
+    <a href ng-click="panel.selectTab(3)">Sign-in</a>
+  </li>
+  <li ng-class="{active: panel.isSelected(4)}">
+    <a href ng-click="panel.selectTab(4)">Login</a>
+  </li>
+  <li ng-class="{active: panel.isSelected(5)}">
+    <a href ng-click="panel.selectTab(5)">Logout</a>
+  </li>
+  <li ng-class="{active: panel.isSelected(6)}">
+    <a href ng-click="panel.selectTab(6)">About</a>
+  </li>
+  </ul>    <!-- <li>Search</li>
+      
+    <li>Results</li>
+    <li>About Us</li>
+    <li>Sign-in</li>
+    <li>Login</li> -->
+  </ul>
+</section>
+
+
+
+<!-- This is where our views will load when the page loads -->
+<!-- <div ng-view></div> -->
+
+
+
+<!-- This is the landing page -->
+<section id="landingPage">
+
+  <div id="search" ng-controller="SearchController" class="">
+    <p>Search by a loaction </p>
+    <form novalidate class="simple-form">
+      <!-- Search by location(required) and genre -->
+      <input type="text" ng-model="search.location" placeholder="Enter a location" required/>
+      <input type="text" ng-model="search.genre" placeholder="Enter a genre"/>
+      <!-- This will be the search for the date -->
+
+<!-- 
+      notes for future date restrictions:
+        restrict min date search to today, max date search to something resonable
+ -->
+      <input type="date" ng-model="search.date" class="datepicker" placeholder="yyyy-MM-dd" min="2015-01-01" max="2113-12-31"/> 
+      
+      <!-- Submit search results. The Location field is required -->
+      <input type="submit" ng-click="update(search)" value="Submit" />
+    </form>    
+  </div>
+
+</section>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!-- consider changing the href by downloading the library locally -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+<!-- this maybe superfluous -->
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!-- this calls the app.js file -->
+<script type="text/javascript" src="./js/app.js"></script>
+</body>
+</html>
