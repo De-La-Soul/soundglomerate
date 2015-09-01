@@ -2,13 +2,30 @@
 'use strict';
 var app = angular.module('soundGlomerate', []);
 
-app.controller('NavBarController', function(){
+////////////////////////////////////////
+//BELOW IS DUMMY DATA TO SET UP TESTING
+
+
+
+
+//ABOVE IS DUMMY DATA TO SET UP TESTING
+///////////////////////////////////////
+
+
+
+
+
+
+app.controller('NavBarController', function($scope){
+  return $scope.obj = {
+    fun: 'not fun'
+  };
   
 });
 
 app.controller('SearchController', ['$scope', function($scope) {
   $scope.master = {};
-  console.log("The datepicker: ", $('.datepicker'));
+  // console.log("The datepicker: ", $('.datepicker'));
 
   // $('.datepicker').pickadate()
 

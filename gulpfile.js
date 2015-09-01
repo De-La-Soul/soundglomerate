@@ -6,6 +6,8 @@ var mocha = require('gulp-mocha');
 // var assert = require('assert');
 // var expect = require('chai').expect; 
  
+
+
 gulp.task('lint', function() {
   return gulp.src(['public/js/*.js', 'app/*.js'])
     .pipe(jshint())
@@ -17,6 +19,10 @@ gulp.task('serverTest', function() {
   return gulp.src('test/serverSpec.js')
     .pipe(mocha());
 });
+
+gulp.task('karma', shell.task([
+  'karma start'
+  ]))
 
 gulp.task('default', function() {
   console.log('gulp is running');
