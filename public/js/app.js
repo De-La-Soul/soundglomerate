@@ -46,9 +46,56 @@ app.controller('SearchController', ['$scope', function($scope) {
     // console.log(date);
   };
 
-  
+
 
   
 }]);
+
+  app.controller('EventBriteDataController', ['$scope', '$http', function($scope, $http){
+    $scope.test = 'testing123';
+    $http({
+      method: 'GET',
+      datatype: 'JSON',
+      // headers: {"Content-Type": "application/javascript"},
+      url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=San+Francisco&venue.region=CA&token='
+
+    }).success(function(data){
+      $scope.dataAPI = data.events[1];
+      console.log($scope.dataAPI);
+    })
+
+  }]);
+
+  // app.controller('EventFulDataController', ['$scope', '$http', function($scope, $http){
+  //   $scope.test = 'testing456';
+  //   $http({
+  //     url: 'http://api.eventful.com/json/events/search?api_key=&keywords=books&location=San+Diego',
+  //     method: 'JSONP',
+  //     datatype: 'JSON',      
+  //     headers: {"Content-Type": "application/json"}
+  //   }).success(function(data){
+  //     // $scope.dataAPI = data.events[0].name;
+  //     console.log('EVENTFUL :',data);
+  //   }).error(function(err){
+  //     console.log ('error : ', err);
+  //   })
+
+  // }]);
+
+
+//   var nprUrl = 'http://api.npr.org/query?id=61&fields=relatedLink,title,byline,text,audio,image,pullQuote,all&output=JSON';
+
+//     $scope.test = 'testing123';
+// $http({
+//     method:'JSONP',
+//     url: nprUrl + '&apiKey=MDIwMzUyMDc5MDE0NDEwOTAyNDRkMGY4OQ001&callback=JSON_CALLBACK'}).success(function(data, status){
+//       $scope.dataAPI = data.list.story;
+//       console.log(data);
+
+//     }).error(function(data, status){
+
+//     });
+
+
 
 })();
