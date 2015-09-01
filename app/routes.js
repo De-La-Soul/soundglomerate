@@ -39,9 +39,9 @@ var getEventBriteData = function(){
     if(!error & response.statusCode === 200){
       console.log("EVENTBRITEEEEEE!!!!!!!!!!:", JSON.parse(body));
     }
-  })
+  });
 
-}
+};
 
 
 
