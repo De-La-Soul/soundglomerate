@@ -8,10 +8,10 @@
   <link rel="stylesheet" type="text/css" href="styles/styles.css">
 <script type="text/javascript" src"../bower_components/pickdate/lib/picker.date.js"></script>
 </head>
-<body ng-controller="NavBarController as nbCtrl">
+<body >
   <!-- <p>Date: <input type="text" id="datepicker"></p> -->
 
-
+<div ng-controller="NavBarController as nbCtrl">
 
   <!-- Navigation bar -->
 <!-- Make navs used as navigation accessible
@@ -47,7 +47,7 @@
     <li>Login</li> -->
   </ul>
 </section>
-
+</div>
 
 
 <!-- This is where our views will load when the page loads -->
@@ -79,6 +79,12 @@
 
 </section>
 
+
+<div ng-controller="DataController">
+    {{dataAPI}}
+    {{test}}
+
+</div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
