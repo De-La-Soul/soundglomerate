@@ -31,7 +31,7 @@ app.controller('SearchController', ['$scope', '$http', function($scope, $http) {
     $http({
       method: 'GET',
       datatype: 'JSON',
-          url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=' + location + '&venue.region=CA&token= [Enter API Key HERE]'
+          url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=' + location + '&venue.region=CA&token='
 
     }).success(function(data){
        
@@ -56,7 +56,7 @@ app.controller('SearchController', ['$scope', '$http', function($scope, $http) {
 
   };
 
-
+$scope.genres = {3001: "Alternative", 3002: "Blues & Jazz", 3003: "Classical", 3004: "Country", 3005: "Cultural", 3006: "EDM / Electronic", 3007: "Folk", 3008: "Hip Hop / Rap", 3009: "Indie", 3010: "Latin", 3011: "Metal", 3012: "Opera", 3013: "Pop", 3014: "R&B", 3015: "Reggae", 3016: "Religious/Spiritual", 3017: "Rock", 3018: "Top 40", 3999: "Other"}
 
   
 }]);
