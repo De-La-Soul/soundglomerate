@@ -24,53 +24,35 @@ app.controller('NavBarController', function($scope){
 
 app.controller('SearchController', ['$scope', '$http', function($scope, $http) {
   $scope.master = {};
-  // console.log("The datepicker: ", $('.datepicker'));
+  
+  $scope.apiCall = function(location){
+    
 
-  // $('.datepicker').pickadate()
-
-
-  // console.log('$scope', $scope);
-  // console.log('this', this);
-  $scope.apiCall = function(){
     $http({
       method: 'GET',
       datatype: 'JSON',
-          // headers: {"Content-Type": "application/javascript"},
-          url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=San+Francisco&venue.region=CA&token=MD33DX7LJOIGAGCBYRF7'
+          url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=' + location + '&venue.region=CA&token= [Enter API Key HERE]'
 
     }).success(function(data){
-        // var results = ;
-        // var container = [];
+       
 
         $scope.dataAPI = data.events;
         
-        // for(var i = 0; results.length; i++){
-          
-        // //   var container = {};
-        // //   container.name = data.events[i].name.text; 
-        // //   container.description = data.events[i].description.text.slice(0,99);
-        // //   container.timeStart = data.events[i].start.local;
-        // //   container.timeEnd = data.events[i].end.local;
-        //   container.push("test")    
-        // }
-
-        // console.log('Results ', data.events)
-   
+        
 
       })
   };
 
   $scope.update = function(search) {
     $scope.master = angular.copy(search);
-    // 
+
     console.log("Genre", search);
     console.log("Location", search.location);
     console.log("This is this", this.search);
-    // Clear the search forms
+  
     this.search = {};
-    // console.log(search.genre);
-    // console.log(date);
-    $scope.apiCall();
+
+    $scope.apiCall(search.location);
 
   };
 
