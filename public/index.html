@@ -76,9 +76,14 @@
       <input type="submit" ng-click="update(search)" value="Submit" />
     </form>    
   
-    <div>
-  <p>{{dataAPI}}<p>
-  </div>
+    <div ng-repeat="event in dataAPI">
+      <ul>
+        <li>{{event.name.text}}</li>
+        <li>{{event.description.text}}</li>
+        <li>{{event.start.local}}</li>
+        <li>{{event.end.local}}</li>
+      </ul>
+    </div>
   </div>
 
 

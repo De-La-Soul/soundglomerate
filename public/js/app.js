@@ -36,23 +36,26 @@ app.controller('SearchController', ['$scope', '$http', function($scope, $http) {
       method: 'GET',
       datatype: 'JSON',
           // headers: {"Content-Type": "application/javascript"},
-          url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=San+Francisco&venue.region=CA&token='
+          url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=San+Francisco&venue.region=CA&token=MD33DX7LJOIGAGCBYRF7'
 
     }).success(function(data){
-        var eventsArr = []; 
+        // var results = ;
+        // var container = [];
+
+        $scope.dataAPI = data.events;
         
-        for(var i = 0; data.events.length; i++){
+        // for(var i = 0; results.length; i++){
           
+        // //   var container = {};
+        // //   container.name = data.events[i].name.text; 
+        // //   container.description = data.events[i].description.text.slice(0,99);
+        // //   container.timeStart = data.events[i].start.local;
+        // //   container.timeEnd = data.events[i].end.local;
+        //   container.push("test")    
+        // }
 
-          var container = {};
-          container.name = data.events[i].name.text; 
-          // container.description = data.events[i].description.text.slice(0,99);
-          // container.timeStart = data.events[i].start.local;
-          // container.timeEnd = data.events[i].end.local;
-          eventsArr.push(container)
-        }
-
-        $scope.dataAPI = eventsArr;
+        // console.log('Results ', data.events)
+   
 
       })
   };
