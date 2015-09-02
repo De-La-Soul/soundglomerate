@@ -34,10 +34,7 @@ app.controller('SearchController', ['$scope', '$http', function($scope, $http) {
           url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=' + location + '&venue.region=CA&categories=103&subcategories='+ genre +
           '&token='
 
-          
-
-
-    }).success(function(data){
+        }).success(function(data){
        
 
         $scope.dataAPI = data.events;
@@ -103,7 +100,7 @@ var apiGenreId = {
 //     $scope.test = 'testing123';
 // $http({
 //     method:'JSONP',
-//     url: nprUrl + '&apiKey=&callback=JSON_CALLBACK'}).success(function(data, status){
+//     url: nprUrl + '&apiKey=MDIwMzUyMDc5MDE0NDEwOTAyNDRkMGY4OQ001&callback=JSON_CALLBACK'}).success(function(data, status){
 //       $scope.dataAPI = data.list.story;
 //       console.log(data);
 

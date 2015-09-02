@@ -82,6 +82,7 @@
   
     <div ng-repeat="event in dataAPI">
       <div>
+      <img ng-src="{{event.logo.url}}" />
         <ul>
           <li>{{event.name.text}}</li>
           <li>{{event.description.text.slice(0,100)}}</li>
