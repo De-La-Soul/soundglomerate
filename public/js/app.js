@@ -19,9 +19,6 @@ app.controller('NavBarController', function($scope){
   
 });
 
-
-
-
 app.controller('SearchController', ['$scope', '$http', function($scope, $http) {
   $scope.master = {};
   
@@ -78,19 +75,6 @@ $scope.genres = {3001: "Alternative", 3002: "Blues & Jazz", 3003: "Classical", 3
 
   // }]);
 
-
-//   var nprUrl = 'http://api.npr.org/query?id=61&fields=relatedLink,title,byline,text,audio,image,pullQuote,all&output=JSON';
-
-//     $scope.test = 'testing123';
-// $http({
-//     method:'JSONP',
-//     url: nprUrl + '&apiKey=MDIwMzUyMDc5MDE0NDEwOTAyNDRkMGY4OQ001&callback=JSON_CALLBACK'}).success(function(data, status){
-//       $scope.dataAPI = data.list.story;
-//       console.log(data);
-
-//     }).error(function(data, status){
-
-//     });
 
 
 
