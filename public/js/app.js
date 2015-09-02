@@ -100,7 +100,7 @@ var apiGenreId = {
 //     $scope.test = 'testing123';
 // $http({
 //     method:'JSONP',
-//     url: nprUrl + '&apiKey=MDIwMzUyMDc5MDE0NDEwOTAyNDRkMGY4OQ001&callback=JSON_CALLBACK'}).success(function(data, status){
+//     url: nprUrl + '&apiKey=&callback=JSON_CALLBACK'}).success(function(data, status){
 //       $scope.dataAPI = data.list.story;
 //       console.log(data);
 
