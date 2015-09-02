@@ -34,8 +34,7 @@ app.controller('SearchController', ['$scope', '$http', function($scope, $http) {
           url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=' + location + '&venue.region=CA&categories=103&subcategories='+ genre +
           '&token='
 
-          // https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=Oakland&venue.region=CA&categories=103&subcategories=3015&token=MD33DX7LJOIGAGCBYRF7
-
+          
 
 
     }).success(function(data){
