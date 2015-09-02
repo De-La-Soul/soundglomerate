@@ -11,11 +11,7 @@ var app = angular.module('soundGlomerate', []);
 //ABOVE IS DUMMY DATA TO SET UP TESTING
 ///////////////////////////////////////
 
-
-
-
-
-
+// May not need this later
 app.controller('NavBarController', function($scope){
   return $scope.obj = {
     fun: 'not fun'
@@ -23,7 +19,10 @@ app.controller('NavBarController', function($scope){
   
 });
 
-app.controller('SearchController', ['$scope', function($scope) {
+
+
+
+app.controller('SearchController', ['$scope', '$http', function($scope, $http) {
   $scope.master = {};
   // console.log("The datepicker: ", $('.datepicker'));
 
@@ -32,11 +31,35 @@ app.controller('SearchController', ['$scope', function($scope) {
 
   // console.log('$scope', $scope);
   // console.log('this', this);
+  $scope.apiCall = function(){
+    $http({
+      method: 'GET',
+      datatype: 'JSON',
+          // headers: {"Content-Type": "application/javascript"},
+          url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=San+Francisco&venue.region=CA&token='
+
+    }).success(function(data){
+        var eventsArr = []; 
+        
+        for(var i = 0; data.events.length; i++){
+          
+
+          var container = {};
+          container.name = data.events[i].name.text; 
+          // container.description = data.events[i].description.text.slice(0,99);
+          // container.timeStart = data.events[i].start.local;
+          // container.timeEnd = data.events[i].end.local;
+          eventsArr.push(container)
+        }
+
+        $scope.dataAPI = eventsArr;
+
+      })
+  };
 
   $scope.update = function(search) {
     $scope.master = angular.copy(search);
     // 
-
     console.log("Genre", search);
     console.log("Location", search.location);
     console.log("This is this", this.search);
@@ -44,6 +67,8 @@ app.controller('SearchController', ['$scope', function($scope) {
     this.search = {};
     // console.log(search.genre);
     // console.log(date);
+    $scope.apiCall();
+
   };
 
 
@@ -53,17 +78,9 @@ app.controller('SearchController', ['$scope', function($scope) {
 
   app.controller('EventBriteDataController', ['$scope', '$http', function($scope, $http){
     $scope.test = 'testing123';
-    $http({
-      method: 'GET',
-      datatype: 'JSON',
-      // headers: {"Content-Type": "application/javascript"},
-      url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=San+Francisco&venue.region=CA&token='
-
-    }).success(function(data){
-      $scope.dataAPI = data.events[1];
-      console.log($scope.dataAPI);
-    })
-
+  
+    
+    
   }]);
 
   // app.controller('EventFulDataController', ['$scope', '$http', function($scope, $http){
