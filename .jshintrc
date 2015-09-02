@@ -8,5 +8,8 @@
   "camelcase": true,
   "indent": 2,
   "unused": true,
-  "strict": true
+  "strict": true,
+  "browser": true,
+  "predef": ["angular", "$", "console"]
+
 }

@@ -17,5 +17,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "angular-ui-date": "~0.0.8",
+    "pickadate": "~3.5.6"
+  }
 }
