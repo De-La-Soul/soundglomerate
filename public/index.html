@@ -63,7 +63,11 @@
     <form novalidate class="simple-form">
       <!-- Search by location(required) and genre -->
       <input type="text" ng-model="search.location" placeholder="Enter a location" required/>
-      <input type="text" ng-model="search.genre" placeholder="Enter a genre"/>
+      <select type="text" ng-model="search.genre" placeholder="Select a genre">
+        <option ng-repeat="genre in genres">
+          {{genre}}
+        </option>
+      </select>
       <!-- This will be the search for the date -->
 
 <!-- 
