@@ -63,7 +63,11 @@
     <form novalidate class="simple-form">
       <!-- Search by location(required) and genre -->
       <input type="text" ng-model="search.location" placeholder="Enter a location" required/>
-      <input type="text" ng-model="search.genre" placeholder="Enter a genre"/>
+      <select type="text" ng-model="search.genre" placeholder="Select a genre">
+        <option ng-repeat="genre in genres">
+          {{genre}}
+        </option>
+      </select>
       <!-- This will be the search for the date -->
 
 <!-- 
@@ -75,16 +79,35 @@
       <!-- Submit search results. The Location field is required -->
       <input type="submit" ng-click="update(search)" value="Submit" />
     </form>    
+  
+    <div ng-repeat="event in dataAPI">
+      <div>
+      <img ng-src="{{event.logo.url}}" />
+        <ul>
+          <li>{{event.name.text}}</li>
+          <li>{{event.description.text.slice(0,100)}}</li>
+          <li>{{event.start.local}}</li>
+          <li>{{event.end.local}}</li>
+        </ul>
+      </div>  
+    </div>
   </div>
+
+
+  
+  
+ 
+
+
 
 </section>
 
 
-<div ng-controller="EventBriteDataController">
-    {{dataAPI}}
+<!-- <div ng-controller="EventBriteDataController">
+    
     {{test}}
 
-</div>
+</div> -->
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
