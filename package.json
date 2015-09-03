@@ -2,7 +2,7 @@
   "name": "de-la-soul",
   "version": "1.0.0",
   "description": "live music event search app",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "npm run test-server",
     "test-server": "mocha -R spec ./test/serverSpec.js"
