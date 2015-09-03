@@ -33,7 +33,7 @@ app.controller('SearchController', ['$scope', '$http', function($scope, $http) {
       method: 'GET',
       datatype: 'JSON',
           url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=' + location + '&venue.region=CA&categories=103'+ genre +
-          '&token=MD33DX7LJOIGAGCBYRF7'
+          '&token='
 
         }).success(function(data){
        
