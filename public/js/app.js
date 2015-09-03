@@ -23,13 +23,17 @@ app.controller('SearchController', ['$scope', '$http', function($scope, $http) {
   $scope.master = {};
   
   $scope.apiCall = function(location, genre){
-    
+    if(genre !== undefined){
+      genre = '&subcategories=' + genre;
+    }else{
+      genre='';
+    }
 
     $http({
       method: 'GET',
       datatype: 'JSON',
-          url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=' + location + '&venue.region=CA&categories=103&subcategories='+ genre +
-          '&token='
+          url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=' + location + '&venue.region=CA&categories=103'+ genre +
+          '&token=MD33DX7LJOIGAGCBYRF7'
 
         }).success(function(data){
        
@@ -42,15 +46,16 @@ app.controller('SearchController', ['$scope', '$http', function($scope, $http) {
   $scope.update = function(search) {
     $scope.master = angular.copy(search);
 
-    console.log("Genre", search.genre.replace(/\W/g, ""));
-    console.log("Location", search.location);
+    // console.log("Genre", search.genre.replace(/\W/g, ""));
+    // console.log("Location", search.location);
     
   
     this.search = {};
-    console.log(apiGenreId[search.genre.replace(/\W/g, "")]);
-
-    $scope.apiCall(search.location, apiGenreId[search.genre.replace(/\W/g, "")]);
-
+    // console.log(apiGenreId[search.genre.replace(/\W/g, "")]);
+    if(search.genre !== undefined)
+      $scope.apiCall(search.location, apiGenreId[search.genre.replace(/\W/g, "")]);
+    else
+      $scope.apiCall(search.location);
   };
 
 $scope.genres = 
