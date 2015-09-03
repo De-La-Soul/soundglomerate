@@ -6,79 +6,93 @@
   <!-- consider changing the href by downloading the library locally -->
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="styles/styles.css">
-<script type="text/javascript" src"../bower_components/pickdate/lib/picker.date.js"></script>
+  <script type="text/javascript" src"../bower_components/pickdate/lib/picker.date.js"></script>
 </head>
-<body ng-controller="NavBarController as nbCtrl">
-  <!-- <p>Date: <input type="text" id="datepicker"></p> -->
+
+<body >
 
 
 
-  <!-- Navigation bar -->
-<!-- Make navs used as navigation accessible
-  If you are using navs to provide a navigation bar, be sure to add a role="navigation" to the most logical parent container of the <ul>, or wrap a <nav> element around the whole navigation. Do not add the role to the <ul> itself, as this would prevent it from being announced as an actual list by assistive technologies. -->
-  <section role="navigation">
-    <ul class="nav nav-pills">
-<!-- 
-    tabs across the top of the homepage. note: currently there are no panels
-  -->
-  <li ng-class="{active: panel.isSelected(1)}"> 
-    <a href ng-click="panel.selectTab(1)">Home</a>
-  </li>
-  <li ng-class="{active: panel.isSelected(2)}">
-    <a href ng-click="panel.selectTab(2)">Search</a>
-  </li>
-  <li ng-class="{active: panel.isSelected(3)}">
-    <a href ng-click="panel.selectTab(3)">Sign-in</a>
-  </li>
-  <li ng-class="{active: panel.isSelected(4)}">
-    <a href ng-click="panel.selectTab(4)">Login</a>
-  </li>
-  <li ng-class="{active: panel.isSelected(5)}">
-    <a href ng-click="panel.selectTab(5)">Logout</a>
-  </li>
-  <li ng-class="{active: panel.isSelected(6)}">
-    <a href ng-click="panel.selectTab(6)">About</a>
-  </li>
-  </ul>    <!-- <li>Search</li>
-      
-    <li>Results</li>
-    <li>About Us</li>
-    <li>Sign-in</li>
-    <li>Login</li> -->
-  </ul>
-</section>
+  <div class="navbar navbar-fixed-top">
+    <div class="container">  
+      <a href="#" class="navbar-brand"> 
+        <!-- this is the logo on the navbar -->
+        <img src="./assets/SBlogo.png" > 
+      </a>
+      <ul class="nav navbar-nav pull-right">
+        <li>
+          <!-- this is the log in button on the navbar -->
+          <a href="#" class="btn btn-primary"  id="signIn-btn"> Log In </a>
+        </li>
+      </ul>
+    </div>
+  </div> <!-- end of navbar -->
+
+
+  <!-- This is where our views will load when the page loads -->
+  <!-- <div ng-view></div> -->
+  <div class="container-fluid">
+    <div ng-controller="SearchController" > 
+      <div class="carousel" id="backgroundSearchImage" >
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="./assets/bckgdSearch.jpg" style="height:750px;width:100%">
+            <div class="carousel-caption">
+
+              <div id="landingPage">
+                <div id="search">
+                  <p id="pitch"> Live Music Events </p>
+                  <div>
+                    <form novalidate class="simple-form">
+                      <!-- Search by location(required) and genre -->
+                      <input type="text" ng-model="search.location" placeholder="Enter a location" required/>
+                      <select type="text" ng-model="search.genre" placeholder="Select a genre">
+                        <option ng-repeat="genre in genres">
+                          {{genre}}
+                        </option>
+
+                        <!-- This will be the search for the date -->
+
+                        <!--  notes for future date restrictions: restrict min date search to today, max date search to something resonable -->
+                        <input type="date" ng-model="search.date" class="datepicker" placeholder="yyyy-MM-dd" min="2015-09-03" max="2113-12-31"/> 
+
+                        <!-- Submit search results. The Location field is required -->
+                        <input type="submit" ng-click="update(search)" value="Submit" />
+                      </form> 
+                    </div> 
+                  </div> <!--end of landing page -->
+                </div> <!--end of carousel caption -->
+              </div> <!--end of item active -->
+            </div> <!--end of carousel-inner -->
+          </div> <!--end of carousel -->
+          
+          <div ng-repeat="event in dataAPI" >
+            <div class="row" style="margin:10px 10px 0px;border:1px solid grey;border-radius:5px;">
+              <div class="col-xs-3" style="background-color:white;padding:5px;">
+                <a ng-href="{{event.url}}"><img ng-src="{{event.logo.url}}" class="img-responsive" width="200px" height="162px" /></a>
+              </div> <!-- end of col-xs-3 --> 
+              <div class="col-xs-9">
+                <h4>{{event.name.text}}</h4>
+                <ul>
+                  <li>{{event.description.text.slice(0,100)}}</li>
+                  <li>{{event.start.local}}</li>
+                  <li>{{event.end.local}}</li>
+                </ul>
+              </div><!-- end of col-xs-9 -->
+            </div>  <!-- end of row -->
+          </div> <!--end of ng-repeat dataAPI -->
+        </div> <!--end of search controller -->
+      </div> <!--end of container fluid -->
+      <!-- This is the landing page -->
 
 
 
-<!-- This is where our views will load when the page loads -->
-<!-- <div ng-view></div> -->
+<!--   <div ng-controller="EventBriteDataController">
+    {{dataAPI}}
+    {{test}}
 
-
-
-<!-- This is the landing page -->
-<section id="landingPage">
-
-  <div id="search" ng-controller="SearchController" class="">
-    <p>Search by a loaction </p>
-    <form novalidate class="simple-form">
-      <!-- Search by location(required) and genre -->
-      <input type="text" ng-model="search.location" placeholder="Enter a location" required/>
-      <input type="text" ng-model="search.genre" placeholder="Enter a genre"/>
-      <!-- This will be the search for the date -->
-
-<!-- 
-      notes for future date restrictions:
-        restrict min date search to today, max date search to something resonable
- -->
-      <input type="date" ng-model="search.date" class="datepicker" placeholder="yyyy-MM-dd" min="2015-01-01" max="2113-12-31"/> 
-      
-      <!-- Submit search results. The Location field is required -->
-      <input type="submit" ng-click="update(search)" value="Submit" />
-    </form>    
   </div>
-
-</section>
-
+-->
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
