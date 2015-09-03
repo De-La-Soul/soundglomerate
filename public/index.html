@@ -17,7 +17,7 @@
     <div class="container">  
       <a href="#" class="navbar-brand"> 
         <!-- this is the logo on the navbar -->
-        <img src="./assets/SBlogo.png"> 
+        <img src="./assets/SBlogo.png" > 
       </a>
       <ul class="nav navbar-nav pull-right">
         <li>
@@ -32,11 +32,11 @@
   <!-- This is where our views will load when the page loads -->
   <!-- <div ng-view></div> -->
   <div class="container-fluid">
-    <div ng-controller="SearchController"> 
-      <div class="carousel" id="backgroundSearchImage">
+    <div ng-controller="SearchController" > 
+      <div class="carousel" id="backgroundSearchImage" >
         <div class="carousel-inner">
           <div class="item active">
-            <img src="./assets/bckgdSearch.jpg">
+            <img src="./assets/bckgdSearch.jpg" style="height:750px;width:100%">
             <div class="carousel-caption">
 
               <div id="landingPage">
@@ -67,23 +67,22 @@
           </div> <!--end of carousel -->
           
           <div ng-repeat="event in dataAPI" >
-            <div class="row">
-            <div class="col-xs-3">
-              <img ng-src="{{event.logo.url}}" class="thumbnail"/>
+            <div class="row" style="margin:10px 10px 0px;border:1px solid grey;border-radius:5px;">
+              <div class="col-xs-3" style="background-color:white;padding:5px;">
+                <a ng-href="{{event.url}}"><img ng-src="{{event.logo.url}}" class="img-responsive" width="200px" height="162px" /></a>
               </div> <!-- end of col-xs-3 --> 
               <div class="col-xs-9">
-              <ul>
-                <li>{{event.name.text}}</li>
-                <li>{{event.description.text.slice(0,100)}}</li>
-                <li>{{event.start.local}}</li>
-                <li>{{event.end.local}}</li>
-              </ul>
-              
+                <h4>{{event.name.text}}</h4>
+                <ul>
+                  <li>{{event.description.text.slice(0,100)}}</li>
+                  <li>{{event.start.local}}</li>
+                  <li>{{event.end.local}}</li>
+                </ul>
+              </div><!-- end of col-xs-9 -->
             </div>  <!-- end of row -->
           </div> <!--end of ng-repeat dataAPI -->
         </div> <!--end of search controller -->
       </div> <!--end of container fluid -->
-
       <!-- This is the landing page -->
 
 

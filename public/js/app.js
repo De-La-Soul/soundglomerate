@@ -36,10 +36,7 @@ app.controller('SearchController', ['$scope', '$http', function($scope, $http) {
           '&token='
 
         }).success(function(data){
-       
-
         $scope.dataAPI = data.events;
-
       })
   };
 
