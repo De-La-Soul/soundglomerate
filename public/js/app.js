@@ -19,43 +19,40 @@ app.controller('NavBarController', function($scope){
   
 });
 
-
-
-
 app.controller('SearchController', ['$scope', '$http', function($scope, $http) {
   $scope.master = {};
   
   $scope.apiCall = function(location, genre){
-    
+    if(genre !== undefined){
+      genre = '&subcategories=' + genre;
+    }else{
+      genre='';
+    }
 
     $http({
       method: 'GET',
       datatype: 'JSON',
-          url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=' + location + '&venue.region=CA&categories=103&subcategories='+ genre +
+          url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=' + location + '&venue.region=CA&categories=103'+ genre +
           '&token='
 
         }).success(function(data){
-       
-
         $scope.dataAPI = data.events;
-        
-        
-
       })
   };
 
   $scope.update = function(search) {
     $scope.master = angular.copy(search);
 
-    console.log("Genre", search.genre.replace(/\W/g, ""));
-    console.log("Location", search.location);
+    // console.log("Genre", search.genre.replace(/\W/g, ""));
+    // console.log("Location", search.location);
     
   
     this.search = {};
-    console.log(apiGenreId[search.genre.replace(/\W/g, "")]);
-
-    $scope.apiCall(search.location, apiGenreId[search.genre.replace(/\W/g, "")]);
-
+    // console.log(apiGenreId[search.genre.replace(/\W/g, "")]);
+    if(search.genre !== undefined)
+      $scope.apiCall(search.location, apiGenreId[search.genre.replace(/\W/g, "")]);
+    else
+      $scope.apiCall(search.location);
   };
 
 $scope.genres = 
@@ -93,20 +90,6 @@ var apiGenreId = {
   //   })
 
   // }]);
-
-
-//   var nprUrl = 'http://api.npr.org/query?id=61&fields=relatedLink,title,byline,text,audio,image,pullQuote,all&output=JSON';
-
-//     $scope.test = 'testing123';
-// $http({
-//     method:'JSONP',
-//     url: nprUrl + '&apiKey=&callback=JSON_CALLBACK'}).success(function(data, status){
-//       $scope.dataAPI = data.list.story;
-//       console.log(data);
-
-//     }).error(function(data, status){
-
-//     });
 
 
 
