@@ -1,5 +1,5 @@
-angular.module('soundGlomerate.mainServices', [])
+angular.module('soundGlomerate.mainFactory', [])
 
-.factory('Search',function($http){
+.factory('Main',function($http){
 	
 })
