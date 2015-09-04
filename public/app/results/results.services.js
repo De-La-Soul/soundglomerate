@@ -17,6 +17,6 @@
 
 angular.module('soundGlomerate.resultsFactory', [])
 
-.factory('Results',function($http){
+.factory('Results',function($http){ // Possibly don't need this service, just need access to the Search service
 	
 })
