@@ -10,18 +10,14 @@ module.exports = function(app, express){
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static(__dirname + '/../../client'));
+app.use(express.static(__dirname + '/../../public'));
 
 
-var eventbriteRouter = express.Router();
+var eventsRouter = express.Router();
 
-app.use('/api/events', eventbriteRouter); 
+app.use('/api/results', eventsRouter)
 
-app.get('/*', function(req, res) {
-    res.redirect('/');
-});
-
-require('../events/eventsRoutes.js')(eventbriteRouter);
+require('../events/eventsRoutes.js')(eventsRouter);
 
 }
 
