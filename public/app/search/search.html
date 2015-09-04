@@ -15,4 +15,21 @@
 ~ eventbrite API info (send)
 ~ On success, store and parse data 
 -->
-<div ng-controller="SearchController"></div>
+<html ng-app="soundGlomerate.search"> <!-- DELETE ME -->
+<head>
+  <meta charset="utf-8"/>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script> <!-- DELETE ME -->
+  <script src="../app.js"></script>
+  <script src="search.js"></script>
+  <script src="search.services.js"></script>
+</head>
+<body>
+  <div ng-controller="SearchController">
+    <input type="text" ng-model="location" placeholder="Enter Location" >
+
+    <p>{{location}}</p>
+
+  </div>
+</body> 
+</html> <!-- DELETE ME -->
