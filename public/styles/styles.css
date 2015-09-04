@@ -1,0 +1,34 @@
+#landingPage {
+    width: 100%;
+    height: 800px;
+    padding: 50px 0;
+    color: #fff;
+    background: url(../assets/bgimage.jpg) no-repeat center center scroll;
+    background-color: {{ site.color.primary-dark }};
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#landingPage #search{
+    /*position: absolute;*/
+    margin-left: 200px;
+
+}
+
+#landingPage #search input{
+    /*position: absolute;*/
+    color:  black;
+    
+}
+
+@media screen and (max-width: 200px) {
+  body {
+    background-color: black;
+    background: url(../assets/bgimage.jpg) no-repeat center center scroll;
+
+  }
+}
+
+

@@ -1,0 +1,15 @@
+{
+  "curly": true,
+  "eqeqeq": true,
+  "undef": true,
+  "globals": {
+    "jQuery": false
+  },
+  "camelcase": true,
+  "indent": 2,
+  "unused": true,
+  "strict": true,
+  "browser": true,
+  "predef": ["angular", "$", "console"]
+
+}
