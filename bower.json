@@ -1,0 +1,28 @@
+{
+  "name": "De-La-Soul-Thesis",
+  "version": "0.0.0",
+  "homepage": "https://github.com/De-La-Soul/De-La-Soul-Thesis.git",
+  "authors": [
+    "De-La-Soul-Thesis-Team"
+  ],
+  "description": "Find music events",
+  "main": "index.js",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "~0.2.11",
+    "angular-ui-date": "~0.0.8",
+    "pickadate": "~3.5.6",
+    "ui-router": "~0.2.15"
+  }
+}
