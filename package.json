@@ -22,6 +22,7 @@
     "async-series": "0.0.1",
     "aws-sign2": "^0.5.0",
     "bl": "^1.0.0",
+    "body-parser": "^1.13.3",
     "caseless": "^0.11.0",
     "chai": "^3.2.0",
     "combined-stream": "^1.0.5",
