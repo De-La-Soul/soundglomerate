@@ -2,9 +2,17 @@
 // this is where routing happens
 angular.module('soundGlomerate', [ // declare all controllers and services
   'soundGlomerate.main',
-  'soundGlomerate.mainServices',
-  'soundGlomerate.eventbrite',
-  'soundGlomerate.eventbriteServices',
+  'soundGlomerate.mainFactory',
+  'soundGlomerate.filter',
+  'soundGlomerate.filterFactory',
+  'soundGlomerate.map',
+  'soundGlomerate.mapFactory',
+  'soundGlomerate.results',
+  'soundGlomerate.resultsFactory',
+  'soundGlomerate.search',
+  'soundGlomerate.searchFactory',
+  'soundGlomerate.selectedEvent',
+  'soundGlomerate.selectedEventFactory',
   'ui.router'
 ])
 
@@ -15,9 +23,11 @@ angular.module('soundGlomerate', [ // declare all controllers and services
       templateUrl: 'app/main/main.html',
       controller: 'MainController'
     })
-    .state('events', {
-      templateUrl: 'app/events/eventbrite.html',
-      controller: 'EventbriteController'
+    .state('results', {
+      url:'/results',
+      templateUrl: 'app/results/results.html',
+      controller: 'ResultsController'
     })
+
     $urlRouterProvider.otherwise('/'); // this is the default route (if no route is specified)
 })
