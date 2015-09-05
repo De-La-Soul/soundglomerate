@@ -1,3 +1,4 @@
+angular.module('soundGlomerate.resultsFactory', ['soundGlomerate.searchFactory'])
 // goals:
 // 2. Search Bar
 // - view --
@@ -18,13 +19,13 @@
 
 
 
-angular.module('soundGlomerate.resultsFactory', ['soundGlomerate.searchFactory'])
 
-.factory('Results', ['$http', 'Search', '',function($http, Search){ 
-  var apiDataResults = Search.apiSearchResults;
-	
+.factory('Results', ['$http', 'Search', function($http, Search){   
+
+  console.log(Search.searchData)
+   // console.log(Search.apiSearchResults);
   return {
-    apiDataResults: apiDataResults
+    resultsData: Search.searchData
   }
 }]);
 
@@ -81,3 +82,8 @@ angular.module('soundGlomerate.resultsFactory', ['soundGlomerate.searchFactory']
 // var apiGenreId = {
 //   'Alternative': "3001", 'BluesJazz': "3002", 'Classical': "3003", 'Country': "3004", 'Cultural': "3005", 'EDMElectronic': "3006", 'Folk': "3007", 'HipHopRap': "3008", 'Indie': "3009", 'Latin': "3010", 'Metal': "3011", 'Opera': "3012", 'Other': "3999", 'Pop': "3013", 'RB': "3014", 'Reggae': "3015",'ReligiousSpiritual': "3016", 'Rock': "3017", 'Top40': "3018"
 // } 
+
+
+
+
+/************************************************************************************/

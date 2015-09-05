@@ -1,3 +1,4 @@
+angular.module('soundGlomerate.searchFactory', [])
 // goals:
 // 2. Search Bar
 // - view --
@@ -15,11 +16,11 @@
 // ------- eventbrite API info (send)
 // ------- On success, store and parse data 
 
-angular.module('soundGlomerate.searchFactory', [])
 
-.factory('Search',['$http', function($http){
-	
-  var apiSeachResults = [{
+.factory('Search', ['$http', function($http){
+    
+
+  var resultsObj = [{
             "name": {
                 "text": "Bissap Baobab Oakland presents: RHYTMS OF SOLIDARITY", 
                 "html": "Bissap Baobab Oakland presents: RHYTMS OF SOLIDARITY"
@@ -109,7 +110,7 @@ angular.module('soundGlomerate.searchFactory', [])
                 "edge_color_set": true
             }
         }];
-
+        // console.
   // $http({
   //     method: 'GET',
   //     datatype: 'JSON',
@@ -121,11 +122,11 @@ angular.module('soundGlomerate.searchFactory', [])
   //       console.log('Data.api', $scope.dataAPI);
   //     })
   // };
-
+  // console.log(resultsObj);
   return {
-    apiSeachResults: apiSeachResults
+    searchData: resultsObj
   }
-}])
+}]);
 
 
  

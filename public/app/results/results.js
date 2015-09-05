@@ -33,7 +33,9 @@ angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory'])
   //   thing2: {
 
   //   } 
-  $scope.apiData = Results.apiDataResults;
+  // console.log(Results);
+
+  $scope.apiData = Results.resultsData;
 
     
   }]);
