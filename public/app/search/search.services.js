@@ -17,6 +17,25 @@
 
 angular.module('soundGlomerate.searchFactory', [])
 
-.factory('Search',function($http){
-	
-})
+.factory('Search', ['$http', function($http){
+
+  console.log('this : ', this, ', $http : ', $http);
+
+  var sendAPIQuery = function(){
+
+  };
+  var example = {};
+  return example;
+
+}]);
+
+
+
+
+
+
+
+
+
+
+
