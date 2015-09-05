@@ -114,7 +114,7 @@ angular.module('soundGlomerate.searchFactory', [])
   // $http({
   //     method: 'GET',
   //     datatype: 'JSON',
-  //         url: 'https://www.eventbriteapi.com/v3/events/search/?venue.city=Oakland&venue.region=CA&categories=103&subcategories=3005&token=MD33DX7LJOIGAGCBYRF7'
+  //         url: 'https://www.eventbriteapi.com/v3/events/search/?venue.city=Oakland&venue.region=CA&categories=103&subcategories=3005&token='
 
   //       }).success(function(data){
   //       $scope.dataAPI = data.events;
