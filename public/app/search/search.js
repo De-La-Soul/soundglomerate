@@ -15,10 +15,16 @@
 // ------- eventbrite API info (send)
 // ------- On success, store and parse data 
 
-// angular.module('soundGlomerate.search', [])
-angular.module('soundGlomerate', [])
+angular.module('soundGlomerate.search', [])
 
-.controller('SearchController', function ($scope) {
-  console.log($scope, search.location);
 
-});
+.controller('SearchController', ['$scope', function ($scope) {
+  
+  $scope.update = function(search){
+    search = search;
+    console.log('search: ', search);
+    console.log('search.location: ', search.location);
+    console.log('search.startDate: ', search.startDate);
+    console.log('search.endDate: ', search.endDate);
+  }
+}]);

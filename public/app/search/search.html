@@ -16,20 +16,34 @@
 ~ On success, store and parse data 
 -->
 <html ng-app="soundGlomerate.search"> <!-- DELETE ME -->
-<head>
-  <meta charset="utf-8"/>
-  
+<head><!-- DELETE ME -->
+  <meta charset="utf-8"/> <!-- DELETE ME -->
+  <script type="text/javascript" src"../bower_components/pickdate/lib/picker.date.js"></script> <!-- DELETE ME -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script> <!-- DELETE ME -->
-  <script src="../app.js"></script>
-  <script src="search.js"></script>
-  <script src="search.services.js"></script>
-</head>
-<body>
+
+  <script src="../app.js"></script> <!-- DELETE ME -->
+  <script src="search.js"></script> <!-- DELETE ME -->
+  <script src="search.services.js"></script> <!-- DELETE ME -->
+</head> <!-- DELETE ME -->
+<body> <!-- DELETE ME -->
   <div ng-controller="SearchController">
-    <input type="text" ng-model="location" placeholder="Enter Location" >
+    
+    <!-- NOTE TO SELF: 1. MAKE A BUTTON THAT GRABS THE LOCATION, START AND END DATES, 2. MAKE CUSTOM DIRECTIVE? THAT AUTOCOMPLETES/CITY CHECKER. LOOK HERE FIRST: http://winkervsbecks.github.io/locator/-->
+    <!-- form where user types in location. -->
+    <input type="text" ng-model="search.location" placeholder="Enter Location" required>
+    <p>{{search.location}}</p>
+    
+    <!-- NOTE TO SELF: MAKE CUSTOM DIRECTIVE datePicker -->
+    <input type="date" ng-model="search.startDate" class="datepicker" placeholder="yyyy-MM-dd" min="2015-09-03" max="2113-12-31"/> 
+    <p>{{search.startDate}}</p>
+    
 
-    <p>{{location}}</p>
+    <!-- NOTE TO SELF: MAKE CUSTOM DIRECTIVE datePicker -->
+    <input type="date" ng-model="search.endDate" class="datepicker" placeholder="yyyy-MM-dd" min="{{search.startDate}}" max="2113-12-31"/> 
+    <p>{{search.endDate}}</p>
 
+    <!-- submit button that grabs data when clicked. FOR FUTURE, MAKE THIS ALSO AVAILABLE WHEN USER HITS ENTER -->
+    <input type="submit" ng-click="update(search)" value="Submit" />
   </div>
-</body> 
+</body> <!-- DELETE ME -->
 </html> <!-- DELETE ME -->
