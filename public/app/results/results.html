@@ -1,10 +1,10 @@
 
 
 <!DOCTYPE html>
-<html ng-app="soundGlomerate.results">
+<html ng-app="soundGlomerate.results"> <!-- !!NECESSARY!! -->
 <head>
   <!-- <meta charset="utf-9"/> -->
-  <title>Results view tester</title>
+  <title>SoundGlomerate</title>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
   
@@ -15,8 +15,8 @@
 
 
 <!--  -->
-  <div ng-controller="ResultsController as results"> <!-- CONNECT TO THE RESULTS CONTROLLER  -->
-    <div ng-repeat="event in dataAPI"> <!-- GET ALL THE EVENT INFO FROM THE DATAAPI OBJECT IN THE RESULTS CONTROLLER -->
+  <div ng-controller="ResultsController as results"> <!-- !!NECESSARY!! CONNECT TO THE RESULTS CONTROLLER  -->
+    <div ng-repeat="event in apiData"> <!-- GET ALL THE EVENT INFO FROM THE DATAAPI OBJECT IN THE RESULTS CONTROLLER -->
       <div class="row" style="margin:10px 10px 0px;border:1px solid grey;border-radius:5px;">
         <div class="col-xs-3" style="background-color:white;padding:5px;">
           <a ng-href="{{event.url}}"><img ng-src="{{event.logo.url}}" class="img-responsive" width="200px" height="162px" /></a> <!-- EVENT IMAGE -->
@@ -48,8 +48,15 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
 <!-- this maybe superfluous -->
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
+  
+  <!-- File handling the API query -->
+  <script src="search/search.services.js"></script>
+  <!-- File where the results CONTROLLER lies -->
   <script type="text/javascript" src="results.js"></script>
+  <!-- File location where the results SERVICES lies -->
+  <script src="results.services.js"></script>
+
+
 </body>
 </html>
 
