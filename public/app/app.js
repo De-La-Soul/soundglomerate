@@ -28,6 +28,11 @@ angular.module('soundGlomerate', [ // declare all controllers and services
       templateUrl: 'app/results/results.html',
       controller: 'ResultsController'
     })
+    .state('filter', {
+      url:'/filter',
+      templateUrl: 'app/filter/filter.html',
+      controller: 'FilterController'
+    })
 
     $urlRouterProvider.otherwise('/'); // this is the default route (if no route is specified)
 })
