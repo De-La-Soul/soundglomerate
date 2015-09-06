@@ -17,6 +17,6 @@
 
 angular.module('soundGlomerate.search', [])
 
-.controller('SearchController', function ($scope) {
+.controller('SearchController', function ($scope, $stateParams) {
 	
 });
