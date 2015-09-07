@@ -1,3 +1,5 @@
+'use strict'
+angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory'])
 // goals:
 // 2. Search Bar
 // - view --
@@ -14,10 +16,14 @@
 // ---- HTTP GET
 // ------- eventbrite API info (send)
 // ------- On success, store and parse data 
+// (function(){
 
-angular.module('soundGlomerate.results', [])
+.controller('ResultsController', ['$scope', 'Results', function ($scope, Results) {
+  
 
-.controller('ResultsController', function ($scope) {
-	$scope.test = "this is a test"
 
-});
+  $scope.apiData = Results.resultsData;
+
+    
+  }]);
+
