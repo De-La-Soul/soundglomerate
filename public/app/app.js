@@ -79,4 +79,4 @@ angular.module('soundGlomerate', [ // declare all controllers and services
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
       }
-])
+]);
