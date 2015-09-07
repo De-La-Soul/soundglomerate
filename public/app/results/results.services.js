@@ -16,11 +16,39 @@ angular.module('soundGlomerate.resultsFactory', ['soundGlomerate.searchFactory']
 // ------- eventbrite API info (send)
 // ------- On success, store and parse data 
 
-.factory('Results', ['$http', 'Search', function($http, Search){   
+.factory('Results', ['$http', '$q', 'Search', function($http, $q, Search){   
+  var deferred = $q.defer();
+  var eventbriteData;
+  var service = {
+    events: []
+  };
+  
+  // var cb = function(data){
+    
+  //   data.events.forEach(function)
+  //   service.events = data.events;
+  // }
 
-  return {
-    resultsData: Search.searchData
-  }
+  Search.eventbriteQuery().success(function(data){
+    // deferred.resolve({
+    //   service: data.events
+    // })
+    // return deferred.promise;
+    // service.events = data.events;
+    // console.log
+    data.events.forEach(function(event1){
+      service.events.push(event1);
+    });
+  // console.log('Eventbrite data results', service);
+  }).then(function(results){
+    // console.log(service)
+
+  });
+
+  
+
+
+  return service;
 }]);
 
 
