@@ -7,5 +7,5 @@ angular.module('soundGlomerate.filterFactory', [])
   
   return {
     genresEB:genresEB 
-  }
-})
+  };
+});

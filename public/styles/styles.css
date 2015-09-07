@@ -1,19 +1,15 @@
 #landingPage {
-    width: 100%;
-    height: 800px;
-    padding: 50px 0;
-    color: #fff;
-    background: url(../assets/bgimage.jpg) no-repeat center center scroll;
-    background-color: {{ site.color.primary-dark }};
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+/*    width: 100%;
+*/    /*height: 800px;*/
+/*    padding: 50px 0;
+*/
+   color: black;
 }
 
 #landingPage #search{
     /*position: absolute;*/
-    margin-left: 200px;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
@@ -26,11 +22,27 @@
 @media screen and (max-width: 200px) {
   body {
     background-color: black;
-    background: url(../assets/bgimage.jpg) no-repeat center center scroll;
+    /*background: url(../assets/bgimage.jpg) no-repeat center center scroll;*/
 
   }
 }
 
+#signIn-btn{
+    margin-top:12px;
+    margin-bottom:5px;
+    background-color: red;
+    border-color: black;
+    /*height: 10px;
+    padding-top: 4px;*/
+}
+
+#backgroundSearchImage{
+    margin-top: 100px;
+}
+
+#pitch{
+    color:red;
+}
 
 
 /* 

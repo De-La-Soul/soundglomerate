@@ -18,5 +18,6 @@
 angular.module('soundGlomerate.results', [])
 
 .controller('ResultsController', function ($scope) {
-	
+	$scope.test = "this is a test"
+
 });
