@@ -1,3 +1,4 @@
+angular.module('soundGlomerate.searchFactory', [])
 // goals:
 // 2. Search Bar
 // - view --
@@ -15,11 +16,12 @@
 // ------- eventbrite API info (send)
 // ------- On success, store and parse data 
 
-angular.module('soundGlomerate.searchFactory', [])
 
 .factory('Search', ['$http', function($http){ // naming the factory 'Search', requiring the $http module to make API calls
 
+
   var getEventBriteData = function(city, startDate, endDate){ //defines the getEventBriteData fxn
+
 
     endDate = endDate || '';
     startDate = startDate || '';
@@ -38,14 +40,3 @@ angular.module('soundGlomerate.searchFactory', [])
   }
 
 }]);
-
-
-
-
-
-
-
-
-
-
-
