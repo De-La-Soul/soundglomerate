@@ -35,25 +35,27 @@
     <!-- form where user types in location. -->
     <div class="col-xs-3">
     <input type="text" ng-model="search.location" placeholder="Enter Location" required>
-    <p>{{search.location}}</p>
+    <!-- <p>{{search.location}}</p> -->
+    <!-- <p>{{EBEvents}}</p> -->
     </div> <!-- end of col-xs-3 -->
 
     <div class="col-xs-3">
     <!-- NOTE TO SELF: MAKE CUSTOM DIRECTIVE datePicker -->
     <input type="date" ng-model="search.startDate" class="datepicker" min="2015-09-03" max="2113-12-31"/> 
-    <p>{{search.startDate | date }}</p>
+    <!-- <p>{{search.startDate | date }}</p> -->
     </div> <!-- end of col-xs-3 -->
 
     <div class="col-xs-3">
     <!-- NOTE TO SELF: MAKE CUSTOM DIRECTIVE datePicker. TRY TO SET DATE MAX AT ONE/TWO YEARS IN THE FUTURE -->
     <input type="date" ng-model="search.endDate" class="datepicker" min="{{search.startDate}}" max="2113-12-31"/> 
-    <p>{{search.endDate | date }}</p>
+    <!-- <p>{{search.endDate | date }}</p> -->
+
     </div> <!-- end of col-xs-3 -->
 
 
     <!-- submit button that grabs data when clicked. FOR FUTURE, MAKE THIS ALSO AVAILABLE WHEN USER HITS ENTER -->
     <div class="col-xs-3">
-    <input type="submit" ng-show="search.location" ng-click="update(search)" value="Submit" />
+    <input type="submit" ng-show="search.location" ng-click="getEBEvents()" value="Submit" />
     </div> <!-- end of col-xs-3 -->
   </div>
   </div> <!-- end of row -->
