@@ -18,7 +18,7 @@
 angular.module('soundGlomerate.search', ['soundGlomerate.searchFactory'])
 
 
-.controller('SearchController', ['$scope', 'Search', function ($scope, Search) {
+.controller('SearchController', ['$scope', 'Search', function ($scope, $stateParams, Search) {
   
   
 
@@ -37,4 +37,3 @@ angular.module('soundGlomerate.search', ['soundGlomerate.searchFactory'])
   
   
 }]);
-
