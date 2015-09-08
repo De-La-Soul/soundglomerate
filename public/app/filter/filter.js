@@ -4,4 +4,3 @@ angular.module('soundGlomerate.filter', [])
   $scope.genresEB = Filter.genresEB;
   $scope.Answers = {};
 });
-
