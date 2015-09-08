@@ -22,10 +22,12 @@
   <script type="text/javascript" src"../bower_components/pickdate/lib/picker.date.js"></script> <!-- DELETE ME -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script> <!-- DELETE ME -->
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../../styles/styles.css">
 
   <script src="../app.js"></script> <!-- DELETE ME -->
   <script src="search.js"></script> <!-- DELETE ME -->
   <script src="search.services.js"></script> <!-- DELETE ME -->
+  <script src="../results/results.services.js"></script> <!-- DELETE ME -->
 </head> <!-- DELETE ME -->
 <body> <!-- DELETE ME -->
 <div class="row"  style="background-color:black;opacity:.5;padding:2px;text-align:center">
@@ -55,6 +57,7 @@
     <div class="col-xs-3">
     <input type="submit" ng-show="search.location" ng-click="update(search)" value="Submit" />
     </div> <!-- end of col-xs-3 -->
+    <div id="#query" style="color: red">{{results}}</div>
   </div>
   </div> <!-- end of row -->
 </body> <!-- DELETE ME -->

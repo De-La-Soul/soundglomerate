@@ -26,6 +26,9 @@
 
   }
 }
+div #query{
+    color: black;
+}
 
 #signIn-btn{
     margin-top:12px;

@@ -19,30 +19,48 @@ angular.module('soundGlomerate.searchFactory', [])
 
 .factory('Search', ['$http', function($http){
 
+  var service = {};  
+  service.searchInput = {};
+  service.events = [];
+
   var method = 'GET';
-  var datatype = 'JSON';
   
   /////////////REMOVE BEFORE COMMITING///////////////
-  var eventbriteKey = 'MD33DX7LJOIGAGCBYRF7';
+  var eventbriteKey = '';
   /////////////REMOVE BEFORE COMMITING///////////////
   
   var urls = {
     eventbrite: 'https://www.eventbriteapi.com/v3/events/search/?venue.city=Oakland&venue.region=CA&categories=103&token=',
   }
-  var service = {};  
 
-  service.eventbriteQuery = function(){
+  // service.getSearchData = function(searchData){
+  //   service.searchInput.location = searchData.location;
+  //   service.searchInput.startDate = searchData.startDate || '';
+  //   service.searchInput.endDate = searchData.endDate || '';
+
+  //   console.log(searchInput)
+  // }
+
+  service.getData = function(value){
+    value = service.events;
+  };
+
+  service.eventbriteQuery = function(searchData){
    
-   return $http({
+    return $http({
       method: method,
-      datatype: datatype,
-          url: urls.eventbrite + eventbriteKey
-
-        });
-    };
+      url: 'https://www.eventbriteapi.com/v3/events/search/?venue.city=Oakland&venue.region=CA&categories=103&token=' + eventbriteKey
+    }).success(function(data){
+      data.events.forEach(function(event1){
+      service.events.push(event1);
+    });
+  })
+    // .then(function(results){
+    //   console.log(service.events);
+    // });
+  };
   
-
-  return service;
+  return service
 
 }]);
 
