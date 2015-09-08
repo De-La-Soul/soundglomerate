@@ -22,8 +22,10 @@ angular.module('soundGlomerate.searchFactory', [])
   var events = []; 
 
 
-  var getEventBriteData = function(city, startDate, endDate){ //defines the getEventBriteData fxn
-    angular.copy([], events)
+  var getEventBriteData = function(city, startDate, endDate){ // Defines the getEventBriteData fxn
+
+
+    angular.copy([], events); // Creates a copy of the search data
 
     endDate = endDate || '';
     startDate = startDate || '';
@@ -36,6 +38,7 @@ angular.module('soundGlomerate.searchFactory', [])
         res.data.events.forEach(function(evnt){
           //NOTE: need to take into account when fields are null. Right now, it errors out if one of these fields is null.
           
+          // Push each event into the events array for the results to access
           events.push(evnt);
         });
         console.log("these are the events", events)

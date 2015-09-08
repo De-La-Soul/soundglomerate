@@ -23,6 +23,15 @@ angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory'])
  
   $scope.apiData = Results.events;
 
+  // A click event to list for a click on the div, link, or event
+  $scope.selectedEvent = function(event){
+    console.log('Logging the event that was clicked on', event);
+  }
+  
+  // at state event to send navigate to the selected results page
+
+  // Using 'this' to grab the event and send to the results view/controller
+
     
 }]);
 
