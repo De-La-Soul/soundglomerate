@@ -18,7 +18,9 @@ angular.module('soundGlomerate.searchFactory', [])
 
 
 .factory('Search', ['$http', function($http){ // naming the factory 'Search', requiring the $http module to make API calls
+
   var events = []; 
+
 
   var getEventBriteData = function(city, startDate, endDate){ //defines the getEventBriteData fxn
     angular.copy([], events)
@@ -28,23 +30,13 @@ angular.module('soundGlomerate.searchFactory', [])
 
     return $http({ // the direct API call with the user specificed input as the fxn's parameters
       method: 'GET',
-      url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=' + city + '&venue.region=CA&categories=103&token=MD33DX7LJOIGAGCBYRF7'
+      url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=' + city + '&venue.region=CA&categories=103&token='
     })
     .then(function(res){ // this is a promise that waits for the API to return info
-        res.data.events.forEach(function(elem){
+        res.data.events.forEach(function(evnt){
           //NOTE: need to take into account when fields are null. Right now, it errors out if one of these fields is null.
-          var event = {
-            name: elem.name.text, 
-            description: elem.description.text, 
-            time: {
-              startTime: elem.start.local,
-              endTime: elem.end.local 
-            },
-            pic: elem.logo.url,
-            genre: elem.subcategory_id,
-            eventUrl: elem.url             
-          }
-          events.push(event);
+          
+          events.push(evnt);
         });
         console.log("these are the events", events)
         return events
@@ -57,4 +49,50 @@ angular.module('soundGlomerate.searchFactory', [])
     getEventBriteData: getEventBriteData 
   }
 
+
 }]);
+  
+
+
+
+
+  // var method = 'GET';
+  
+  // /////////////REMOVE BEFORE COMMITING///////////////
+  // var eventbriteKey = '';
+  // /////////////REMOVE BEFORE COMMITING///////////////
+  
+  // var urls = {
+  //   eventbrite: 'https://www.eventbriteapi.com/v3/events/search/?venue.city=Oakland&venue.region=CA&categories=103&token=',
+  // }
+  // service.getSearchData = function(searchData){
+  //   service.searchInput.location = searchData.location;
+  //   service.searchInput.startDate = searchData.startDate || '';
+  //   service.searchInput.endDate = searchData.endDate || '';
+
+  //   console.log(searchInput)
+  // }
+
+//   service.getData = function(value){
+//     value = service.events;
+//   };
+
+//   service.eventbriteQuery = function(searchData){
+   
+//     return $http({
+//       method: method,
+//       url: 'https://www.eventbriteapi.com/v3/events/search/?venue.city=Oakland&venue.region=CA&categories=103&token=' + eventbriteKey
+//     }).success(function(data){
+//       data.events.forEach(function(event1){
+//       service.events.push(event1);
+//     });
+//   })
+//     // .then(function(results){
+//     //   console.log(service.events);
+//     // });
+//   };
+  
+//   return service
+
+// }]);
+

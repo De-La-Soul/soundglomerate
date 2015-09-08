@@ -1,3 +1,4 @@
+
 <div class="row"  style="background-color:black;opacity:.5;padding:2px;text-align:center">
   <div ng-controller="SearchController">
     
@@ -27,5 +28,6 @@
     <div class="col-xs-3">
     <input type="submit" ng-show="search.location" ng-click="getEBEvents()" value="Submit" />
     </div> <!-- end of col-xs-3 -->
+    <div id="#query" style="color: red">{{results}}</div>
   </div>
 </div> <!-- end of row -->
