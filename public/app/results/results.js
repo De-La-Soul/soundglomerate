@@ -20,10 +20,6 @@ angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory'])
 
 .controller('ResultsController', ['$scope', 'Results', function ($scope, Results) {
   
-
-
-  $scope.apiData = Results.resultsData;
-
     
   }]);
 
