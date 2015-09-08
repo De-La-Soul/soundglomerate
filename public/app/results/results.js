@@ -1,5 +1,5 @@
 'use strict'
-angular.module('soundGlomerate.results', ['soundGlomerate.searchFactory'])
+angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory'])
 // goals:
 // 2. Search Bar
 // - view --
@@ -19,21 +19,9 @@ angular.module('soundGlomerate.results', ['soundGlomerate.searchFactory'])
 // (function(){
 
 
-.controller('ResultsController', ['$scope', 'Search', function ($scope,Search) {
-  // console.log(Results.eventbriteResults)
-  
-  // console.log('Logging Results', Results)
-  $scope.apiData = Search.events;
-  // console.log(Search)
-  
-  // $scope.$watch("Search.events", function(newValue, oldValue){
-  //     if(Search.events.length > 0){
-  //       Search.getData($scope.apiData);
-  //       console.log("The watcher is working");
-  //     }
-
-  //   // setInterval(Search.getData, 3000 , $scope.apiData);
-  // });
+.controller('ResultsController', ['$scope', 'Results', function ($scope, Results) {
+ 
+  $scope.apiData = Results.events;
 
     
 }]);

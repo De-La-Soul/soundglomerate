@@ -19,28 +19,34 @@ angular.module('soundGlomerate.searchFactory', [])
 
 .factory('Search', ['$http', function($http){ // naming the factory 'Search', requiring the $http module to make API calls
 
-  var service = {};  
-  service.searchInput = {};
-  service.events = [];
+  var events = []; 
 
 
   var getEventBriteData = function(city, startDate, endDate){ //defines the getEventBriteData fxn
-
+    angular.copy([], events)
 
     endDate = endDate || '';
     startDate = startDate || '';
 
     return $http({ // the direct API call with the user specificed input as the fxn's parameters
       method: 'GET',
-      url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=' + city + '&venue.region=CA&categories=103&token=MD33DX7LJOIGAGCBYRF7'
+      url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=' + city + '&venue.region=CA&categories=103&token='
     })
     .then(function(res){ // this is a promise that waits for the API to return info
-        return res.data;
+        res.data.events.forEach(function(evnt){
+          //NOTE: need to take into account when fields are null. Right now, it errors out if one of these fields is null.
+          
+          events.push(evnt);
+        });
+        console.log("these are the events", events)
+        return events
       })
+  
   };
 
   return {
-    getEventBriteData: getEventBriteData // returning the fxn to make it available to the controller
+    events: events,
+    getEventBriteData: getEventBriteData 
   }
 
 

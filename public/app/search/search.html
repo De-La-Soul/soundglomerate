@@ -1,35 +1,4 @@
-<!-- goals:
-2. Search Bar
-- view 
-~ /3 input forms
-~ /search button
-~ /queried location ($scope.location)
-- controller ~
-~ $scope elements for each input 
-~ /$scope.location
-~ /$scope.startDate
-~ /$scope.endDate
-~ /$scope.clickFxn (calls the service Fxn)
-- services ~
-~ HTTP GET
-~ eventbrite API info (send)
-~ On success, store and parse data 
--->
 
-<html ng-app="soundGlomerate.search"> <!-- DELETE ME -->
-<head><!-- DELETE ME -->
-  <meta charset="utf-8"/> <!-- DELETE ME -->
-  <script type="text/javascript" src"../bower_components/pickdate/lib/picker.date.js"></script> <!-- DELETE ME -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script> <!-- DELETE ME -->
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../../styles/styles.css">
-
-  <script src="../app.js"></script> <!-- DELETE ME -->
-  <script src="search.js"></script> <!-- DELETE ME -->
-  <script src="search.services.js"></script> <!-- DELETE ME -->
-  <script src="../results/results.services.js"></script> <!-- DELETE ME -->
-</head> <!-- DELETE ME -->
-<body> <!-- DELETE ME -->
 <div class="row"  style="background-color:black;opacity:.5;padding:2px;text-align:center">
   <div ng-controller="SearchController">
     
@@ -61,6 +30,4 @@
     </div> <!-- end of col-xs-3 -->
     <div id="#query" style="color: red">{{results}}</div>
   </div>
-  </div> <!-- end of row -->
-</body> <!-- DELETE ME -->
-</html> <!-- DELETE ME -->
+</div> <!-- end of row -->
