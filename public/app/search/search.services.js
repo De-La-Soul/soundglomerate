@@ -17,13 +17,15 @@ angular.module('soundGlomerate.searchFactory', [])
 // ------- On success, store and parse data 
 
 
-.factory('Search', ['$http', function($http){ // naming the factory 'Search', requiring the $http module to make API calls
+.service('Search', ['$http', function($http){ // naming the factory 'Search', requiring the $http module to make API calls
 
   var events = []; 
 
 
-  var getEventBriteData = function(city, startDate, endDate){ //defines the getEventBriteData fxn
-    angular.copy([], events)
+  var getEventBriteData = function(city, startDate, endDate){ // Defines the getEventBriteData fxn
+
+
+    angular.copy([], events); // Creates a copy of the search data
 
     endDate = endDate || '';
     startDate = startDate || '';
@@ -36,6 +38,7 @@ angular.module('soundGlomerate.searchFactory', [])
         res.data.events.forEach(function(evnt){
           //NOTE: need to take into account when fields are null. Right now, it errors out if one of these fields is null.
           
+          // Push each event into the events array for the results to access
           events.push(evnt);
         });
         console.log("these are the events", events)
@@ -49,50 +52,6 @@ angular.module('soundGlomerate.searchFactory', [])
     getEventBriteData: getEventBriteData 
   }
 
-
 }]);
   
-
-
-
-
-  // var method = 'GET';
-  
-  // /////////////REMOVE BEFORE COMMITING///////////////
-  // var eventbriteKey = '';
-  // /////////////REMOVE BEFORE COMMITING///////////////
-  
-  // var urls = {
-  //   eventbrite: 'https://www.eventbriteapi.com/v3/events/search/?venue.city=Oakland&venue.region=CA&categories=103&token=',
-  // }
-  // service.getSearchData = function(searchData){
-  //   service.searchInput.location = searchData.location;
-  //   service.searchInput.startDate = searchData.startDate || '';
-  //   service.searchInput.endDate = searchData.endDate || '';
-
-  //   console.log(searchInput)
-  // }
-
-//   service.getData = function(value){
-//     value = service.events;
-//   };
-
-//   service.eventbriteQuery = function(searchData){
-   
-//     return $http({
-//       method: method,
-//       url: 'https://www.eventbriteapi.com/v3/events/search/?venue.city=Oakland&venue.region=CA&categories=103&token=' + eventbriteKey
-//     }).success(function(data){
-//       data.events.forEach(function(event1){
-//       service.events.push(event1);
-//     });
-//   })
-//     // .then(function(results){
-//     //   console.log(service.events);
-//     // });
-//   };
-  
-//   return service
-
-// }]);
 
