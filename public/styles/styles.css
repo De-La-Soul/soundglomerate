@@ -26,6 +26,9 @@
 
   }
 }
+div #query{
+    color: black;
+}
 
 #signIn-btn{
     margin-top:12px;
@@ -44,6 +47,19 @@
     color:red;
 }
 
-li {
-    list-style-type: none;
+
+/* 
+*****************************************************************************
+******************** filter Styling *****************************************
+*****************************************************************************
+*/
+
+div#filterOptions > p{
+    color:black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+hr#filterOptions {
+    width: 100%;
 }
