@@ -13,8 +13,7 @@ angular.module('soundGlomerate', [ // declare all controllers and services
   'soundGlomerate.searchFactory',
   'soundGlomerate.selectedEvent',
   'soundGlomerate.selectedEventFactory',
-  'ui.router',
-  // 'google-maps'
+  'ui.router'
 ])
 
 .config(function($stateProvider, $urlRouterProvider) { // this uses UI router (previously we used ng-router). this is better becuer it uses states, templates and controller and service and if there is a view within the state. THe later is done with the resolve method.
