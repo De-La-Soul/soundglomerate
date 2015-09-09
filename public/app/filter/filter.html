@@ -1,18 +1,21 @@
-<div ng-controller="FilterController">
-  <div id="filterOptions">
-    <p>Music Genre</p>
-    <form ng-repeat="(key, value) in genresEB">
-      <label for="filterGenreEB"></label>
-      <!-- <input type="checkbox" ng-model="">{{key}}</select> -->
-    </form>
-    {{}}
-    <hr/>
-    <p>Venue</p>
-    <p>Date</p>
 
-    <p>Price</p>
-    <p>Time</p>
-    <p>Artist</p>
-  </div>
-  
-</div>
+<div ng-controller="FilterController" class="row">
+
+  <div id="filterOptions" class="col-sm-4">
+    <p>Music Genre</p>
+    <a href="#/results" ng-click="setCurrentGenre(all)">All</a>
+    <div ng-repeat="(key,value) in genres">
+      <a href="#/results" ng-click="setCurrentGenre(key)">{{value}}</button>
+    </div>
+    <hr/>
+  </div> <!--  end of col-sm-4 -->
+
+  <div class="col-sm-8">
+    <div ng-repeat="(key, value) in tempData | filter:currentGenre" style="margin-top:40px;border:1px solid red">
+      <p>{{value.name}}</p>
+      <p>{{value.id}}</p>
+      <p>{{genres[value.subcategory_id]}}</p>
+    </div>
+  </div> <!-- end of col-sm-8  -->
+
+</div><!-- end of ng-controller-->
