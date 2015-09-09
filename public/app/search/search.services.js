@@ -17,7 +17,7 @@ angular.module('soundGlomerate.searchFactory', [])
 // ------- On success, store and parse data 
 
 
-.factory('Search', ['$http', function($http){ // naming the factory 'Search', requiring the $http module to make API calls
+.service('Search', ['$http', function($http){ // naming the factory 'Search', requiring the $http module to make API calls
 
   var events = []; 
 

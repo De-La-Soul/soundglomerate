@@ -1,5 +1,7 @@
-angular.module('soundGlomerate.selectedEvent', [])
+angular.module('soundGlomerate.selectedEvent', ['soundGlomerate.selectedEventFactory'])
 // 6. Selected Event
+
+
 // - view --
 // -- event photo
 // -- full description
@@ -9,6 +11,8 @@ angular.module('soundGlomerate.selectedEvent', [])
 // ---- buy ticket
 // ---- venue
 // ---- add to myCal (ties in with the oAuth)
+// 
+
 // - controller --
 // -- event photo and full description are 
 // access from API object from search 
@@ -20,6 +24,11 @@ angular.module('soundGlomerate.selectedEvent', [])
 // search service (see 2)
 
 
-.controller('SelectedEventController', function ($scope) {
-	
-});
+.controller('SelectedEventController', ['$scope', 'SelectedEvent', function ($scope, SelectedEvent) {
+	 
+   $scope.thisEvent = SelectedEvent.yourEvent;
+
+   console.log('SelectedEvent', SelectedEvent);
+   // console.log('Logging this', this)
+   // console.log('Logging scope', $scope)
+}]);
