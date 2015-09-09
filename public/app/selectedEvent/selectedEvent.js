@@ -29,6 +29,5 @@ angular.module('soundGlomerate.selectedEvent', ['soundGlomerate.selectedEventFac
    $scope.thisEvent = SelectedEvent.yourEvent;
 
    console.log('SelectedEvent', SelectedEvent);
-   // console.log('Logging this', this)
-   // console.log('Logging scope', $scope)
+   
 }]);
