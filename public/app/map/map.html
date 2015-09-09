@@ -4,12 +4,12 @@
 </map>
 -->
 <div ng-controller="MarkerRemoveCtrl">
-  <div id="panel">
+<!--   <div id="panel">
     <input ng-click="hideMarkers()" type="button" value="Hide Markers">
     <input ng-click="showMarkers()" type="button" value="Show All Markers">
     <input ng-click="deleteMarkers()" type="button" value="Delete Markers">
-  </div>
-  <map center="37.7699298, -122.4469157" zoom="12" on-click="addMarker()">
+  </div> -->
+  <map center="37.8, -122.27" zoom="12" on-click="addMarker()">
     <marker ng-repeat="pos in positions" position="{{pos.lat}}, {{pos.lng}}"></marker>
   </map>
 </div>
