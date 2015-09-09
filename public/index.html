@@ -6,11 +6,11 @@
     <title>SoundGlomerate</title>
       <link rel="stylesheet" type="text/css" href="styles/styles.css">
       <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="bower_components/lodash/lodash.min.js"></script>
   </head>
 
   <body> 
-
-   <div class="navbar navbar-fixed-top">
+  <nav class="navbar navbar-default navbar-fixed-top" style="margin">   
     <div class="container">  
       <a href="#/" class="navbar-brand"> 
         <!-- this is the logo on the navbar -->
@@ -22,9 +22,8 @@
           <a href="#" class="btn btn-primary"  id="signIn-btn"> Log In </a>
         </li>
       </ul>
-    </div>
-  </div> <!-- end of navbar -->
-
+    </div>  
+  </nav>
     
   <div ui-view><div>
 
@@ -46,7 +45,6 @@
     <script src="app/selectedEvent/selectedEvent.js"></script>
     <script src="app/selectedEvent/selectedEvent.services.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
     <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
 
   </body>
