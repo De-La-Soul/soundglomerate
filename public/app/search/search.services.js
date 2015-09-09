@@ -52,50 +52,6 @@ angular.module('soundGlomerate.searchFactory', [])
     getEventBriteData: getEventBriteData 
   }
 
-
 }]);
   
-
-
-
-
-  // var method = 'GET';
-  
-  // /////////////REMOVE BEFORE COMMITING///////////////
-  // var eventbriteKey = '';
-  // /////////////REMOVE BEFORE COMMITING///////////////
-  
-  // var urls = {
-  //   eventbrite: 'https://www.eventbriteapi.com/v3/events/search/?venue.city=Oakland&venue.region=CA&categories=103&token=',
-  // }
-  // service.getSearchData = function(searchData){
-  //   service.searchInput.location = searchData.location;
-  //   service.searchInput.startDate = searchData.startDate || '';
-  //   service.searchInput.endDate = searchData.endDate || '';
-
-  //   console.log(searchInput)
-  // }
-
-//   service.getData = function(value){
-//     value = service.events;
-//   };
-
-//   service.eventbriteQuery = function(searchData){
-   
-//     return $http({
-//       method: method,
-//       url: 'https://www.eventbriteapi.com/v3/events/search/?venue.city=Oakland&venue.region=CA&categories=103&token=' + eventbriteKey
-//     }).success(function(data){
-//       data.events.forEach(function(event1){
-//       service.events.push(event1);
-//     });
-//   })
-//     // .then(function(results){
-//     //   console.log(service.events);
-//     // });
-//   };
-  
-//   return service
-
-// }]);
 
