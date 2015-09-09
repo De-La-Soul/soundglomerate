@@ -1,18 +1,55 @@
-<!-- goals:
-2. Search Bar
-- view 
-~ 3 input forms
-~ search button
-~ queried location ($scope.location)
-- controller ~
-~ $scope elements for each input 
-~ $scope.location
-~ $scope.startDate
-~ $scope.endDate
-~ $scope.clickFxn (calls the service Fxn)
-- services ~
-~ HTTP GET
-~ eventbrite API info (send)
-~ On success, store and parse data 
--->
-<p> this is the map. cool map. </p>
+
+<!-- <p> this is the map. cool map. </p> -->
+<!--  /////////////////////////////////////////////////
+<h1>test</h1>
+ <script src="https://maps.googleapis.com/maps/api/js"></script>
+<google-map center="map.center" zoom="map.zoom" style="height=400px">
+  
+  <marker coords="marker.coords"></marker>
+
+  <marker data-ng-repeat="marker in markerList" coords="marker"></marker>
+
+</google-map>
+//////////// ////////////////////////////////// -->
+ <!DOCTYPE html>
+
+<html>
+<head>
+  <style>
+    #map {
+      width: 500px;
+      height: 400px;
+      background-color: #CCC;
+    }
+    
+  </style>
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+
+  <script>
+    function initialize() {
+      // create a new Google Maps object. The Map object constructor takes two arguments: 
+      //(1) A reference to the div that the map will be loaded into. We use the JavaScript getElementById function to obtain this. 
+      var mapCanvas = document.getElementById('map');
+      //(2) Options for the map, such as the center, zoom level, and the map type. There are many more options that can be set, but these three are required.
+      var mapOptions = {
+        center: new google.maps.LatLng(37.82016, -122.35111),
+        zoom: 11, // between 0 (farthest) and 22 that sets the zoom level of the map
+        mapTypeId: google.maps.MapTypeId.ROADMAP // mapTypeId is used to specify what type of map to use. Your choices are ROADMAP, SATELLITE, HYBRID, or TERRAIN
+      }
+      // Create the new Google Maps object.
+      var map = new google.maps.Map(mapCanvas, mapOptions);
+
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+    // Marker marker = mMap.addMarker(
+    //   new MarkerOptions()
+    //   .position(new LatLng(37.8, -122.35)))
+  </script>
+</head>
+<body>
+  <div id="map"></div>
+    <marker coords="{latitude : 37.8, longitude: -122.35}"></marker>
+      <marker data-ng-repeat="marker in markerList" coords="marker"></marker>
+</body>
+</html> 
