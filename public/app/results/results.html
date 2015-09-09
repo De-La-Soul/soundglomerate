@@ -1,6 +1,6 @@
   <div ng-controller="ResultsController as results"> <!-- !!NECESSARY!! CONNECT TO THE RESULTS CONTROLLER  -->
     <div ng-repeat="event in apiData"> <!-- GET ALL THE EVENT INFO FROM THE DATAAPI OBJECT IN THE RESULTS CONTROLLER -->
-      <div class="row" style="margin:10px 10px 0px;border:1px solid grey;border-radius:5px;">
+      <div class="row pull-right" style="margin:10px 10px 0px;border:1px solid grey; border-radius:5px; width:70%; ">
         <div class="col-xs-3" style="background-color:white;padding:5px;">
           <a ng-click="selectedEvent(event)"><img ng-src="{{event.logo.url}}" class="img-responsive" width="200px" height="162px" /></a> <!-- EVENT IMAGE -->
         </div> <!-- end of col-xs-3 --> 
