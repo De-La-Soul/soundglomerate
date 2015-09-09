@@ -1,5 +1,5 @@
 'use strict'
-angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory'])
+angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory', 'soundGlomerate.selectedEventFactory'])
 // goals:
 // 2. Search Bar
 // - view --
@@ -19,15 +19,22 @@ angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory'])
 // (function(){
 
 
-.controller('ResultsController', ['$scope', 'Results', function ($scope, Results) {
+.controller('ResultsController', ['$scope', '$state', 'Results', 'SelectedEvent', function ($scope, $state, Results, SelectedEvent) {
  
   $scope.apiData = Results.events;
 
   // A click event to list for a click on the div, link, or event
   $scope.selectedEvent = function(event){
+    // Stores the selected event for display in the selectedEvent view
+    SelectedEvent.yourEvent = event;
+   
+    // Navigate to the selected event view
+    $state.go('app.resultsDisplay.selectedEvent');
+
+    // Logs the event that was clicked on
     console.log('Logging the event that was clicked on', event);
   }
-  
+
   // at state event to send navigate to the selected results page
 
   // Using 'this' to grab the event and send to the results view/controller
