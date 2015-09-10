@@ -1,4 +1,4 @@
-  <div ng-controller="ResultsController as results"> <!-- !!NECESSARY!! CONNECT TO THE RESULTS CONTROLLER  -->
+  <div> <!-- !!NECESSARY!! CONNECT TO THE RESULTS CONTROLLER  -->
     <div ng-repeat="event in apiData"> <!-- GET ALL THE EVENT INFO FROM THE DATAAPI OBJECT IN THE RESULTS CONTROLLER -->
       <div class="row pull-right" style="margin:10px 10px 0px;border:1px solid grey; border-radius:5px; width:70%; ">
         <div class="col-xs-3" style="background-color:white;padding:5px;">
@@ -11,6 +11,9 @@
             <li>{{event.description.text.slice(0,100)}}</li> 
 
             <li><span style="color:grey">date:</span> {{event.start.local.slice(0,10)}}</li>
+
+            <li><span style="color:grey">venue:</span> {{event.venue.name}}</li>
+
             
             <!-- COST OF THE EVENT  -->
             <!-- <li>{{event.description.price | currency}}</li>  -->

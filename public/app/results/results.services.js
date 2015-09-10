@@ -1,4 +1,4 @@
-angular.module('soundGlomerate.resultsFactory', ['soundGlomerate.searchFactory'])
+angular.module('soundGlomerate.resultsFactory', ['soundGlomerate.searchFactory', 'soundGlomerate.mapFactory'])
 // goals:
 // 2. Search Bar
 // - view --
@@ -22,7 +22,10 @@ angular.module('soundGlomerate.resultsFactory', ['soundGlomerate.searchFactory']
     events: Search.events
   };
 
-  return service;
+
+  return {
+  	service: service
+  }
 
 }]);
 

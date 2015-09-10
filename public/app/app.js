@@ -30,14 +30,14 @@ angular.module('soundGlomerate', [ // declare all controllers and services
       url: '/', // the main page is found at the main url 
       views: {
         'main': {templateUrl: 'app/main/main.html'}, // the ui-view="main" in the div tag in the landing page template will display the html code in the main.html file
-        'search': {templateUrl: 'app/search/search.html'} // the ui-view="search" in the div tag in the landingPage template will display the html code in the search.html file
+        'search': {templateUrl: 'app/search/search.html', controller: 'SearchController'} // the ui-view="search" in the div tag in the landingPage template will display the html code in the search.html file
       }
     })
     .state('app.landing.logIn', { //////// LOGIN DOESNT EXIST YET. THIS IS AN EXAMPLE
       url: '/logIn', // the main page is found at the logIn url 
       views: {
         'main': {templateUrl: 'app/main/main.html'}, // the ui-view="main" in the div tag in the landing page template will display the html code in the main.html file
-        'search': {templateUrl: 'app/logIn/logIn.html'} // the ui-view="search" in the div tag in the landingPage template will display the html code in the logIn.html file
+        'search': {templateUrl: 'app/logIn/logIn.html', controller: 'SearchController'} // the ui-view="search" in the div tag in the landingPage template will display the html code in the logIn.html file
       } //////////////////////////////////////////////
     }) 
     .state('app.resultsDisplay', { // this is a made up name so that humans understand what is happening. it follows the following format: rootNodeName.templateName.urlName. Here we only have the first two things, the rootNode and the template. This is a template that will be used for at least the results page and the selected events page. it may be used for the user profile/dashboard page 
@@ -47,26 +47,26 @@ angular.module('soundGlomerate', [ // declare all controllers and services
     .state('app.resultsDisplay.results', { // this is results page
       url: '/results', // the results page is found at /results
       views: {
-        'search': {templateUrl: 'app/search/search.html'}, // the ui-view="search" in the div tag in the resultsDiplay template will display the html code in the search.html file
-        'results': {templateUrl: 'app/results/results.html'}, // the ui-view="results" in the div tag in the resultsDiplay template will display the html code in the results.html file
-        'map': {templateUrl: 'app/map/map.html'}, // the ui-view="map" in the div tag in the resultsDiplay template will display the html code in the map.html file
-        'filter': {templateUrl:'app/filter/filter.html'} // the ui-view="filter" in the div tag in the resultsDiplay template will display the html code in the filter.html file
+        'search': {templateUrl: 'app/search/search.html', controller: 'SearchController'}, // the ui-view="search" in the div tag in the resultsDiplay template will display the html code in the search.html file
+        'results': {templateUrl: 'app/results/results.html', controller:'ResultsController'}, // the ui-view="results" in the div tag in the resultsDiplay template will display the html code in the results.html file
+        'map': {templateUrl: 'app/map/map.html', controller:'ResultsController'}, // the ui-view="map" in the div tag in the resultsDiplay template will display the html code in the map.html file
+        'filter': {templateUrl:'app/filter/filter.html', controller:'FilterController'} // the ui-view="filter" in the div tag in the resultsDiplay template will display the html code in the filter.html file
       }
     })
     .state('app.resultsDisplay.selectedEvent', { // this is selectedEvent page
       url: '/selectedEvent', // the selectedEvent page is found at /selectedEvent CONSIDER CHANGING THIS TO SOMETHING SHORTER, LIKE '/details'
       views: {
-        'search': {templateUrl: 'app/search/search.html'}, // the ui-view="search" in the div tag in the resultsDiplay template will display the html code in the search.html file
-        'results': {templateUrl: 'app/selectedEvent/selectedEvent.html'}, // the ui-view="results" in the div tag in the resultsDiplay template will display the html code in the selectedEvent.html file
-        'map': {templateUrl: 'app/map/map.html'}, // the ui-view="map" in the div tag in the resultsDiplay template will display the html code in the map.html file
+        'search': {templateUrl: 'app/search/search.html', controller:'SearchController'}, // the ui-view="search" in the div tag in the resultsDiplay template will display the html code in the search.html file
+        'results': {templateUrl: 'app/selectedEvent/selectedEvent.html', controller:'SelectedEventController as selectedEvent'}, // the ui-view="results" in the div tag in the resultsDiplay template will display the html code in the selectedEvent.html file
+        'map': {templateUrl: 'app/map/map.html', controller:'MapsController'}, // the ui-view="map" in the div tag in the resultsDiplay template will display the html code in the map.html file
       }
     })
     .state('app.resultsDisplay.dashboard', { //////// DASHBOARD DOESNT EXIST YET. THIS IS AN EXAMPLE. CONSIDER MAKING A NEW TEMPLATE FOR THIS PAGE.
       url: '/dashboard',
       views: {
-        'search': {templateUrl: 'app/search/search.html'}, 
-        'results': {templateUrl: 'app/userInfo/userInfo.html'}, 
-        'map': {templateUrl: 'app/savedEvents/savedEvents.html'}, 
+        'search': {templateUrl: 'app/search/search.html', controller:'SearchController'}, 
+        'results': {templateUrl: 'app/userInfo/userInfo.html', controller:'ResultsController'}, 
+        'map': {templateUrl: 'app/savedEvents/savedEvents.html', controller:'MapsController'}, 
       } /////////////////////////////////////////////////
     })
 
