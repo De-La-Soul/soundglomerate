@@ -1,7 +1,7 @@
 
 <div ng-controller="ResultsController" class="row"> <!-- !!NECESSARY!! CONNECT TO THE RESULTS CONTROLLER  -->
 
-  <div id="filterOptions" class="col-sm-3">
+  <div id="filterOptions" class="col-xs-3">
     <p>Music Genre</p>
     <a href="#/results" ng-click="setCurrentGenre(all)">All</a>
     <div ng-repeat="(key,value) in genresSwap">
@@ -10,9 +10,9 @@
   </div> <!--  end of col-sm-4 -->
 
 
-  <div ng-repeat="event in apiData  | filter:currentGenre" class="col-sm-9"> 
+  <div ng-repeat="event in apiData  | filter:currentGenre" class="col-xs-9"> 
     <!-- GET ALL THE EVENT INFO FROM THE DATAAPI OBJECT IN THE RESULTS CONTROLLER -->
-    <div class="row pull-right" style="margin:10px 10px 0px;border:1px solid grey; border-radius:5px; width:70%; ">
+    <div class="row pull-right" style="margin:10px 10px 0px;border:1px solid grey; border-radius:5px;">
       <div class="col-xs-3" style="background-color:white;padding:5px;">
         <a ng-click="selectedEvent(event)"><img ng-src="{{event.logo.url}}" class="img-responsive" width="200px" height="162px" /></a> <!-- EVENT IMAGE -->
       </div> <!-- end of col-xs-3 --> 
