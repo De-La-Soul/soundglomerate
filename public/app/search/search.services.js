@@ -1,21 +1,5 @@
+"use strict()";
 angular.module('soundGlomerate.searchFactory', [])
-// goals:
-// 2. Search Bar
-// - view --
-// -- 3 input forms
-// -- search button
-// -- queried location ($scope.location)
-// - controller --
-// -- $scope elements for each input 
-// ---- $scope.location
-// ---- $scope.startDate
-// ---- $scope.endDate
-// ---- $scope.clickFxn (calls the service Fxn)
-// - services --
-// ---- HTTP GET
-// ------- eventbrite API info (send)
-// ------- On success, store and parse data 
-
 
 .service('Search', ['$http', function($http){ // naming the factory 'Search', requiring the $http module to make API calls
 
@@ -49,13 +33,14 @@ angular.module('soundGlomerate.searchFactory', [])
         });
         return events
       })
+
   
   };
 
   return {
     events: events,
     getEventBriteData: getEventBriteData 
-  }
+  };
 
 }]);
   

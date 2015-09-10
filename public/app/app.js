@@ -3,8 +3,6 @@
 angular.module('soundGlomerate', [ // declare all controllers and services
   'soundGlomerate.main',
   'soundGlomerate.mainFactory',
-  'soundGlomerate.filter',
-  'soundGlomerate.filterFactory',
   'soundGlomerate.map',
   'soundGlomerate.mapFactory',
   'soundGlomerate.results',
@@ -50,7 +48,6 @@ angular.module('soundGlomerate', [ // declare all controllers and services
         'search': {templateUrl: 'app/search/search.html', controller: 'SearchController'}, // the ui-view="search" in the div tag in the resultsDiplay template will display the html code in the search.html file
         'results': {templateUrl: 'app/results/results.html', controller:'ResultsController'}, // the ui-view="results" in the div tag in the resultsDiplay template will display the html code in the results.html file
         'map': {templateUrl: 'app/map/map.html', controller:'ResultsController'}, // the ui-view="map" in the div tag in the resultsDiplay template will display the html code in the map.html file
-        'filter': {templateUrl:'app/filter/filter.html', controller:'FilterController'} // the ui-view="filter" in the div tag in the resultsDiplay template will display the html code in the filter.html file
       }
     })
     .state('app.resultsDisplay.selectedEvent', { // this is selectedEvent page
