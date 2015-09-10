@@ -17,7 +17,7 @@ angular.module('soundGlomerate.selectedEventFactory', [])
 // ------- On success, store and parse data 
 
 
-.factory('SelectedEvent',function($http){
+.factory('SelectedEvent',function(){
   var selectedEventService = {
     yourEvent: {},
   };
