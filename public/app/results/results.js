@@ -54,8 +54,6 @@ angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory', 'soun
 
     $scope.genresSwap = swap($scope.genres);
 
-    // $scope.currentGenre = '3015';
-    $scope.currentGenre = 'all';
 
     function setCurrentGenre(genre){
       $scope.currentGenre = $scope.genresSwap[genre];
