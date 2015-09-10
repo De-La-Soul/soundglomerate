@@ -1,4 +1,5 @@
-angular.module('soundGlomerate.resultsFactory', ['soundGlomerate.searchFactory',])
+'use strict()';
+angular.module('soundGlomerate.resultsFactory', ['soundGlomerate.searchFactory','soundGlomerate.filterFactory'])
 // goals:
 // 2. Search Bar
 // - view --
@@ -16,8 +17,7 @@ angular.module('soundGlomerate.resultsFactory', ['soundGlomerate.searchFactory',
 // ------- eventbrite API info (send)
 // ------- On success, store and parse data 
 
-.factory('Results', ['$http', 'Search','Filter', function($http, Search){   
-  
+.factory('Results', ['$http', 'Search','Filter', function($http, Search){  
   var service = {
     events: Search.events
   };
