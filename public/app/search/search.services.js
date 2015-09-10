@@ -1,3 +1,4 @@
+"use strict()";
 angular.module('soundGlomerate.searchFactory', [])
 // goals:
 // 2. Search Bar
@@ -41,16 +42,16 @@ angular.module('soundGlomerate.searchFactory', [])
           // Push each event into the events array for the results to access
           events.push(evnt);
         });
-        console.log("these are the events", events)
-        return events
-      })
+        console.log("these are the events", events);
+        return events;
+      });
   
   };
 
   return {
     events: events,
     getEventBriteData: getEventBriteData 
-  }
+  };
 
 }]);
   
