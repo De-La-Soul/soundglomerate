@@ -6,7 +6,7 @@
   "scripts": {
     "start" : "node index.js",
     "test": "npm run test-server",
-    "test-server": "mocha -R spec ./test/serverSpec.js",
+    // "test-server": "mocha -R spec ./test/serverSpec.js",
     "postinstall": "bower install"
   },
   "repository": {
