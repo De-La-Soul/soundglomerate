@@ -1,26 +1,32 @@
 <!DOCTYPE html>
-
+ 
 <html ng-app="soundGlomerate">
 <head>
   <meta charset="utf-8"/>
   <title>SoundGlomerate</title>
   <link rel="stylesheet" type="text/css" href="styles/styles.css">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  
+
+  
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+  <script src="bower_components/ngmap/build/scripts/ng-map.js"></script>
+  <script src="bower_components/lodash/lodash.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
 </head>
 
 <body> 
   <nav class="navbar navbar-default navbar-fixed-top" style="margin">   
     <div class="container">  
-      <a href="#/" class="navbar-brand"> 
+      <a href="/" class="navbar-brand"> 
         <!-- this is the logo on the navbar -->
         <img src="./assets/SBlogo.png" > 
       </a>
       <ul class="nav navbar-nav pull-right">
-        <li>
-          <!-- this is the log in button on the navbar -->
-          <a href="#" class="btn btn-primary"  id="signIn-btn"> Log In </a>
-        </li>
+
       </ul>
     </div>  
   </nav>
@@ -28,12 +34,6 @@
   <div class="container-fluid">
     
   <div id="main" ui-view><div>
-
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-  <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
-  <script src="bower_components/ngmap/build/scripts/ng-map.min.js"></script>
-  <script src="bower_components/lodash/lodash.min.js"></script>
 
 
   <script src="app/app.js"></script>
@@ -47,10 +47,6 @@
   <script src="app/search/search.services.js"></script>
   <script src="app/selectedEvent/selectedEvent.js"></script>
   <script src="app/selectedEvent/selectedEvent.services.js"></script>
-
-  <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-
-
 
 </body>
 
