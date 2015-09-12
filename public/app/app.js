@@ -67,7 +67,7 @@ angular.module('soundGlomerate', [ // declare all controllers and services
       } /////////////////////////////////////////////////
     })
 
-    $urlRouterProvider.otherwise('/'); // this is the default route (if no route is specified)
+    $urlRouterProvider.otherwise('/#/'); // this is the default route (if no route is specified)
 })
 
 .run(
