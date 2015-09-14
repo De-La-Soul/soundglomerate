@@ -18,16 +18,7 @@ Our goal is to provide a place for music lovers to fincs local music events in t
 2. From the CLi - `git clone https://github.com/De-La-Soul/De-La-Soul-Thesis.git soundglomerate` 
 3. From the soundglomerate dir, install Gulp, globally - `npm install -g gulp`
 4. Run Build to install all dependencies - `Gulp build`
-5. TEMPORARY FIX!!! - Create a file in the public folder named 'apiKeys.js'
-  - `angular.module('soundGlomerate.keysFactory', [])
-​
-.factory('APIkeys', function(){
-  
-  var apiKeysFactory = {
-    eventBritekey: [YOUR OWN API KEY HERE]
-  }
-​
-  return apiKeysFactory;
-})`
+5. Create factory in public folder name "apikeys.js" (see pic below)
+![alt text](/public/assets/keyENV.png)
 6. From the CLi - `gulp start`
 
