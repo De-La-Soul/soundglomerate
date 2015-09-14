@@ -1,4 +1,4 @@
-var app = require('./server/server.js');
+var app = require('./server/server.js'); // exporting app = express();
 
 var port = process.env.PORT || 8000;
 var url = process.env.URL || 'localhost';

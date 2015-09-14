@@ -1,6 +1,5 @@
 DB RELATED NOTES:
 
-1. Run:
-    node db/dbTableCreation.js 
-    for the creation of the tables
-2. 
+1. 
+on colorful: app.js
+on here: index.js
