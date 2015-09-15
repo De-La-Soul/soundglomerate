@@ -11,14 +11,26 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
 
     angular.copy([], events); // Creates a copy of the search data
 
+    var fixTime = function(date){
+      date = date.substring(0,19);
+      console.log('date', date);
+      date += 'Z';
+      return date;
+    };
+
+    if(startDate !== undefined){
+      startDate = fixTime(startDate.toISOString());
+    }
+    if(endDate !== undefined){
+      endDate = fixTime(endDate.toISOString());
+    }
+
+
     startDate = startDate ? '&start_date.range_start='+startDate : '';
   
 
     endDate = endDate ? '&start_date.range_end='+endDate : '';
   
-    console.log(startDate);
-    console.log(endDate);
-
 
     return $http({ // the direct API call with the user specificed input as the fxn's parameters
       method: 'GET',
@@ -31,8 +43,8 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
           // Push each event into the events array for the results to access
           events.push(evnt);
         });
-        return events
-      })
+        return events;
+      });
 
   
   };

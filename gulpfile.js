@@ -7,8 +7,6 @@ var mocha = require('gulp-mocha');
 // var chai = require('chai');
 // var assert = require('assert');
 // var expect = require('chai').expect; 
- 
-
 
 gulp.task('build', shell.task([
   'npm install -g nodemon', 'npm install', 'npm install -g karma-cli', 'cd /Desktop/soundglomerate'
