@@ -42,7 +42,7 @@ angular.module('soundGlomerate.searchFactory', [])
           // Push each event into the events array for the results to access
           events.push(evnt);
         });
-        return events
+        return events;
       });
 
   

@@ -7,8 +7,6 @@ var mocha = require('gulp-mocha');
 // var chai = require('chai');
 // var assert = require('assert');
 // var expect = require('chai').expect; 
- 
-
 
 gulp.task('lint', function() {
   return gulp.src(['public/js/*.js', 'app/*.js'])
