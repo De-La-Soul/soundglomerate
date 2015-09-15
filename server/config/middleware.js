@@ -15,7 +15,7 @@ app.use(express.static(__dirname + '/../../public'));
 
 var eventsRouter = express.Router();
 
-app.use('/api/results', eventsRouter)
+app.use('/api/results', eventsRouter);
 
 require('../events/eventsRoutes.js')(eventsRouter);
 
