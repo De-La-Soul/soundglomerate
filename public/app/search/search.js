@@ -17,6 +17,8 @@ angular.module('soundGlomerate.search', ['soundGlomerate.searchFactory'])
 // ------- On success, store and parse data 
 
 
+
+
 .controller('SearchController', ['$scope', '$state', 'Search', function ($scope, $state, Search) { // naming the controller 'SearchController', requiring the 'Seach' factory and the $scope module. 
 
   $scope.update = function(search){ // makes user input into an object
@@ -30,6 +32,7 @@ angular.module('soundGlomerate.search', ['soundGlomerate.searchFactory'])
   };
 
   $scope.getEBEvents = function(){ // this function is called when the submit button is clicked
+    console.log('message from $scope.getEBEvents in the search controller');
     Search.getEventBriteData($scope.search.location, $scope.search.startDate, $scope.search.endDate)
     $state.go('app.resultsDisplay.results');
   };
