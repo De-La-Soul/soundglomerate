@@ -1,22 +1,14 @@
-// goals:
-// 2. Search Bar
-// - view --
-// -- 3 input forms
-// -- search button
-// -- queried location ($scope.location)
-// - controller --
-// -- $scope elements for each input 
-// ---- $scope.location
-// ---- $scope.startDate
-// ---- $scope.endDate
-// ---- $scope.clickFxn (calls the service Fxn)
-// - services --
-// ---- HTTP GET
-// ------- eventbrite API info (send)
-// ------- On success, store and parse data 
+// var app=angular.module('myapp', ['ngMap']);
+// app.controller('MarkerRemoveCtrl', function($scope) {  
 
-angular.module('soundGlomerate.map', [])
+angular.module('soundGlomerate.map', ['soundGlomerate.mapFactory','ngMap'])
+.controller('MapsController', ['$scope', 'Map', function ($scope) {
+  
 
-.controller('MapController', function ($scope) {
-	
-});
+
+
+}]);
+
+//like this: {lat: x, long: y }
+
+

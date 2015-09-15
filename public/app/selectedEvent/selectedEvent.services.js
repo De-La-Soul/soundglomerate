@@ -1,3 +1,4 @@
+angular.module('soundGlomerate.selectedEventFactory', [])
 // goals:
 // 2. Search Bar
 // - view --
@@ -15,8 +16,12 @@
 // ------- eventbrite API info (send)
 // ------- On success, store and parse data 
 
-angular.module('soundGlomerate.selectedEventFactory', [])
 
-.factory('SelectedEvent',function($http){
+.factory('SelectedEvent',function(){
+  var selectedEventService = {
+    yourEvent: {},
+  };
+
+  return selectedEventService;
 	
 })
