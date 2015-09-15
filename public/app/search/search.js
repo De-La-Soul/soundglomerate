@@ -7,10 +7,8 @@ angular.module('soundGlomerate.search', ['soundGlomerate.searchFactory'])
       alert("must enter a location");
     } else {
       $scope.search = search; 
-
     }
-  // $scope.results = Search.events;
-
+  
   }
 
   $scope.getEBEvents = function(){ // this function is called when the submit button is clicked

@@ -11,7 +11,7 @@ var mocha = require('gulp-mocha');
 
 
 gulp.task('build', shell.task([
-  'npm install -g nodemon', 'npm install', 'npm install -g karma-cli', 'cd /Desktop/soundglomerate'
+  'npm install -g nodemon', 'npm install', 'npm install -g karma-cli'
 ]));
 
 gulp.task('start', shell.task([
