@@ -17,8 +17,6 @@ angular.module('soundGlomerate.search', ['soundGlomerate.searchFactory'])
 // ------- On success, store and parse data 
 
 
-
-
 .controller('SearchController', ['$scope', '$state', 'Search', function ($scope, $state, Search) { // naming the controller 'SearchController', requiring the 'Seach' factory and the $scope module. 
 
   $scope.cities = {
@@ -35,8 +33,7 @@ angular.module('soundGlomerate.search', ['soundGlomerate.searchFactory'])
 
     }
   // $scope.results = Search.events;
-
-  }
+  };
 
   $scope.getEBEvents = function(){ // this function is called when the submit button is clicked
     console.log('message from $scope.getEBEvents in the search controller');
@@ -44,5 +41,4 @@ angular.module('soundGlomerate.search', ['soundGlomerate.searchFactory'])
     $state.go('app.resultsDisplay.results');
   };
 
-  
 }]);
