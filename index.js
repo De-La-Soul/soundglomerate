@@ -1,9 +1,10 @@
-var app = require('./server/server.js'); // exporting app = express();
 
+// Testing this for Heroku
+var app = require('./server/server.js');
 var port = process.env.PORT || 8000;
-var url = process.env.URL || 'localhost';
+// var url = process.env.URL || 'localhost';
 
-app.listen(port, url);
+app.listen(port);
 
 console.log('Listening on', url, ':', port);
 
@@ -24,7 +25,4 @@ app.post('/db/events', function(req, res){
     client.query('INSERT INTO events(id,name) values($1,$2)', [1,'cris Testing']);
   });
 });
-
-
-
 
