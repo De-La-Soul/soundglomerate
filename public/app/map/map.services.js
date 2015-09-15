@@ -1,31 +1,15 @@
-angular.module('soundGlomerate.mapFactory', [])
+angular.module('soundGlomerate.mapFactory', ['soundGlomerate.resultsFactory', 'soundGlomerate.searchFactory'])
 
-.factory('Map', function(){
+.factory('Map', ['Results', 'Search', function(Results, Search){
 	
-
-	var markerMapper = function(events){
-	var markerPositions = [];
-			events.forEach(function(elem){		 
-				  var coords = {};
-				  coords.lat = elem.venue.address.latitude;
-				  coords.long = elem.venue.address.longitude;
-				  markerPositions.push(coords);
-			})	
-		return markerPositions		
+	var testFxn = function(str){
+		console.log('SE factory called the map factory :', str)
 	}
 
-
-	return {
-	    	markerMapper: markerMapper,
-  	}
-
-	//on hover 
-		//marker provides info
-		//event lights up or something
-
-	//need an event listener for event hover
-		//marker responds either by changing color or jumping up and down
-
-
+  return {
+    // LatLongKey: Search.LatLong,
+    LatLongKey: Search.LatLong,
+    testFxn: testFxn
+  };
 	
-})
+}])

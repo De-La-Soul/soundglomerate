@@ -5,6 +5,11 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
 
   var events = []; 
 
+  var LatLong =[];
+ 
+  ////////////////////////
+
+
   var getEventBriteData = function(city, startDate, endDate){ // Defines the getEventBriteData fxn
 
 
@@ -27,8 +32,6 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
     startDate = startDate ? '&start_date.range_start='+startDate : '';
     endDate = endDate ? '&start_date.range_end='+endDate : '';
   
-    console.log(startDate);
-    console.log(endDate);
 
     return $http({ // the direct API call with the user specificed input as the fxn's parameters
       method: 'GET',
@@ -37,12 +40,23 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
     .then(function(res){ // this is a promise that waits for the API to return info
         res.data.events.forEach(function(evnt){
           //NOTE: need to take into account when fields are null. Right now, it errors out if one of these fields is null.
-          // console.log('It\'s this one')
+
+          
+          // CLAIRE, ADD NOTES HERE
+          var tuple = [ evnt.venue.address.latitude, evnt.venue.address.longitude];
+          // Latttttt = evnt.venue.address.latitude;
+          // Longggggg = evnt.venue.address.longitude;
+          LatLong.push(tuple);
+
+
           // Push each event into the events array for the results to access
           events.push(evnt);
+
         });
+
         console.log(events)
         return events
+         // selectedEventMapMarker
       })
     .catch(function(err){
       console.log(err);
@@ -52,6 +66,7 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
 
   return {
     events: events,
+    LatLong: LatLong,
     getEventBriteData: getEventBriteData 
   };
 
