@@ -17,6 +17,8 @@ angular.module('soundGlomerate.search', ['soundGlomerate.searchFactory'])
 // ------- On success, store and parse data 
 
 
+
+
 .controller('SearchController', ['$scope', '$state', 'Search', function ($scope, $state, Search) { // naming the controller 'SearchController', requiring the 'Seach' factory and the $scope module. 
 
   $scope.update = function(search){ // makes user input into an object
