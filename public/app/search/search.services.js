@@ -25,11 +25,12 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
       endDate = fixTime(endDate.toISOString());
     }
 
+
     startDate = startDate ? '&start_date.range_start='+startDate : '';
+  
+
     endDate = endDate ? '&start_date.range_end='+endDate : '';
   
-    console.log(startDate);
-    console.log(endDate);
 
     return $http({ // the direct API call with the user specificed input as the fxn's parameters
       method: 'GET',
@@ -42,7 +43,7 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
           // Push each event into the events array for the results to access
           events.push(evnt);
         });
-        return events
+        return events;
       });
 
   

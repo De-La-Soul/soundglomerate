@@ -1,12 +1,18 @@
+<<<<<<< HEAD
 
 var app = require('./server/server.js'); // exporting app = express();
 
+=======
+// Testing this shit for Heroku
+var app = require('./server/server.js');
+>>>>>>> 917813b30f87e765973c243e982bdc1f266e6719
 
 var port = process.env.PORT || 8000;
 // var url = process.env.URL || 'localhost';
 
 app.listen(port);
 
+<<<<<<< HEAD
 
 console.log('Listening on', port);
 
@@ -33,3 +39,6 @@ app.post('/db/events', function(req, res){
 
 
 
+=======
+console.log('Listening on', port);
+>>>>>>> 917813b30f87e765973c243e982bdc1f266e6719
