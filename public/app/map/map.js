@@ -1,23 +1,12 @@
 // var app=angular.module('myapp', ['ngMap']);
 // app.controller('MarkerRemoveCtrl', function($scope) {  
 
-  angular.module('soundGlomerate.map', ['soundGlomerate.resultsFactory', 'ngMap', 'soundGlomerate.searchFactory', 'soundGlomerate.mapFactory', 'soundGlomerate.results', 'soundGlomerate.selectedEventFactory'])
+  angular.module('soundGlomerate.map', ['ngMap', 'soundGlomerate.mapFactory'])
 
-  .controller('MapsController', ['$scope', 'Search', 'Map', 'Results', 'SelectedEvent', function ($scope, Search, Map, Results, SelectedEvent) {
+  .controller('MapsController', ['$scope', 'Map', function ($scope, Map) {
 
-  ///////
-  $scope.setPositionsMap = function(){
-    console.log('called the $scope.setPositions fxn in the map controller')
-  }
-  ///////
+    // Sets the position of the markers from the Maps controller. These cordinate come from the initial object return from the api call in Search.factory
+  $scope.positions = Map.LatLongKey;
 
-  $scope.positions = Search.LatLong;
-
-  $scope.$watch('SelectedEvent.selectedEventService.yourEvent', function(newVal, oldVal){
-    if(newVal !== oldVal){
-      console.log('jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj console.log $scope.watch(\'Results.selectedEvent\' from the map controller');}
-  });
-
-  console.log('SelectedEvent :', SelectedEvent);
 
 }]);

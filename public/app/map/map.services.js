@@ -1,15 +1,12 @@
-angular.module('soundGlomerate.mapFactory', ['soundGlomerate.resultsFactory', 'soundGlomerate.searchFactory'])
+angular.module('soundGlomerate.mapFactory', ['soundGlomerate.searchFactory'])
 
-.factory('Map', ['Results', 'Search', function(Results, Search){
-	
-	var testFxn = function(str){
-		console.log('SE factory called the map factory :', str)
-	}
+.factory('Map', ['Search', function(Search){
+  
+  // sets the LatLong (which will become the markers on the map) after the intial location search (the submit button is hit)
+  var LatLongKey = Search.LatLong;
 
   return {
-    // LatLongKey: Search.LatLong,
-    LatLongKey: Search.LatLong,
-    testFxn: testFxn
+    LatLongKey: LatLongKey
   };
-	
+  
 }])
