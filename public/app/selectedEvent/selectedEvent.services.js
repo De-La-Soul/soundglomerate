@@ -1,4 +1,4 @@
-angular.module('soundGlomerate.selectedEventFactory', [])
+angular.module('soundGlomerate.selectedEventFactory', ['soundGlomerate.mapFactory'])
 // goals:
 // 2. Search Bar
 // - view --
@@ -17,11 +17,13 @@ angular.module('soundGlomerate.selectedEventFactory', [])
 // ------- On success, store and parse data 
 
 
-.factory('SelectedEvent',function(){
+.factory('SelectedEvent', ['Map', function(Map){
   var selectedEventService = {
     yourEvent: {},
   };
 
+  Map.testFxn();
+
   return selectedEventService;
 	
-})
+}])
