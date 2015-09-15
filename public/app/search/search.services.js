@@ -1,7 +1,7 @@
 "use strict()";
-angular.module('soundGlomerate.searchFactory', [])
+angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
 
-.factory('Search', ['$http', function($http){ // naming the factory 'Search', requiring the $http module to make API calls
+.service('Search', ['$http', 'APIkeys', function($http, APIkeys){ // naming the factory 'Search', requiring the $http module to make API calls
 
   var events = []; 
 
@@ -21,12 +21,12 @@ angular.module('soundGlomerate.searchFactory', [])
 
     return $http({ // the direct API call with the user specificed input as the fxn's parameters
       method: 'GET',
-      url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=' + city + '&venue.region=CA'+startDate+endDate+'&categories=103&expand=venue&token=MD33DX7LJOIGAGCBYRF7'
+      url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=' + city + '&venue.region=CA'+startDate+endDate+'&categories=103&expand=venue&token=' + APIkeys.eventBriteKey
     })
     .then(function(res){ // this is a promise that waits for the API to return info
         res.data.events.forEach(function(evnt){
           //NOTE: need to take into account when fields are null. Right now, it errors out if one of these fields is null.
-          
+          // console.log('It\'s this one')
           // Push each event into the events array for the results to access
           events.push(evnt);
         });
