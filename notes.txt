@@ -1,0 +1,5 @@
+DB RELATED NOTES:
+
+1. 
+on colorful: app.js
+on here: index.js
