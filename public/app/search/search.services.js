@@ -5,6 +5,7 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
 
   var events = []; 
 
+
   var getEventBriteData = function(city, startDate, endDate){ // Defines the getEventBriteData fxn
 
 
@@ -41,12 +42,9 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
           // Push each event into the events array for the results to access
           events.push(evnt);
         });
-        console.log(events)
         return events
       })
-    .catch(function(err){
-      console.log(err);
-    })
+
   
   };
 
@@ -55,5 +53,6 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
     getEventBriteData: getEventBriteData 
   };
 
-}])
+}]);
+  
 
