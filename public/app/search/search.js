@@ -33,7 +33,6 @@ angular.module('soundGlomerate.search', ['soundGlomerate.searchFactory'])
   }
 
   $scope.getEBEvents = function(){ // this function is called when the submit button is clicked
-    console.log('message from $scope.getEBEvents in the search controller');
     Search.getEventBriteData($scope.search.location, $scope.search.startDate, $scope.search.endDate)
     $state.go('app.resultsDisplay.results');
   };

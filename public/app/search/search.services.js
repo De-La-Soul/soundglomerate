@@ -1,10 +1,9 @@
 "use strict()";
 angular.module('soundGlomerate.searchFactory', [])
 
-.service('Search', ['$http', function($http){ // naming the factory 'Search', requiring the $http module to make API calls
+.factory('Search', ['$http', function($http){ // naming the factory 'Search', requiring the $http module to make API calls
 
   var events = []; 
-
 
   var getEventBriteData = function(city, startDate, endDate){ // Defines the getEventBriteData fxn
 
@@ -31,8 +30,15 @@ angular.module('soundGlomerate.searchFactory', [])
           // Push each event into the events array for the results to access
           events.push(evnt);
         });
+        console.log(events)
         return events
       })
+    .catch(function(err){
+      console.log(err);
+    })
+    .finally(function(){
+      $q.resolve();
+    })
 
   
   };
@@ -42,6 +48,5 @@ angular.module('soundGlomerate.searchFactory', [])
     getEventBriteData: getEventBriteData 
   };
 
-}]);
-  
+}])
 
