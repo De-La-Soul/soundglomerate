@@ -1,5 +1,5 @@
 'use strict'
-angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory', 'soundGlomerate.selectedEventFactory', 'soundGlomerate.mapFactory','angularSpinners'])
+angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory', 'soundGlomerate.selectedEventFactory', 'soundGlomerate.mapFactory', 'ngMaps', 'angularSpinners'])
 
 .controller('ResultsController', ['$scope', '$state', 'Results', 'SelectedEvent', 'Map', 'spinnerService', function ($scope, $state, Results, SelectedEvent, Map, spinnerService) {
 

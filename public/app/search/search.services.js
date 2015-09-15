@@ -36,10 +36,6 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
     .catch(function(err){
       console.log(err);
     })
-    .finally(function(){
-      $q.resolve();
-    })
-
   
   };
 
