@@ -12,18 +12,18 @@ angular.module('soundGlomerate.searchFactory', [])
     angular.copy([], events); // Creates a copy of the search data
 
     var fixTime = function(date){
-      
       date = date.substring(0,19);
       console.log('date', date);
       date += 'Z';
       return date;
+    };
+
+    if(startDate !== undefined){
+      startDate = fixTime(startDate.toISOString());
     }
-    startDate = fixTime(startDate.toISOString());
-    endDate = fixTime(endDate.toISOString());
-
-    console.log('start', startDate);
-    console.log('end', endDate);
-
+    if(endDate !== undefined){
+      endDate = fixTime(endDate.toISOString());
+    }
 
     startDate = startDate ? '&start_date.range_start='+startDate : '';
     endDate = endDate ? '&start_date.range_end='+endDate : '';
@@ -43,7 +43,7 @@ angular.module('soundGlomerate.searchFactory', [])
           events.push(evnt);
         });
         return events
-      })
+      });
 
   
   };

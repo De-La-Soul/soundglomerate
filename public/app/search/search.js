@@ -27,13 +27,11 @@ angular.module('soundGlomerate.search', ['soundGlomerate.searchFactory'])
 
     }
   // $scope.results = Search.events;
-
-  }
+  };
 
   $scope.getEBEvents = function(){ // this function is called when the submit button is clicked
     Search.getEventBriteData($scope.search.location, $scope.search.startDate, $scope.search.endDate)
     $state.go('app.resultsDisplay.results');
   };
 
-  
 }]);
