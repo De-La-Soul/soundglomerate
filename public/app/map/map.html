@@ -1,4 +1,3 @@
-
 <!---
 <map center="37.8, -122.2" zoom="12">
   <marker position="37.7, -122.1" title="Hello World!"></marker>
@@ -7,16 +6,10 @@
 
 <div class="mapContainer" ng-controller="MapsController">
 
-
-<!-- set the dimensions of the map, location of the center of the map, and map zoomlevel -->
-  
+<!-- set the dimensions of the map, location of the center of the map, and map zoomlevel -->  
   <map style="width: 80%; height:40%; margin: 10px" center="37.8, -122.27" zoom="12">
 
     <!-- places markers on the map -->
     <marker ng-repeat="pos in positions" position="{{pos}}"></marker>
-
-
   </map>
-
-
 </div>

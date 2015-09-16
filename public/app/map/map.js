@@ -7,3 +7,4 @@ angular.module('soundGlomerate.map', ['ngMap', 'soundGlomerate.mapFactory'])
 
 
   }]);
+

@@ -3,11 +3,6 @@ var gulp   = require('gulp');
 var jshint = require('gulp-jshint');
 var shell = require('gulp-shell');
 var mocha = require('gulp-mocha');
-// var shell = require('gulp-shell');
-// var chai = require('chai');
-// var assert = require('assert');
-// var expect = require('chai').expect; 
- 
 
 
 gulp.task('build', shell.task([

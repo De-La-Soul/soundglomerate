@@ -11,27 +11,33 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
     angular.copy([], events); // Creates a copy of the search data
 
     var fixTime = function(date){
-      
       date = date.substring(0,19);
       console.log('date', date);
       date += 'Z';
       return date;
     }
-    // startDate = fixTime(startDate.toISOString());
-    // endDate = fixTime(endDate.toISOString());
 
-    startDate = startDate ? '&start_date.range_start='+startDate : '';
-    endDate = endDate ? '&start_date.range_end='+endDate : '';
+  
+
+  if(startDate !== undefined){
+    startDate = fixTime(startDate.toISOString());
+  }
+  if(endDate !== undefined){
+    endDate = fixTime(endDate.toISOString());
+  }
+
+  startDate = startDate ? '&start_date.range_start='+startDate : '';
+
+  endDate = endDate ? '&start_date.range_end='+endDate : '';
 
 
     return $http({ // the direct API call with the user specificed input as the fxn's parameters
       method: 'GET',
-      url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=' + city + '&venue.region=CA'+startDate+endDate+'&categories=103&expand=venue&token=' + APIkeys.eventBriteKey
+      url: 'https://www.eventbriteapi.com/v3/events/search/?sort_by=date&venue.city=' + city + '&venue.region=CA'+startDate+endDate+'&categories=103&expand=venue&token=' + APIkeys.eventBriteKey
     })
     .then(function(res){ // this is a promise that waits for the API to return info
 
       res.data.events.forEach(function(evnt){
-
 
         ////////////////////////////////////////////////////////////////////////////////////   
         //  Gets the initial lat long and formats them to put as markers on the map       //
@@ -52,14 +58,14 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
       
       return events;
     })
-
-  };
-
+    .catch(function(err){    
+      console.log(err);    
+    })
+  }; // End of eventBrite Call
   return {
     events: events,
     getEventBriteData: getEventBriteData,
     LatLong: LatLong
   };
-
 
 }]);

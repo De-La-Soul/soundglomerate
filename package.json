@@ -4,7 +4,7 @@
   "description": "live music event search app",
   "main": "index.js",
   "scripts": {
-    "start" : "node index.js",
+    "start": "node index.js",
     "test": "npm run test-server",
     "postinstall": "bower cache clean && bower install"
   },
