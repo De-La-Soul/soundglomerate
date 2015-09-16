@@ -7,8 +7,7 @@ var port = process.env.PORT || 8000;
 
 app.listen(port);
 
-console.log('Listening on', port);
-
+console.log('Listening on :', port);
 
 // DATABASE VARIABLES
 var pg = require('pg');

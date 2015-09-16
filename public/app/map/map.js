@@ -1,14 +1,10 @@
-// var app=angular.module('myapp', ['ngMap']);
-// app.controller('MarkerRemoveCtrl', function($scope) {  
+angular.module('soundGlomerate.map', ['ngMap', 'soundGlomerate.mapFactory'])
 
-angular.module('soundGlomerate.map', ['soundGlomerate.mapFactory','ngMap'])
-.controller('MapsController', ['$scope', 'Map', function ($scope) {
-  
+.controller('MapsController', ['$scope', 'Map', function ($scope, Map) {
+
+    // Sets the position of the markers from the Maps controller. These cordinate come from the initial object return from the api call in Search.factory
+    $scope.positions = Map.LatLongKey;
 
 
-
-}]);
-
-//like this: {lat: x, long: y }
-
+  }]);
 
