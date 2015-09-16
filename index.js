@@ -7,7 +7,8 @@ var port = process.env.PORT || 8000;
 
 app.listen(port);
 
-console.log('Listening on :', port);
+console.log('Listening on', port);
+var results = [];
 
 // DATABASE VARIABLES
 var pg = require('pg');
@@ -17,8 +18,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Connection string for our database
+// 
 var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/student';
-
 
 app.post('/db/events', function(req, res){
   // when using curl, data will be sent here
@@ -26,3 +27,25 @@ app.post('/db/events', function(req, res){
     client.query('INSERT INTO events(id,name) values($1,$2)', [1,'cris Testing']);
   });
 });
+
+app.get('/db/events', function(req, res){
+  pg.connect(connectionString,function(err, client, done){
+    // SQL query to get data
+    var query = client.query('SELECT * FROM newEvents;');
+    query.on('row', function(row){
+      results.push(row);
+    });
+
+    // after all data is returned, close connection to db
+    query.on('end', function(){
+      client.end();
+      return res.json(results);
+    }); 
+
+    // Handle Errors
+    if(err){
+      console.log(err);
+    }
+  });
+});
+

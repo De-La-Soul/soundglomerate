@@ -29,6 +29,7 @@
     "bootstrap": "~3.3.5",
     "ngmap": "~1.13.4",
     "pickadate": "~3.5.6",
-    "ui-router": "~0.2.15"
+    "ui-router": "~0.2.15",
+    "angular-spinners": "~3.0.2"
   }
 }
