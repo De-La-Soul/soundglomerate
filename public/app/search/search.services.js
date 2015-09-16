@@ -44,14 +44,14 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
     });
   };
 
+  
+
   var scrappedData = function(){
-    return $http({
-      method:'GET',
-      url:'/db/events',
-    }).then(function(res){
-      console.log('res', res);
-    })
-  }
+    return $http.get('/db/events')
+    .success(function (events) {
+      console.log('even', event);
+    });
+  };
 
   return {
     events: events,

@@ -8,7 +8,7 @@ var port = process.env.PORT || 8000;
 app.listen(port);
 
 console.log('Listening on', port);
-
+var results = [];
 
 // DATABASE VARIABLES
 var pg = require('pg');
@@ -18,7 +18,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Connection string for our database
-var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/student';
+// 
+var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/CristianAvalos';
 
 
 app.post('/db/events', function(req, res){
@@ -31,6 +32,7 @@ app.post('/db/events', function(req, res){
 app.get('/db/events', function(req, res){
   pg.connect(connectionString,function(err, client, done){
     // SQL query to get data
+    console.log('in app get listener');
     var query = client.query('SELECT * FROM newEvents;');
     query.on('row', function(row){
       results.push(row);
@@ -46,9 +48,7 @@ app.get('/db/events', function(req, res){
     if(err){
       console.log(err);
     }
-
-
-  })
+  });
 });
 
 
