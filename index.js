@@ -49,10 +49,3 @@ app.get('/db/events', function(req, res){
   });
 });
 
-
-
-
-
-
-
-

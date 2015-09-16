@@ -5,7 +5,7 @@ angular.module('soundGlomerate.search', ['soundGlomerate.searchFactory'])
 
   $scope.cities = {
     oakland: 'Oakland',
-    berkeley: 'berkeley',
+    berkeley: 'Berkeley',
     sanFrancisco: "San Francisco"
 
   };
@@ -14,15 +14,13 @@ angular.module('soundGlomerate.search', ['soundGlomerate.searchFactory'])
       alert("must enter a location");
     } else {
       $scope.search = search; 
-
     }
-  // $scope.results = Search.events;
-  };
+  }
 
   $scope.getEBEvents = function(){ // this function is called when the submit button is clicked
     console.log('message from $scope.getEBEvents in the search controller');
     Search.getEventBriteData($scope.search.location, $scope.search.startDate, $scope.search.endDate);
-    Search.scrappedData();
+    // Search.scrappedData();
     $state.go('app.resultsDisplay.results');
   };
 
