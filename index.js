@@ -32,7 +32,6 @@ app.post('/db/events', function(req, res){
 app.get('/db/events', function(req, res){
   pg.connect(connectionString,function(err, client, done){
     // SQL query to get data
-    console.log('in app get listener');
     var query = client.query('SELECT * FROM newEvents;');
     query.on('row', function(row){
       results.push(row);
