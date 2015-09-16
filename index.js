@@ -28,6 +28,31 @@ app.post('/db/events', function(req, res){
   });
 });
 
+app.get('/db/events', function(req, res){
+  pg.connect(connectionString,function(err, client, done){
+    // SQL query to get data
+    var query = client.query('SELECT * FROM newEvents;');
+    query.on('row', function(row){
+      results.push(row);
+    });
+
+    // after all data is returned, close connection to db
+    query.on('end', function(){
+      client.end();
+      return res.json(results);
+    }); 
+
+    // Handle Errors
+    if(err){
+      console.log(err);
+    }
+
+
+  })
+});
+
+
+
 
 
 
