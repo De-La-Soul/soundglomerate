@@ -29,7 +29,7 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
     endDate = endDate ? '&start_date.range_end='+endDate : '';
 
 
-    return $http({ // the direct API call with the user specificed input as the fxn's parameters
+    return $http({ // the direct API call withß the user specificed input as the fxn's parameters
       method: 'GET',
       url: 'https://www.eventbriteapi.com/v3/events/search/?sort_by=date&venue.city=' + city + '&venue.region=CA'+startDate+endDate+'&categories=103&expand=venue&token=' + APIkeys.eventBriteKey
     })
@@ -43,8 +43,6 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
       return events;
     });
   };
-
-  
 
   var scrappedData = function(){
     return $http.get('/db/events')
