@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Connection string for our database
 // 
+// var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/CristianAvalos';
 var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/student';
 
 app.post('/db/events', function(req, res){
@@ -32,9 +33,9 @@ app.post('/db/events', function(req, res){
 app.get('/db/events', function(req, res){
   pg.connect(connectionString,function(err, client, done){
     // SQL query to get data
-    var query = client.query('SELECT * FROM newEvents;');
+    var query = client.query("SELECT data FROM newEvents;");
     query.on('row', function(row){
-      results.push(row);
+      results.push(row.data);
     });
 
     // after all data is returned, close connection to db
