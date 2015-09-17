@@ -1,6 +1,6 @@
 
 
-<div id="filterOptions" class="col-xs-2 pull-left" style="border-style:solid;margin-top:100px">
+<div id="resultsFilter" class="col-xs-2 pull-left" style="border-style:solid;margin-top:100px">
   <p>Music Genre</p>
   <a href="#/results" ng-click="setCurrentGenre(all)">All</a>
   <div ng-repeat="(key,value) in genresSwap">
@@ -13,11 +13,11 @@
  <!-- <div class="clearfix visible-xs-block"></div> -->
 <div class="col-xs-6"  style=" margin-left:10px"> 
 
-  <div  id="" dir-paginate="event in apiData | filter: currentGenre | itemsPerPage: 6" style="margin:10px; "> 
+  <div  id="resultsPagingate" dir-paginate="event in apiData | filter: currentGenre | itemsPerPage: 6" style="margin:10px; "> 
   <!-- GET ALL THE EVENT INFO FROM THE DATAAPI OBJECT IN THE RESULTS CONTROLLER -->
     
     <!-- Must be a container in order get each border dive working -->
-    <div class="container col-md-12" style="border-style:solid; margin:10px">
+    <div id="resultsEvent" class="container col-md-12" style="border-style:solid; margin:10px">
       
       <div class="col-xs-4" style="background-color:white; margin-top:15px">
         <a ng-click="selectedEvent(event)">

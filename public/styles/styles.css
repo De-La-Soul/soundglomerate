@@ -92,15 +92,25 @@ button {
   margin-right: -1.5%;
 }
 
+/*************** SPINNER *****************/
+
+#resultsPagingate{}
+
+
+/*************** EVENTS ******************/
+
+#resultsEvent{}
+
+
 /*************** FILTER ******************/
 
-div#filterOptions > p{
+div#resultsFilter > p{
     color:black;
     font-size: 18px;
     font-weight: bold;
 }
 
-hr#filterOptions {
+hr#resultsFilter {
     width: 100%;
 }
 
