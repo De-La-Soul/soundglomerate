@@ -1,51 +1,80 @@
-#landingPage {
-/*    width: 100%;
-*/    /*height: 800px;*/
-/*    padding: 50px 0;
-*/
-   color: black;
+/*************** LANDING PAGE SEARCH BAR *************/
+#landingSearch {
+  
+  color: black;
 }
 
-#landingPage #search{
-    /*position: absolute;*/
-    margin-left: auto;
-    margin-right: auto;
+
+
+
+
+
+/**************** GLOBAL SEARCH BAR *****************/
+
+
+#globalSearch{
+  height: 60px;
+  border-radius: 10px;
+}
+
+#globalSearch:hover{
+  height: 60px;
+  border-radius: 10px;
+  border-color: #9C0505 !important;
+  box-shadow: inset 1px 1px 12px 5px #9C0505, 0px 0px 20px #9C0505 !important;
 
 }
 
-#landingPage #search input{
-    /*position: absolute;*/
-    color:  black;
-    
+#searchLoc{
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
-@media screen and (max-width: 200px) {
-  body {
-    background-color: black;
-    /*background: url(../assets/bgimage.jpg) no-repeat center center scroll;*/
+#startDate{
+  margin-top: 10px;
+  font-weight: bold;
 
-  }
-}
-div #query{
-    color: black;
 }
 
-#signIn-btn{
-    margin-top:12px;
-    margin-bottom:5px;
-    background-color: red;
-    border-color: black;
-    /*height: 10px;
-    padding-top: 4px;*/
+#endDate{
+  margin-top: 10px;
+  font-weight: bold;
+
 }
 
-#backgroundSearchImage{
+input:hover{
+  border-color: #9C0505 !important;
+  box-shadow: inset 1px 1px 12px 5px #9C0505, 0px 0px 20px #9C0505 !important;
+
+}
+
+input:focus{
+  border-color: #9C0505 !important;
+  box-shadow: inset 1px 1px 12px 5px #9C0505, 0px 0px 20px #9C0505 !important;
+
+}
+
+button {
+  margin-top: 10px !important;
+  background-color: black !important;
+  border-color: #9C0505 !important;
+  box-shadow: inset 1px 1px 12px 5px #9C0505, 0px 0px 20px #9C0505!important;
+}
+
+/********************** LANDING IMAGE ******************************/
+
+#landingImage {
     margin-top: 100px;
+    display: inline-block;
+    height:750px;
+    max-width: 110% ;
+    page-break-inside: avoid; 
+    width: 105% !important;
+    vertical-align: left;
+    margin-left: -2%;
 }
 
-#pitch{
-    color:red;
-}
 
 
 /* 
@@ -82,7 +111,7 @@ map {
     margin: 20px;
 }
 
-
+/*************************** SPINNER *******************************/
 .spinner > div {
   background-color: #F0A83A;
   height: 100%;
@@ -132,7 +161,28 @@ div[ng-controller='MarkerRemoveCtrl'] #panel {
 */
 
 
+/*@media screen and (max-width: 200px) {
+  body {
+    background-color: black;
+    background: url(../assets/bgimage.jpg) no-repeat center center scroll;
 
+  }
+}
+div #query{
+    color: black;
+}
+
+
+#signIn-btn{
+    margin-top:12px;
+    margin-bottom:5px;
+    background-color: red;
+    border-color: black;
+    height: 10px;
+    padding-top: 4px;
+
+}
+*/
 
 
 
