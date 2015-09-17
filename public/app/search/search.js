@@ -1,8 +1,8 @@
-angular.module('soundGlomerate.search', ['soundGlomerate.searchFactory'])
+angular.module('soundGlomerate.search', ['soundGlomerate.searchFactory', 'ui.bootstrap'])
 
 .controller('SearchController', ['$scope', '$state', 'Search', function ($scope, $state, Search) { // naming the controller 'SearchController', requiring the 'Seach' factory and the $scope module. 
 
-  $scope.cities = {
+  $scope.search.location = {
     oakland: 'Oakland',
     berkeley: 'Berkeley',
     sanFrancisco: "San Francisco"
