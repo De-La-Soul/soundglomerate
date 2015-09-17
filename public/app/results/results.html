@@ -8,7 +8,7 @@
   </div>
 </div> <!--  end of col-sm-4 -->
 
-<spinner name="eventSpinner" img-src="http://media.giphy.com/media/npCmk0VCFHyUM/giphy.gif" show="loading"></spinner>
+<spinner name="eventSpinner" img-src="http://i769.photobucket.com/albums/xx331/maclisa2/elephant/thPink_Elephant.gif" show="loading"></spinner>
 
  <div class="clearfix visible-xs-block"></div>
 <div class="col-xs-6"  style=" margin-left:10px"> 
@@ -29,13 +29,13 @@
         <h4 ng-click="selectedEvent(event)" style="pointer">{{event.name.text}}</h4> <!-- NAME OF THE EVENT -->
         <ul>
           <!-- Minified event desrciption -->
-          <li>{{event.description.text.slice(0,100)}}</li> 
-          <li><span style="color:grey">date:</span> {{event.start.local.slice(0,10)}}</li>
-          <li><span style="color:grey">venue:</span> {{event.venue.name}}</li>
+          <li ng-show="{{event.description.text.length > 0}}">{{event.description.text.slice(0,100)}}</li> 
+          <li ng-show="{{event.start.local.length > 0}}"><span style="color:grey">date:</span> {{event.start.local}}</li>
+          <li ng-show="{{event.venue.name.length > 0}}"><span style="color:grey">venue:</span> {{event.venue.name}}</li>
 
           <!-- LINK TO PURCHASE TICKETS -->
-          <li><a ng-href="{{event.url}}">buy tickets</a></li> 
-          <li>{{genres[event.subcategory_id]}}</li>
+          <li ng-show="{{event.url.length > 0}}"><a ng-href="{{event.url}}">buy tickets</a></li> 
+          <li ng-show="{{event.subcategory_id.length > 0}}">{{genres[event.subcategory_id]}}</li>
 
         </ul>
       </div>
