@@ -1,6 +1,7 @@
 angular.module('soundGlomerate.search', ['soundGlomerate.searchFactory', 'ui.bootstrap'])
 
 
+
 .controller('SearchController', ['$scope', '$state', 'Search', function ($scope, $state, Search) { // naming the controller 'SearchController', requiring the 'Seach' factory and the $scope module. 
 
   // $('#searchbar').typehead({source:?["Oakalnd", "San Francisco", "Berkeley"]})
