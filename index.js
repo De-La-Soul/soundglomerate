@@ -28,6 +28,7 @@ app.post('/db/events', function(req, res){
   });
 });
 
+
 app.get('/db/events', function(req, res){
   pg.connect(connectionString,function(err, client, done){
     // SQL query to get data

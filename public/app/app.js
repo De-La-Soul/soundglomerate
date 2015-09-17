@@ -12,6 +12,7 @@ angular.module('soundGlomerate', [ // declare all controllers and services
   'soundGlomerate.searchFactory',
   'soundGlomerate.selectedEvent',
   'soundGlomerate.selectedEventFactory',
+  'ui.bootstrap',
   'ui.router',
   'angularSpinners'
 ])

@@ -8,4 +8,5 @@ bower_components
 # API Keys #
 ######################
 apikeys.js
+config.json
 

@@ -22,10 +22,11 @@
   "dependencies": {
     "angular-bootstrap": "~0.13.4",
     "angular-google-maps": "~2.2.0",
+    "angular-spinners": "~3.0.2",
     "angular-ui-date": "~0.0.8",
     "angular-ui-router": "~0.2.11",
-    "angular-utils-pagination": "angular-utils-pagination#~0.8.4",
     "angular-wurfl-image-tailor": "~0.9.4",
+    "angular-utils-pagination": "angular-utils-pagination#~0.8.4",
     "bootstrap": "~3.3.5",
     "ngmap": "~1.13.4",
     "pickadate": "~3.5.6",
