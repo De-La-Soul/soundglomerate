@@ -39,7 +39,7 @@ app.get('/db/events', function(req, res){
     // after all data is returned, close connection to db
     query.on('end', function(){
       client.end();
-      return res.json(results);
+      return res.send(results);
     }); 
 
     // Handle Errors
