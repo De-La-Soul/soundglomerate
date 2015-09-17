@@ -11,7 +11,6 @@ angular.module('soundGlomerate.resultsFactory', ['soundGlomerate.searchFactory']
   	service: service
   }
 
-
 }]);
 
 
