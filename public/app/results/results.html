@@ -1,5 +1,5 @@
 
-  <div ng-controller="ResultsController"> 
+<!--   <div ng-controller="ResultsController">  -->
 
 <!--       <div class="row pull-right" style="margin:10px 10px 0px;border:1px solid grey; border-radius:5px; width:70%; ">
         <div class="col-xs-3" style="background-color:white;padding:5px;">
@@ -12,8 +12,8 @@
     </div>
   </div> <!--  end of col-sm-4 -->
 
-  <div class="col-xs-6"  style="border-style:solid; margin-left:10px">
    <spinner name="eventSpinner" img-src="http://media.giphy.com/media/npCmk0VCFHyUM/giphy.gif" show="loading"></spinner>
+  <div class="col-xs-6"  style="border-style:solid; margin-left:10px">
     <div dir-paginate="event in apiData | filter: currentGenre | itemsPerPage: 6"> 
       <!-- GET ALL THE EVENT INFO FROM THE DATAAPI OBJECT IN THE RESULTS CONTROLLER -->
        <div>
