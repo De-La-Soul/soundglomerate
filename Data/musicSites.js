@@ -4,7 +4,7 @@ description:{ text: 'This free annual outdoor music festival puts on over 140 fr
 logo: { url: 'http://cdn.funcheap.com/wp-content/uploads/2015/07/Jerry_Stucker_Promo_Pic1-150x130.jpg' },
 venue: { name: 'Mechanics Monument Plaza' },
 city: 'San Francisco',
-date: 'Tuesday, September 15 – 12:00 pm',
+start: { local: 'Tuesday, September 15 – 12:00 pm'},
 cost: 'FREE' },
 { name: { text: 'People in Plazas: Free Jazz Concert' },
 description: { text: 'This free annual outdoor music festival puts on over 140 free lunchtime concerts of all styles from July to October in over 15 different public plazas stretched from the Embarcadero through the Castro. Funcheap is proud to be a media sponsor of the 2015 festival. 2015 ...' },

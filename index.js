@@ -19,8 +19,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Connection string for our database
 // 
-var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/CristianAvalos';
-// var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/student';
+// var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/CristianAvalos';
+var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/student';
 
 app.post('/db/events', function(req, res){
   // when using curl, data will be sent here
@@ -34,8 +34,8 @@ app.get('/db/events', function(req, res){
     // SQL query to get data
     var query = client.query("SELECT data FROM newEvents;");
     query.on('row', function(row){
-      console.log('row', row);
-      results.push(row);
+      console.log('row', row.data);
+      results.push(row.data);
     });
 
     // after all data is returned, close connection to db

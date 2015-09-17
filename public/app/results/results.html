@@ -20,11 +20,11 @@
   </div> <!-- end of col-xs-4 --> 
 
   <div class="col-xs-8">
-    <h4 ng-click="selectedEvent(event)" style="pointer">{{event.data.name.text}}</h4> <!-- NAME OF THE EVENT -->
+    <h4 ng-click="selectedEvent(event)" style="pointer">{{event.name.text}}</h4> <!-- NAME OF THE EVENT -->
     <ul>
       <!-- Minified event desrciption -->
       <li>{{event.description.text.slice(0,100)}}</li> 
-      <li><span style="color:grey">date:</span> {{event.start.local.slice(0,10)}}</li>
+      <li><span style="color:grey">date:</span> {{event.start.local}}</li>
       <li><span style="color:grey">venue:</span> {{event.venue.name}}</li>
 
       <!-- COST OF THE EVENT  -->
