@@ -9,7 +9,7 @@ angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory', 'soun
   $scope.loading = true;   
   
   $scope.$watch('apiData.length', function(newVal, oldVal){    
-    if(newVal !== oldVal)    
+    // if(newVal !== oldVal) // remove this part because size of the apiData changes while accessing new data from eventbrite. db is faster than eventbrite data    
       $scope.loading = !($scope.loading);    
   })   
 
