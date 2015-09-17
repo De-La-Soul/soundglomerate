@@ -1,15 +1,15 @@
 
-<div>
-  <div>
+<div id="selectedEventView" class="container col-sm-8 pull-right" style="border-style:solid; margin-top:5%">
+  <div id="selectedEventPic">
     <img ng-src="{{thisEvent.logo.url}}" class="img-responsive"/>
   </div>
-  <div></div>
-  
+  <div style="border-style:solid"></div>
+  <div class="clearfix visible-xs-block"></div> 
   <div>
-    <h4>{{thisEvent.name.text}}</h4>
+    <h3 id="selectedEventTitle">{{thisEvent.name.text}}</h3>
   </div>
   <div></div>
-  <div>
+  <div id="selectedEventDscr">
     <p>{{thisEvent.description.text}}</p>
   </div>    
 </div>

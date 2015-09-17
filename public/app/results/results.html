@@ -10,10 +10,10 @@
 
 <spinner name="eventSpinner" img-src="http://media.giphy.com/media/npCmk0VCFHyUM/giphy.gif" show="loading"></spinner>
 
- <div class="clearfix visible-xs-block"></div>
+ <!-- <div class="clearfix visible-xs-block"></div> -->
 <div class="col-xs-6"  style=" margin-left:10px"> 
 
-  <div  dir-paginate="event in apiData | filter: currentGenre | itemsPerPage: 6" style="margin:10px; "> 
+  <div  id="" dir-paginate="event in apiData | filter: currentGenre | itemsPerPage: 6" style="margin:10px; "> 
   <!-- GET ALL THE EVENT INFO FROM THE DATAAPI OBJECT IN THE RESULTS CONTROLLER -->
     
     <!-- Must be a container in order get each border dive working -->
