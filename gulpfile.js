@@ -6,7 +6,7 @@ var mocha = require('gulp-mocha');
 
 
 gulp.task('build', shell.task([
-  'npm install -g nodemon', 'npm install', 'npm install -g karma-cli'
+  'npm install -g nodemon', 'npm install -g karma-cli'
 ]));
 
 gulp.task('start', shell.task([

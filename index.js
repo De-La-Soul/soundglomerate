@@ -29,12 +29,12 @@ app.post('/db/events', function(req, res){
   });
 });
 
+
 app.get('/db/events', function(req, res){
   pg.connect(connectionString,function(err, client, done){
     // SQL query to get data
     var query = client.query("SELECT data FROM newEvents;");
     query.on('row', function(row){
-      console.log('row', row.data);
       results.push(row.data);
     });
 
