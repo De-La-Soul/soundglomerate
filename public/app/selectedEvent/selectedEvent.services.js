@@ -4,6 +4,7 @@ angular.module('soundGlomerate.selectedEventFactory', [])
 
   var selectedEventService = {
     yourEvent: {},
+    yourEventNav: []
   };
 
   return selectedEventService;
