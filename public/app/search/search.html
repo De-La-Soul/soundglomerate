@@ -6,7 +6,7 @@
     <form ng-submit="getEBEvents()">
 
     <div style="opacity:1">
-    <input id="searchLoc" type="text" class="form-control" ng-model="search.location" placeholder="Enter Location" typeahead="city for city in cities | limitTo:3"  required>
+    <input id="searchLoc" type="text" class="form-control" ng-model="search.location" placeholder="Enter Location" typeahead="city for city in cities | filter:$viewValue | limitTo:3"  required>
     </div>
     <!-- <p>{{search.location}}</p> -->
     <!-- <p>{{EBEvents}}</p> -->

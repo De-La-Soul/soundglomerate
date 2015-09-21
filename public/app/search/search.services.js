@@ -4,7 +4,7 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
 .service('Search', ['$http', 'APIkeys', function($http, APIkeys){ // naming the factory 'Search', requiring the $http module to make API calls
 
   var events = []; 
-  var LatLong =[];
+  var latLong =[];
 
   var getEventBriteData = function(city, startDate, endDate){ 
   // Defines the getEventBriteData fxn
@@ -44,9 +44,9 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
         var tuple = [ evnt.venue.address.latitude, evnt.venue.address.longitude];
 
         // Pushes tuples([lat, long]) in the LatLong array
-        LatLong.push(tuple);
+        latLong.push(tuple);
         
-        
+        // console.log('Map tuple collection', tuple);
         ////////////////////////////////////////////////////////////////////////////////////   
         // Push each event into the events array for the results to access                //
         ////////////////////////////////////////////////////////////////////////////////////   
@@ -73,7 +73,7 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
     events: events,
     getEventBriteData: getEventBriteData,
     scrappedData: scrappedData,
-    LatLong: LatLong
+    latLong: latLong
   };
 }]);
 
