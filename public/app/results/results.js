@@ -4,7 +4,7 @@ angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory', 'soun
 
 .controller('ResultsController', ['$scope', '$state', 'Results', 'SelectedEvent','Map', 'spinnerService', function ($scope, $state, Results, SelectedEvent, Map, spinnerService) {
 
-  $scope.apiData = Results.service.events;
+  $scope.apiData = Results.events;
 
   $scope.loading = true;   
   
@@ -25,8 +25,8 @@ angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory', 'soun
 
 
     // this resets the markers on the map to just one, the event that was clicked on
-    Map.LatLongKey = [[event.venue.latitude, event.venue.longitude]];
-
+    // Map.latLongKey = 
+    SelectedEvent.yourEventNav = [[event.venue.latitude, event.venue.longitude]];
   };
 
     $scope.genres = {3001: "Alternative", 3002: "BluesJazz", 3003: "Classical", 3004: "Country", 3005: "Cultural", 3006: "EDMElectronic", 3007: "Folk", 3008: "HipHopRap", 3009: "Indie", 3010: "Latin", 3011: "Metal", 3012: "Opera", 3013: "Pop", 3014: "RB", 3015: "Reggae", 3016: "ReligiousSpiritual", 3017: "Rock", 3018: "Top40", 3999: "Other"};
