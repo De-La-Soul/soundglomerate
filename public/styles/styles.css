@@ -14,7 +14,7 @@
   height: 60px;
   border-radius: 10px;
   border-color: #9C0505 !important;
-  box-shadow: inset 1px 1px 12px 5px #9C0505, 0px 0px 20px #9C0505 !important;
+  box-shadow: inset 1px 1px 5px 5px #9C0505, 0px 0px 20px #9C0505 !important;
 
 }
 
@@ -38,13 +38,13 @@
 
 input:hover{
   border-color: #9C0505 !important;
-  box-shadow: inset 1px 1px 12px 5px #9C0505, 0px 0px 20px #9C0505 !important;
+  box-shadow: inset 1px 1px 3px 2px #9C0505, 0px 0px 20px #9C0505 !important;
 
 }
 
 input:focus{
   border-color: #9C0505 !important;
-  box-shadow: inset 1px 1px 12px 5px #9C0505, 0px 0px 20px #9C0505 !important;
+  box-shadow: inset 1px 1px 3px 2px #9C0505, 0px 0px 20px #9C0505 !important;
 
 }
 

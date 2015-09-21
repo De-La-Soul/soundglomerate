@@ -1,6 +1,6 @@
 'use strict()';
 var pg = require('pg');
-var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/[ENTER COMPUTER NAME HERE]';
+var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/[ENTER THE NAME OF YOUR OWN COMPUTER]';
 
 // 'postgres://localhost:5432/student' then this new table is going to be added to the /student user
 
