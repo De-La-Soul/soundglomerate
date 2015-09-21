@@ -20,7 +20,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Connection string for our database
 // 
 // var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/CristianAvalos';
-var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Martial-One';
+// var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Martial-One';
+var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/CBhome';
 
 app.post('/db/events', function(req, res){
   // when using curl, data will be sent here
