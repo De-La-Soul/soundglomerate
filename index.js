@@ -1,7 +1,6 @@
 
 var app = require('./server/server.js');
 
-
 var port = process.env.PORT || 8000;
 // var url = process.env.URL || 'localhost';
 
@@ -20,8 +19,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Connection string for our database
 // 
 var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/CristianAvalos';
-// var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Martial-One';
-// var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/CristianAvalos';
 // var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Martial-One';
 
 
