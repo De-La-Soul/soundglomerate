@@ -20,7 +20,7 @@
     <div id="resultsEvent" class="container col-md-12" style="border-style:solid; margin:10px">
       
       <div class="col-xs-4" style="background-color:white; margin-top:15px">
-        <a ng-click="selectedEvent(event)">
+        <a ng-click="selectedEvent(event)" style="cursor: pointer">
           <img-wit src="{{(event.logo).url | trusted}}" w="200px" h="162px"></img-wit>
         </a> <!-- EVENT IMAGE -->
       </div> <!-- end of col-xs-4 --> 
@@ -32,7 +32,9 @@
           <li ng-show=>{{event.city}}</li>
           <li ng-show="{{event.description.text.length > 0}}">{{event.description.text.slice(0,100)}}</li> 
           <li ng-show="{{event.start.local.length > 0}}"><span style="color:grey">date:</span> {{event.start.local}}</li>
+          <li ng-show="{{event.time.length > 0}}"><span style="color:grey">time:</span>{{event.time}}</li>
           <li ng-show="{{event.venue.name.length > 0}}"><span style="color:grey">venue:</span> {{event.venue.name}}</li>
+          <li ng-show="{{event.url > 0}}">{{event.url}}</li>
 
           <!-- LINK TO PURCHASE TICKETS -->
           <li ng-show="{{event.url.length > 0}}"><a ng-href="{{event.url}}">buy tickets</a></li> 
@@ -57,3 +59,4 @@
 </div> <!-- end of dir-pagginate -->
 
 <!-- end of ResultsController -->
+
