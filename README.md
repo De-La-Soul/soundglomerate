@@ -17,7 +17,7 @@ Our goal is to provide a place for music lovers to find local events in their ar
 1. Fork repo
 2. From the CLi - `git clone https://github.com/De-La-Soul/De-La-Soul-Thesis.git soundglomerate` 
 3. From the soundglomerate dir, install Gulp, globally - `npm install -g gulp`
-4. Run Build to install all dependencies - `Gulp build`
+4. Run npm to install all dependencies - `npm install`
 5. Create factory in public folder name "apikeys.js" (see pic below)
 ![alt text](/public/assets/keyENV.png)
 6. From the CLi - `gulp start`
