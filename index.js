@@ -29,7 +29,7 @@ var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Cr
 app.post('/db/events', function(req, res){
   // when using curl, data will be sent here
   pg.connect(connectionString, function(err, client, done){
-    client.query('INSERT INTO events(id,name) values($1,$2)', [1,'cris Testing']);
+    // client.query('INSERT INTO events(id,name) values($1,$2)', [1,'cris Testing']);
   });
 });
 
