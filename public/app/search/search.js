@@ -11,7 +11,7 @@ angular.module('soundGlomerate.search', ['soundGlomerate.searchFactory', 'ui.boo
     } else {
       $scope.search = search; 
     }
-  }
+  };
 
   $scope.cities = ['Oakland', 'Berkeley', 'San Francisco'];
   $scope.selectedCity = '';
