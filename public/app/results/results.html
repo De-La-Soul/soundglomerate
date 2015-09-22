@@ -35,7 +35,7 @@
           <li ng-show="{{event.start.local.length > 0}}"><span style="color:grey">date:</span> {{event.start.local}}</li>
           <li ng-show="{{event.time.length > 0}}"><span style="color:grey">time:</span>{{event.time}}</li>
           <li ng-show="{{event.venue.name.length > 0}}"><span style="color:grey">venue:</span> {{event.venue.name}}</li>
-          <li ng-show="{{event.url > 0}}">{{event.url}}</li>
+          <li ng-show="{{event.city.length > 0}}"><span style="color:grey">City:</span> {{event.city}}</li>
 
           <!-- LINK TO PURCHASE TICKETS -->
           <li ng-show="{{event.url.length > 0}}"><a ng-href="{{event.url}}">buy tickets</a></li> 
