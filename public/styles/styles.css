@@ -1,3 +1,17 @@
+.container-fluid{
+  background-color: black;
+
+}
+
+.container-fluid.footer{
+  background-color: white;
+
+}
+
+#landingFooter{
+  background-color: white;
+}
+
 /***********************************************************************/
 /************************** SEARCH BAR *********************************/
 /***********************************************************************/
@@ -84,7 +98,7 @@ button {
 /***********************************************************************/
 
 /************ RESULTS SEARCH *************/
-
+.page-results{ background:#00D0BC; color:#00907c; }
 #resultsSearch {
   border-radius: 0px !important;
   opacity: 1;

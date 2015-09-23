@@ -4,6 +4,8 @@ angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory', 'soun
 
 .controller('ResultsController', ['$scope', '$state', 'Results', 'SelectedEvent','Map', 'spinnerService', function ($scope, $state, Results, SelectedEvent, Map, spinnerService) {
 
+  $scope.pageClass = 'page-results';
+
   $scope.apiData = Results.events;
 
   $scope.loading = true;   

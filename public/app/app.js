@@ -15,7 +15,8 @@ angular.module('soundGlomerate', [ // declare all controllers and services
   'ui.bootstrap',
   'ui.router',
   'ui.bootstrap',
-  'angularSpinners'
+  'angularSpinners',
+  'ngAnimate'
 ])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider) { // this uses UI router (previously we used ng-router). this is better becuer it uses states, templates and controller and service and if there is a view within the state. THe later is done with the resolve method.
