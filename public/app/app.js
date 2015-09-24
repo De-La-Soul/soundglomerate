@@ -96,12 +96,14 @@ angular.module('soundGlomerate', [ // declare all controllers and services
         $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
           if(toState.url === "/"){
             
-            console.log($rootScope.$state.current)
+            console.log(document.body.style);
             document.body.style.background = 'white';
+
           } else if (toState.url === "/results"){
-            document.body.style.background = 'black';
+            document.body.style.backgroundImage = "url('./assets/bgimage5.jpg')";
+            // document.body.style.background = 'black';
           } else {
-            document.body.style.background = 'red';
+            document.body.style.background = 'white';
           }
           // console.log('Event info', event, '\n');
           // console.log('toState info', toState, '\n');
