@@ -79,10 +79,39 @@ angular.module('soundGlomerate', [ // declare all controllers and services
     $urlRouterProvider.otherwise('/'); // this is the default route (if no route is specified)
 })
 
-.run(
-    ['$rootScope', '$state', '$stateParams',
-      function($rootScope, $state, $stateParams) {
+.run(['$rootScope', '$state', '$stateParams', function($rootScope, $state, $stateParams) {
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
-      }
-]);
+        // console.log($rootScope.$stateParams)
+        
+    //     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
+    //       console.log('toState info', toState, '\n');
+    //       console.log('fromStae info', fromState, '\n');
+    //       fromState.url = "/";
+    //       toState.url = "/results";
+
+    //     // document.body.style.background = 'red';
+    // });
+
+        $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
+          if(toState.url === "/"){
+            
+            console.log($rootScope.$state.current)
+            document.body.style.background = 'white';
+          } else if (toState.url === "/results"){
+            document.body.style.background = 'black';
+          } else {
+            document.body.style.background = 'red';
+          }
+          // console.log('Event info', event, '\n');
+          // console.log('toState info', toState, '\n');
+          // console.log('frnt info', event, '\n');
+        //   fromState.url = "/results";
+        //   toState.url = "/";
+        // document.body.style.background = 'black';
+        });
+    
+      
+}]);
+
+
