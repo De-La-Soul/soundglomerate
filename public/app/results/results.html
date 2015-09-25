@@ -1,6 +1,6 @@
 
 
-<div id="resultsFilter" class="col-xs-2 pull-left" style="border-style:solid;margin-top:100px">
+<div id="resultsFilter" class="col-xs-2 pull-left" style="border-style:solid;margin-top:100px" ng-controller="SearchController">
   <p>Music Genre</p>
   <a href="#/results" ng-click="setCurrentGenre(all)">All</a>
   <div ng-repeat="(key,value) in genresSwap">
@@ -14,7 +14,7 @@
 <div class="col-xs-6"  style=" margin-left:10px" ng-animate" 'animate' "> 
 
 
-  <div  id="resultsPagingate" dir-paginate="event in apiData | filter: currentGenre | itemsPerPage: 6" style="margin:10px; " ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}"> 
+  <div  id="resultsPagingate" dir-paginate="event in apiData | filter: currentGenre | itemsPerPage: 15 | filter: selectedCity" style="margin:10px; " ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}"> 
   <!-- GET ALL THE EVENT INFO FROM THE DATAAPI OBJECT IN THE RESULTS CONTROLLER -->
     
     <!-- Must be a container in order get each border dive working -->
@@ -37,6 +37,8 @@
           <li ng-show="{{event.time.length > 0}}"><span style="color:grey">time:</span>{{event.time}}</li>
           <li ng-show="{{event.venue.name.length > 0}}"><span style="color:grey">venue:</span> {{event.venue.name}}</li>
           <li ng-show="{{event.city.length > 0}}"><span style="color:grey">City:</span> {{event.city}}</li>
+          <li ng-show="{{event.venue.address.city.length > 0}}"><span style="color:grey">City:</span> {{event.venue.address.city}}</li>
+
 
           <!-- LINK TO PURCHASE TICKETS -->
           <li ng-show="{{event.url.length > 0}}"><a target="_blank" ng-href="{{event.url}}">buy tickets</a></li> 
