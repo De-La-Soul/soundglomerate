@@ -8,13 +8,14 @@
        <accordion-heading >
         Music Genres <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
       </accordion-heading>
-      <a href="#/results" ng-click="setCurrentGenre(all)">All</a>
-      <div ng-repeat="(key,value) in genresSwap">
-      <a href="#/results" ng-click="setCurrentGenre(key)">{{key}}</a>
+      <a href="/results" ng-click="setCurrentGenre(all)">All</a>
+      <div style="background-color:red; margin-top: 2px; opacity:.5; font-size: 18px" ng-repeat="(key,value) in genresSwap">
+      <a href="/results" ng-click="setCurrentGenre(key)">{{key}}</a>
       </div>
+      
     </accordion-group>
     <!-- Placeholder for artists filter -->
-    <accordion-group>
+    <accordion-group id="filterArtists">
        <accordion-heading>
         Artists <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
       </accordion-heading>
@@ -24,7 +25,7 @@
       </div>
     </accordion-group>
     <!-- Placeholder for venue filter -->
-    <accordion-group>
+    <accordion-group id="filterVenue">
       <accordion-heading>
         Venue<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
       </accordion-heading>
@@ -34,7 +35,7 @@
       </div>
     </accordion-group>
     <!-- Placeholder for price filter -->
-    <accordion-group>
+    <accordion-group id="filterPrice">
       <accordion-heading>
         Price<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
       </accordion-heading>
@@ -44,7 +45,7 @@
       </div>
     </accordion-group>
     <!-- Place holder for reviews filter -->
-    <accordion-group>
+    <accordion-group id="filterReviews">
       <accordion-heading>
         Reviews<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
       </accordion-heading>
@@ -53,8 +54,8 @@
       <a href="#/results" ng-click="setCurrentGenre(key)">{{key}}</a>
       </div>
     </accordion-group> 
-    <accordion-group>
-      <accordion-heading>
+    <accordion-group id="filterOther">
+      <accordion-heading >
         Other<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
       </accordion-heading>
       <a href="#/results" ng-click="setCurrentGenre(all)">All</a>
@@ -63,6 +64,7 @@
       </div>
     </accordion-group> 
   </accordion>
+  
 </div> <!--  end of col-sm-4 -->
 
       <!-- <div ng-repeat="item in items">{{item}}</div> -->
@@ -71,10 +73,10 @@
 <spinner class="col-md-offset-5" name="eventSpinner" img-src="http://i769.photobucket.com/albums/xx331/maclisa2/elephant/thPink_Elephant.gif" show="loading"></spinner>
 
  <!-- <div class="clearfix visible-xs-block"></div> -->
-<div class="container col-xs-6 3"  style=" margin-left:10px" > 
+<div class="col-xs-6"> 
 
 
-  <div  class="" id="resultsPagingate" dir-paginate="event in apiData | filter: currentGenre | itemsPerPage: 15 | filter: selectedCity" style="margin:10px; " > 
+  <div  id="resultsPagingate" dir-paginate="event in apiData | filter: currentGenre | itemsPerPage: 15 | filter: selectedCity"  > 
   <!-- GET ALL THE EVENT INFO FROM THE DATAAPI OBJECT IN THE RESULTS CONTROLLER -->
     
     <!-- Must be a container in order get each border dive working -->

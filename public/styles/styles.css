@@ -16,7 +16,7 @@ body{
   background-color: white;
 }
 
-/*.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }*/
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 nav{
   /*background: -webkit-linear-gradient(left, #000000, #606060);*/
@@ -153,7 +153,8 @@ button {
 #resultsEvent{
   /*border-top:solid; */
   /*border-bottom:solid; */
-  margin-left: 48%;
+  margin-left: 5%;
+  margin-right: 30px;
   margin-top: 10px;
   background: rgba(0,0,0,.5);
   color: rgba(255,255,255,.8);
@@ -204,23 +205,26 @@ button {
   line-height: 1.42857143;
 }
 
-
-
+/*
+.genreText{
+  text-decoration: none;
+  font: red;
+}*/
 
 /*********** FILTER (RESULTS VIEW) *************/
 
 
 /*Panel settings before dropdown*/
 .panel-heading{
-  background-color: black !important;
+  background-color: red !important;
 }
 
 
 #resultsFilter{
-  position: fixed !important;
+  /*position: fixed;*/
   border-style:solid;
   margin-top:100px;
-  margin-left: 3%;
+  /*margin-left: 3%;*/
   padding-top: 20px;
   background-color: red;
   border-radius: 3px;
@@ -234,7 +238,7 @@ button {
 
 /*The button links for the filter genres */
 #filterGenre a{
-  color: red;
+  color: black;
 }
 
 /*The filter list title when clicked on*/
@@ -248,9 +252,107 @@ button {
   font-size: 1.15em;
 }
 
-dir-pagination-controls{
-
+#filterArtists{
+  background-color: black;
 }
+
+/*The button links for the filter genres */
+#filterArtists a{
+  color: red;
+}
+
+/*The filter list title when clicked on*/
+#filterArtists a:focus{
+  outline: none;  
+}
+
+/*The filter list title when moused over*/
+#filterArtists a:hover{
+  outline: none;  
+  font-size: 1.15em;
+}
+
+#filterVenue{
+  background-color: black;
+}
+
+/*The button links for the filter genres */
+#filterVenue a{
+  color: red;
+}
+
+/*The filter list title when clicked on*/
+#filterVenue a:focus{
+  outline: none;  
+}
+
+/*The filter list title when moused over*/
+#filterVenue a:hover{
+  outline: none;  
+  font-size: 1.15em;
+}
+
+#filterPrice{
+  background-color: black;
+}
+
+/*The button links for the filter genres */
+#filterPrice a{
+  color: red;
+}
+
+/*The filter list title when clicked on*/
+#filterPrice a:focus{
+  outline: none;  
+}
+
+/*The filter list title when moused over*/
+#filterPrice a:hover{
+  outline: none;  
+  font-size: 1.15em;
+}
+
+#filterReviews{
+  background-color: black;
+}
+
+/*The button links for the filter genres */
+#filterReviews a{
+  color: red;
+}
+
+/*The filter list title when clicked on*/
+#filterReviews a:focus{
+  outline: none;  
+}
+
+/*The filter list title when moused over*/
+#filterReviews a:hover{
+  outline: none;  
+  font-size: 1.15em;
+}
+
+#filterOther{
+  background-color: black;
+}
+
+/*The button links for the filter genres */
+#filterOther a{
+  color: black;
+}
+
+/*The filter list title when clicked on*/
+#filterOther a:focus{
+  outline: none;  
+}
+
+/*The filter list title when moused over*/
+#filterOther a:hover{
+  outline: none;  
+  font-size: 1.15em;
+}
+
+
 
 
 
@@ -301,18 +403,20 @@ styling for map. this is a test
 
 #mapContainer {
   /*width:100%;*/
-  margin-top:5%;
-  position: fixed !important;
-
+  margin-top: 30%;
+/*  position: fixed !important;
+*/
 }
 
 
 map {
-    /*height:400px;*/
-    /*width:25%;*/
-    width: 80%; 
+    /*height:800px;*/
+    width:400px;
+    /*width: 80%; */
     height:40%; 
     /*margin: 10px; */
+    /*margin-right: 3%;*/
+    margin-right: 30px;
     opacity: .7;
 }
 
