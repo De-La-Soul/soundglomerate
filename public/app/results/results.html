@@ -38,7 +38,7 @@
           <li ng-show="{{event.city.length > 0}}"><span style="color:grey">City:</span> {{event.city}}</li>
 
           <!-- LINK TO PURCHASE TICKETS -->
-          <li ng-show="{{event.url.length > 0}}"><a ng-href="{{event.url}}">buy tickets</a></li> 
+          <li ng-show="{{event.url.length > 0}}"><a target="_blank" ng-href="{{event.url}}">buy tickets</a></li> 
           <li ng-show="{{event.subcategory_id.length > 0}}">{{genres[event.subcategory_id]}}</li>
 
         </ul>

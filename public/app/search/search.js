@@ -27,7 +27,7 @@ angular.module('soundGlomerate.search', ['soundGlomerate.searchFactory', 'ui.boo
 
 }])
 
-.filter('trusted', ['$sce', function($sce){
+.filter('trusted', ['$sce', function($sce){ // this is to make the created tag approved by angular
   return function(url){
     return $sce.trustAsResourceUrl(url);
   };
