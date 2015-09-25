@@ -22,12 +22,8 @@ angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory', 'soun
 
     // Navigate to the selected event view
     $state.go('app.resultsDisplay.selectedEvent');
-    // Logs the event that was clicked on
-    console.log('Logging the event that was clicked on', event);
-
 
     // this resets the markers on the map to just one, the event that was clicked on
-    // Map.latLongKey = 
     SelectedEvent.yourEventNav = [[event.venue.latitude, event.venue.longitude]];
   };
 
