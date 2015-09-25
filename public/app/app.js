@@ -92,10 +92,10 @@ angular.module('soundGlomerate', [ // declare all controllers and services
         document.body.style.background = 'white';
         console.log(document.body.style);
       } else if (toState.url === "/results"){
-        document.body.style.backgroundImage = "url('./assets/bgimage1-2.jpg')";
+        document.body.style.backgroundImage = "url('./assets/background1.jpg')";
         document.body.style.backgroundAttachment = 'fixed';
       } else {
-        document.body.style.backgroundImage = "url('./assets/bgimage1-2.jpg')";
+        document.body.style.backgroundImage = "url('./assets/background1.jpg')";
         document.body.style.backgroundAttachment = 'fixed';
       }
       

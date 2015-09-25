@@ -17,8 +17,10 @@ body{
 }
 
 nav{
-  background: -webkit-linear-gradient(right, #000000, #606060);
+  /*background: -webkit-linear-gradient(left, #000000, #606060);*/
   height:75px;
+  border-color: #000000;
+  background-image: url("../assets/background1.jpg");
 }
 
 /***********************************************************************/
