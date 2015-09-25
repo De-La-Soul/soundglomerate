@@ -5,12 +5,14 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
 
   var events = []; 
   var latLong =[];
+  var selectedCity = '';
 
   var getEventBriteData = function(city, startDate, endDate){ 
   // Defines the getEventBriteData fxn
 
     angular.copy([], events); // Creates a copy of the search data
-
+    selectedCity = city;
+    
     var fixTime = function(date){
       date = date.substring(0,19);
       console.log('date', date);
@@ -59,6 +61,8 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
     });
   };
 
+  
+
   var scrappedData = function(){
     return $http.get('/db/events')
     .success(function (res) {
@@ -73,7 +77,8 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
     events: events,
     getEventBriteData: getEventBriteData,
     scrappedData: scrappedData,
-    latLong: latLong
+    latLong: latLong,
+    selectedCity: selectedCity
   };
 }]);
 

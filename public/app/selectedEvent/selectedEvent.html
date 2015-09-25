@@ -6,9 +6,12 @@
   <div style="border-style:solid"></div>
   <div class="clearfix visible-xs-block"></div> 
   <div>
-    <h3 id="selectedEventTitle">{{thisEvent.name.text}}</h3>
+    <h3 id="selectedEventTitle" class="text-center">{{thisEvent.name.text}}</h3>
   </div>
-  <div id="selectedEventDscr">
+  <div id="selectedEventDscr" style="margin-top:25px;color:orange">
     <p>{{thisEvent.description.text}}</p>
-  </div>    
+  </div>  
+  <div>
+    <a target="_blank" ng-href="{{thisEvent.url}}" class="pull-right" style="color:orange">MORE EVENT INFO... (IT WILL OPEN IN A NEW WINDOW)</a>
+  </div>  
 </div>

@@ -44,14 +44,15 @@ angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory', 'soun
     return result;
   }
 
+  Results.selectedCity = $scope.selectedCity;
   $scope.genresSwap = swap($scope.genres);
-
+  console.log('location on results.js', Results.selectedCity);
 
   function setCurrentGenre(genre){
     $scope.currentGenre = $scope.genresSwap[genre];
     console.log($scope.currentGenre);
   }; 
 
-  $scope.setCurrentGenre = setCurrentGenre; 
+  $scope.setCurrentGenre = setCurrentGenre;
 }]);
 
