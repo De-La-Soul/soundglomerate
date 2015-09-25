@@ -16,6 +16,8 @@ body{
   background-color: white;
 }
 
+/*.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }*/
+
 nav{
   /*background: -webkit-linear-gradient(left, #000000, #606060);*/
   height:75px;
@@ -61,14 +63,15 @@ nav{
   height: 60px;
   border-radius: 10px;
   border-color: #9C0505 !important;
-  box-shadow: inset 1px 1px 5px 5px #9C0505, 0px 0px 20px #9C0505 !important;
-
+  box-shadow: 1px 1px 5px 5px #9C0505, 0px 0px 20px #9C0505 !important;
+  transition-duration: 0.8s;
 }
 
 #searchLoc{
   margin-top: 10px;
   font-weight: bold;
   font-size: 14px;
+  transition-duration: 0.8s;
 }
 
 #startDate{
@@ -85,7 +88,7 @@ nav{
 
 input:hover{
   border-color: #9C0505 !important;
-  box-shadow: inset 1px 1px 3px 2px #9C0505, 0px 0px 20px #9C0505 !important;
+  box-shadow: 1px 1px 3px 2px #9C0505, 0px 0px 20px #9C0505 !important;
 
 }
 
@@ -161,27 +164,13 @@ button {
 
 
 #resultsEvent:hover{
-  /*box-shadow: */
-  /*transform: translateY(-10px);
-  transform: translateX(-10px);*/
   -webkit-transform: translate3d(-3px, -3px, 5px);
-  /*display: inline-block;*/
-  /*vertical-align: middle;*/
-  /*-webkit-transform: translateZ(10px);*/
-  /*box-shadow: 0 0 1px rgba(0, 0, 0, 0);*/
-  /*-webkit-backface-visibility: hidden;*/
-  /*backface-visibility: hidden;*/
-  /*-moz-osx-font-smoothing: grayscale;*/
-  /*font-family: 'chunk-webfont';*/
   src: url('../../includes/fonts/chunk-webfont.svg') format('svg');
   -webkit-font-smoothing: antialiased;
-  /*position: relative;*/
+  font-weight: bold;
   box-shadow: 2px 2px 10px 0px #9C0505, 4px 4px 9px 0px #000000  ;
-  /*-webkit-transition-duration: 0.3s;*/
-  transition-duration: 0.3s;
+  transition-duration: 0.5s;
   -webkit-transition-property: transform;
-  transition-property: transform;
-  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
 }
 
 #resultsEventImage{
@@ -193,15 +182,11 @@ button {
 }
 
 #resultsEventLogo:hover{
-  /*background-color: black;*/
-  -webkit-transform: translate3d(-3px, -3px, 3px);
+  -webkit-transform: translateY(5px);
   cursor: pointer;
-  /*border-color: red;*/
-  /*border-style: solid;*/
   transition-duration: 0.2s;
 }
 #resultsEventTitle{
-  
   color: #787878 ;
   font-size: 16px;
 }
@@ -223,15 +208,49 @@ button {
 
 /*************** FILTER ******************/
 
-div#resultsFilter > p{
-    color:black;
-    font-size: 18px;
-    font-weight: bold; 
+
+/*Panel settings before dropdown*/
+.panel-heading{
+  background-color: black !important;
 }
 
-hr#resultsFilter {
-    width: 100%;
+
+#resultsFilter{
+  border-style:solid;
+  margin-top:100px;
+  padding-top: 20px;
+  background-color: red;
+  border-radius: 3px;
+  opacity: .5;
 }
+
+/*Background color of the dropped filter list*/
+#filterGenre{
+  background-color: black;
+}
+
+/*The button links for the filter genres */
+#filterGenre a{
+  color: red;
+}
+
+/*The filter list title when clicked on*/
+#filterGenre a:focus{
+  outline: none;  
+}
+
+/*The filter list title when moused over*/
+#filterGenre a:hover{
+  outline: none;  
+  font-size: 1.15em;
+}
+
+
+
+
+
+/**************** RESULTS MAP ****************/
+
 
 /***********************************************************************/
 /********************** SELECTED EVENT VIEW ****************************/

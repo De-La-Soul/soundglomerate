@@ -1,7 +1,6 @@
 
 var app = require('./server/server.js');
 
-
 var port = process.env.PORT || 8000;
 // var url = process.env.URL || 'localhost';
 
@@ -18,15 +17,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Connection string for our database
-// 
-// var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/CristianAvalos';
-// var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Martial-One';
 var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Martial-Form';
 
+// ROUTING TO GET DATA FROM DB
 app.post('/db/events', function(req, res){
   // when using curl, data will be sent here
   pg.connect(connectionString, function(err, client, done){
-    client.query('INSERT INTO events(id,name) values($1,$2)', [1,'cris Testing']);
+    // client.query('INSERT INTO events(id,name) values($1,$2)', [1,'cris Testing']);
   });
 });
 

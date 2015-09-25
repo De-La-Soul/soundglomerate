@@ -2,6 +2,6 @@ angular.module('soundGlomerate.selectedEvent', ['soundGlomerate.selectedEventFac
 
 .controller('SelectedEventController', ['$scope', 'SelectedEvent', function ($scope, SelectedEvent) {
 	 
-   $scope.thisEvent = SelectedEvent.yourEvent;   
+   $scope.thisEvent = SelectedEvent.yourEvent;  
    
 }]);
