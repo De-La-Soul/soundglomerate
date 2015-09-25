@@ -153,7 +153,8 @@ button {
 #resultsEvent{
   /*border-top:solid; */
   /*border-bottom:solid; */
-  margin:10px;
+  margin-left: 48%;
+  margin-top: 10px;
   background: rgba(0,0,0,.5);
   color: rgba(255,255,255,.8);
   /*opacity: .3;*/
@@ -216,8 +217,10 @@ button {
 
 
 #resultsFilter{
+  position: fixed !important;
   border-style:solid;
   margin-top:100px;
+  margin-left: 3%;
   padding-top: 20px;
   background-color: red;
   border-radius: 3px;
@@ -245,7 +248,9 @@ button {
   font-size: 1.15em;
 }
 
+dir-pagination-controls{
 
+}
 
 
 
@@ -256,7 +261,13 @@ button {
 /********************** SELECTED EVENT VIEW ****************************/
 /***********************************************************************/
 
-#selectedEventView{}
+#selectedEventView{
+  /*border-style:solid; */
+  margin-right: 5%;
+  margin-top:5%;
+  background: rgba(0,0,0,.7);
+  color: rgba(255,255,255,.8);
+}
 
 #selectedEventView #selectedEventPic{
   margin: 2em;
@@ -266,8 +277,6 @@ button {
   /*background: #890000;
   opacity: .43;
   color: #000000;*/
-  background: rgba(0,0,0,.7);
-  color: rgba(255,255,255,.8);
 } 
 
 #selectedEventDscr{
@@ -275,8 +284,8 @@ button {
   opacity: .4;
   font-size: 20px;
   color: #000000;*/
-  background: rgba(0,0,0,.7);
-  color: rgba(255,255,255,.8);
+  /*background: rgba(0,0,0,.7);
+  color: rgba(255,255,255,.8);*/
 } 
 
  
@@ -290,19 +299,28 @@ styling for map. this is a test
 *****************************************************************************
 */
 
-.mapContainer {
-  width:100%;
+#mapContainer {
+  /*width:100%;*/
+  margin-top:5%;
+  position: fixed !important;
 
 }
 
 
 map {
-    height:400px;
-    width:25%;
-    margin: 20px;
+    /*height:400px;*/
+    /*width:25%;*/
+    width: 80%; 
+    height:40%; 
+    /*margin: 10px; */
+    opacity: .7;
 }
 
 /*************************** SPINNER *******************************/
+.spinner{
+
+}
+
 .spinner > div {
   background-color: #F0A83A;
   height: 100%;
@@ -334,46 +352,6 @@ map {
 
 
 
-
-/*div[ng-controller='MarkerRemoveCtrl'] {
-  position: relative;
-}
-
-div[ng-controller='MarkerRemoveCtrl'] #panel {
-  position: absolute;
-  top: 40px;
-  left: 50%;
-  margin-left: -180px;
-  z-index: 5;
-  background-color: #fff;
-  padding: 5px;
-  border: 1px solid #999;
-}
-*/
-
-
-/*@media screen and (max-width: 200px) {
-  body {
-    background-color: black;
-    background: url(../assets/bgimage.jpg) no-repeat center center scroll;
-
-  }
-}
-div #query{
-    color: black;
-}
-
-
-#signIn-btn{
-    margin-top:12px;
-    margin-bottom:5px;
-    background-color: red;
-    border-color: black;
-    height: 10px;
-    padding-top: 4px;
-
-}
-*/
 
 
 

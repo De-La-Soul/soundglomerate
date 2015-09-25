@@ -23,7 +23,7 @@ angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory', 'soun
   $scope.selectedEvent = function(event){
     // Stores the selected event for display in the selectedEvent view
     SelectedEvent.yourEvent = event;
-
+    console.log('The selected event', event)
     // Navigate to the selected event view
     $state.go('app.resultsDisplay.selectedEvent');
     // Logs the event that was clicked on
