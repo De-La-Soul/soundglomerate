@@ -50,7 +50,7 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
         ////////////////////////////////////////////////////////////////////////////////////   
         // Push each event into the events array for the results to access                //
         ////////////////////////////////////////////////////////////////////////////////////   
-        events.push(evnt);
+        events.unshift(evnt);
       });
       return events;
     })
@@ -64,7 +64,7 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
     .success(function (res) {
       // console.log('on scrappedData');
       res.forEach(function(event){
-        events.push(event);
+        events.unshift(event);
       });
     });
   };

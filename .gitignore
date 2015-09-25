@@ -2,11 +2,9 @@
 ######################
 node_modules
 bower_components
-/keys.js
+public/apiKeys.js
 
 
 # API Keys #
 ######################
-apikeys.js
 config.json
-

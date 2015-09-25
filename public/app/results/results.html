@@ -13,12 +13,14 @@
  <!-- <div class="clearfix visible-xs-block"></div> -->
 <div class="col-xs-6"  style=" margin-left:10px" ng-animate" 'animate' "> 
 
+
   <div  id="resultsPagingate" dir-paginate="event in apiData | filter: currentGenre | itemsPerPage: 6" style="margin:10px; " ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}"> 
   <!-- GET ALL THE EVENT INFO FROM THE DATAAPI OBJECT IN THE RESULTS CONTROLLER -->
     
     <!-- Must be a container in order get each border dive working -->
     <div id="resultsEvent" class="container col-md-12" >
       
+
       <div id="resultsEventLogo" class="col-xs-4">
         <a  ng-click="selectedEvent(event)">
           <img-wit  id="resultsEventImage" src="{{(event.logo).url | trusted}}" w="200px" h="162px"></img-wit>
@@ -29,12 +31,15 @@
         <h4 id="resultsEventTitle" ng-click="selectedEvent(event)">{{event.name.text}}</h4> <!-- NAME OF THE EVENT -->
         <ul>
           <!-- Minified event desrciption -->
+          <li ng-show=>{{event.city}}</li>
           <li ng-show="{{event.description.text.length > 0}}">{{event.description.text.slice(0,100)}}</li> 
           <li ng-show="{{event.start.local.length > 0}}"><span style="color:grey">date:</span> {{event.start.local}}</li>
+          <li ng-show="{{event.time.length > 0}}"><span style="color:grey">time:</span>{{event.time}}</li>
           <li ng-show="{{event.venue.name.length > 0}}"><span style="color:grey">venue:</span> {{event.venue.name}}</li>
+          <li ng-show="{{event.city.length > 0}}"><span style="color:grey">City:</span> {{event.city}}</li>
 
           <!-- LINK TO PURCHASE TICKETS -->
-          <li ng-show="{{event.url.length > 0}}"><a ng-href="{{event.url}}">buy tickets</a></li> 
+          <li ng-show="{{event.url.length > 0}}"><a target="_blank" ng-href="{{event.url}}">buy tickets</a></li> 
           <li ng-show="{{event.subcategory_id.length > 0}}">{{genres[event.subcategory_id]}}</li>
 
         </ul>
@@ -56,3 +61,4 @@
 </div> <!-- end of dir-pagginate -->
 
 <!-- end of ResultsController -->
+
