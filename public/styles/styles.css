@@ -23,6 +23,28 @@ nav{
   background-image: url("../assets/background1.jpg");
 }
 
+#home{
+  margin-top: 15px;
+  /*border-style: solid;*/
+  /*border-color: red;*/
+  font-weight: bold;
+  font-size: 16px;
+  /*background-color: red;*/
+  opacity: .3;
+  color: white !important;
+}
+
+#about{
+  margin-top: 15px;
+  /*border-style: solid;*/
+  /*border-color: red;*/
+  font-weight: bold;
+  font-size: 16px;
+  /*background-color: red;*/
+  opacity: .3;
+  color: white !important;
+
+}
 /***********************************************************************/
 /************************** SEARCH BAR *********************************/
 /***********************************************************************/
@@ -150,7 +172,7 @@ button {
   /*-webkit-backface-visibility: hidden;*/
   /*backface-visibility: hidden;*/
   /*-moz-osx-font-smoothing: grayscale;*/
-  font-family: 'chunk-webfont';
+  /*font-family: 'chunk-webfont';*/
   src: url('../../includes/fonts/chunk-webfont.svg') format('svg');
   -webkit-font-smoothing: antialiased;
   /*position: relative;*/
@@ -159,6 +181,7 @@ button {
   transition-duration: 0.3s;
   -webkit-transition-property: transform;
   transition-property: transform;
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
 }
 
 #resultsEventImage{
