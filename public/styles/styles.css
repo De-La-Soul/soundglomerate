@@ -2,9 +2,13 @@
   background-color: black;
 
 }*/
+body{
+  background-attachment: fixed;
+}
 
 .container-fluid.footer{
   background-color: white;
+  
 
 }
 
@@ -13,7 +17,7 @@
 }
 
 nav{
-  background: -webkit-linear-gradient(left, #000000, #ccc);
+  background: -webkit-linear-gradient(right, #000000, #606060);
   height:75px;
 }
 
@@ -120,9 +124,12 @@ button {
 /*************** EVENTS ******************/
 
 #resultsEvent{
-  border-top:solid; 
-  border-bottom:solid; 
+  /*border-top:solid; */
+  /*border-bottom:solid; */
   margin:10px;
+  background: rgba(0,0,0,.5);
+  color: rgba(255,255,255,.8);
+  /*opacity: .3;*/
   
 }
 
@@ -194,7 +201,7 @@ button {
 div#resultsFilter > p{
     color:black;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: bold; 
 }
 
 hr#resultsFilter {
@@ -211,10 +218,21 @@ hr#resultsFilter {
   margin: 2em;
 } 
 
-#selectedEventView #selectedEventTitle{} 
+#selectedEventTitle{
+  /*background: #890000;
+  opacity: .43;
+  color: #000000;*/
+  background: rgba(0,0,0,.7);
+  color: rgba(255,255,255,.8);
+} 
 
-#selectedEventView #selectedEventDscr{
+#selectedEventDscr{
+  /*background: #890000;
+  opacity: .4;
   font-size: 20px;
+  color: #000000;*/
+  background: rgba(0,0,0,.7);
+  color: rgba(255,255,255,.8);
 } 
 
  
