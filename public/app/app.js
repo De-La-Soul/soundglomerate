@@ -15,7 +15,8 @@ angular.module('soundGlomerate', [ // declare all controllers and services
   'ui.bootstrap',
   'ui.router',
   'ui.bootstrap',
-  'angularSpinners'
+  'angularSpinners',
+  'ngAnimate'
 ])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider) { // this uses UI router (previously we used ng-router). this is better becuer it uses states, templates and controller and service and if there is a view within the state. THe later is done with the resolve method.
@@ -70,6 +71,11 @@ angular.module('soundGlomerate', [ // declare all controllers and services
         'map': {templateUrl: 'app/savedEvents/savedEvents.html', controller:'MapsController'}, 
       } /////////////////////////////////////////////////
     })
+    .state('app.about', { //////// DASHBOARD DOESNT EXIST YET. THIS IS AN EXAMPLE. CONSIDER MAKING A NEW TEMPLATE FOR THIS PAGE.
+      url: '/about',
+      templateUrl: '/app/about/about.html'
+      
+    })
     // this is needed so that the landing page will have a subdomain of '/' instead of the default angular '/#/'
     $locationProvider.html5Mode({
       enabled: true,
@@ -77,11 +83,25 @@ angular.module('soundGlomerate', [ // declare all controllers and services
     });
     $urlRouterProvider.otherwise('/'); // this is the default route (if no route is specified)
 })
-
-.run(
-    ['$rootScope', '$state', '$stateParams',
-      function($rootScope, $state, $stateParams) {
-        $rootScope.$state = $state;
-        $rootScope.$stateParams = $stateParams;
+.run(['$rootScope', '$state', '$stateParams', function($rootScope, $state, $stateParams) {
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+    
+    $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
+      if(toState.url === "/"){
+        document.body.style.background = 'white';
+        console.log(document.body.style);
+      } else if (toState.url === "/results"){
+        document.body.style.backgroundImage = "url('./assets/bgimage1-2.jpg')";
+        document.body.style.backgroundAttachment = 'fixed';
+      } else {
+        document.body.style.backgroundImage = "url('./assets/bgimage1-2.jpg')";
+        document.body.style.backgroundAttachment = 'fixed';
       }
-]);
+      
+    });
+    
+      
+}]);
+
+

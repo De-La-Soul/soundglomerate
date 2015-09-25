@@ -11,18 +11,19 @@
 <spinner name="eventSpinner" img-src="http://i769.photobucket.com/albums/xx331/maclisa2/elephant/thPink_Elephant.gif" show="loading"></spinner>
 
  <!-- <div class="clearfix visible-xs-block"></div> -->
-<div class="col-xs-6"  style=" margin-left:10px"> 
+<div class="col-xs-6"  style=" margin-left:10px" ng-animate" 'animate' "> 
 
-  <div  id="resultsPagingate" dir-paginate="event in apiData | filter: currentGenre | itemsPerPage: 15 |filter: selectedCity" style="margin:10px; "> 
+
+  <div  id="resultsPagingate" dir-paginate="event in apiData | filter: currentGenre | itemsPerPage: 6" style="margin:10px; " ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}"> 
   <!-- GET ALL THE EVENT INFO FROM THE DATAAPI OBJECT IN THE RESULTS CONTROLLER -->
     
     <!-- Must be a container in order get each border dive working -->
-    <div id="resultsEvent" class="container col-md-12" style="border-style:solid; margin:10px">
+    <div id="resultsEvent" class="container col-md-12" >
       
 
-      <div id="resultsEventLogo" class="col-xs-4" style="background-color:white; margin-top:15px">
+      <div id="resultsEventLogo" class="col-xs-4">
         <a  ng-click="selectedEvent(event)">
-          <img-wit  src="{{(event.logo).url | trusted}}" w="200px" h="162px"></img-wit>
+          <img-wit  id="resultsEventImage" src="{{(event.logo).url | trusted}}" w="200px" h="162px"></img-wit>
         </a> <!-- EVENT IMAGE -->
       </div> <!-- end of col-xs-4 --> 
 

@@ -10,10 +10,10 @@ angular.module('soundGlomerate.map', ['ngMap', 'soundGlomerate.mapFactory', 'sou
     $scope.$watch('navigation', function(newVal){    
       if(navigation === '/results'){
         $scope.positions = Map.latLongKey
-        console.log('This is the RESULTS vie w');
+        // console.log('This is the RESULTS view');
       } else if (navigation === '/selectedEvent') {
         $scope.positions = SelectedEvent.yourEventNav;
-        console.log('This is the SELECTED EVENT view');
+        // console.log('This is the SELECTED EVENT view');
       };   
       
     }) 

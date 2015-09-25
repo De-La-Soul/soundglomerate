@@ -62,7 +62,7 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
   var scrappedData = function(){
     return $http.get('/db/events')
     .success(function (res) {
-      console.log('on scrappedData');
+      // console.log('on scrappedData');
       res.forEach(function(event){
         events.unshift(event);
       });
