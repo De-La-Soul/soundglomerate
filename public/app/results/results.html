@@ -1,7 +1,8 @@
 
 <!-- The results filter div box  -->
 <div id="resultsFilter" class="col-xs-2 pull-left" ng-controller="SearchController">
-  <accordionclose-others="oneAtATime">
+  <!-- Accordion style list angular bootstrap-->
+  <accordion close-others="oneAtATime">
     <!-- The button links for the filter genres -->
     <accordion-group id="filterGenre">
        <accordion-heading >
@@ -12,6 +13,7 @@
       <a href="#/results" ng-click="setCurrentGenre(key)">{{key}}</a>
       </div>
     </accordion-group>
+    <!-- Placeholder for artists filter -->
     <accordion-group>
        <accordion-heading>
         Artists <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
@@ -21,6 +23,7 @@
       <a href="#/results" ng-click="setCurrentGenre(key)">{{key}}</a>
       </div>
     </accordion-group>
+    <!-- Placeholder for venue filter -->
     <accordion-group>
       <accordion-heading>
         Venue<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
@@ -30,6 +33,7 @@
       <a href="#/results" ng-click="setCurrentGenre(key)">{{key}}</a>
       </div>
     </accordion-group>
+    <!-- Placeholder for price filter -->
     <accordion-group>
       <accordion-heading>
         Price<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
@@ -39,6 +43,7 @@
       <a href="#/results" ng-click="setCurrentGenre(key)">{{key}}</a>
       </div>
     </accordion-group>
+    <!-- Place holder for reviews filter -->
     <accordion-group>
       <accordion-heading>
         Reviews<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
