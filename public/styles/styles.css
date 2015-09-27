@@ -228,7 +228,7 @@ button {
   padding-top: 20px;
   background-color: red;
   border-radius: 3px;
-  opacity: .5;
+  opacity: .7;
 }
 
 /*Background color of the dropped filter list*/
@@ -258,7 +258,7 @@ button {
 
 /*The button links for the filter genres */
 #filterArtists a{
-  color: red;
+  color: black;
 }
 
 /*The filter list title when clicked on*/
@@ -278,7 +278,7 @@ button {
 
 /*The button links for the filter genres */
 #filterVenue a{
-  color: red;
+  color: black;
 }
 
 /*The filter list title when clicked on*/
@@ -298,7 +298,7 @@ button {
 
 /*The button links for the filter genres */
 #filterPrice a{
-  color: red;
+  color: black;
 }
 
 /*The filter list title when clicked on*/
@@ -318,7 +318,7 @@ button {
 
 /*The button links for the filter genres */
 #filterReviews a{
-  color: red;
+  color: black;
 }
 
 /*The filter list title when clicked on*/
@@ -417,7 +417,7 @@ map {
     /*margin: 10px; */
     /*margin-right: 3%;*/
     margin-right: 30px;
-    opacity: .7;
+    opacity: .8;
 }
 
 /*************************** SPINNER *******************************/

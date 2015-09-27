@@ -9,7 +9,7 @@
         Music Genres <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
       </accordion-heading>
       <a href="/results" ng-click="setCurrentGenre(all)">All</a>
-      <div style="background-color:red; margin-top: 2px; opacity:.5; font-size: 18px" ng-repeat="(key,value) in genresSwap">
+      <div style="background-color:red; margin-top: 2px; opacity:.8; font-size: 18px" ng-repeat="(key,value) in genresSwap">
       <a href="/results" ng-click="setCurrentGenre(key)">{{key}}</a>
       </div>
       
