@@ -89,7 +89,7 @@ angular.module('soundGlomerate', [ // declare all controllers and services
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
       if(toState.url === "/"){
         document.body.style.background = 'white';
-        console.log($('#search1'));
+        
       } else if (toState.url === "/results"){
         document.body.style.backgroundImage = "url('./assets/background1.jpg')";
         document.body.style.backgroundAttachment = 'fixed';
