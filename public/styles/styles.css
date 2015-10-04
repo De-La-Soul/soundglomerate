@@ -176,7 +176,9 @@ button {
 }
 
 #resultsEventImage{
-  }
+  height: 180px;
+  width: 250px;
+}
 
 #resultsEventLogo{
   margin-bottom: 10px;
