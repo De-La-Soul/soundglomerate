@@ -258,6 +258,9 @@ button {
   background-color: black;
 }
 
+.filterAll {
+  /*background-color: red;*/
+}
 /*The button links for the filter genres */
 #filterArtists a{
   color: black;
