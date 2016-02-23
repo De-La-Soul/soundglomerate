@@ -67,6 +67,8 @@ input:hover{
 }
 
 input:focus{
+    outline: none;
+
   border-color: #9C0505 !important;
   box-shadow: inset 1px 1px 3px 2px #9C0505, 0px 0px 20px #9C0505 !important;
 
@@ -77,6 +79,10 @@ button {
   background-color: black !important;
   border-color: #9C0505 !important;
   box-shadow: inset 1px 1px 12px 5px #9C0505, 0px 0px 20px #9C0505!important;
+}
+
+.btn:focus {
+  outline: none;
 }
 
 /***********************************************************************/
