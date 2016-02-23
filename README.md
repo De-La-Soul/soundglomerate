@@ -25,6 +25,11 @@ Our goal is to provide a place for music lovers to find local events in their ar
 ![alt text](https://cloud.githubusercontent.com/assets/9672257/12186336/8d6d7e16-b556-11e5-9b9a-4cda768ec41e.png)
 6. From the CLi - `$ gulp start`
 
+##Testing
+
+1. `$ npm i -g karma-cli`
+2. `$ npm test`
+
 ##Contributing
 - [Contribution guide](CONTRIBUTING.md)
 - [Style guide](STYLE-GUIDE.md)

@@ -1,18 +1,36 @@
 
 angular.module('soundGlomerate.searchFactory', [])
 
-.service('Search', ['$http', function($http){
+.factory('Search', ['$http', '$q', function($http, $q) {
 
   var events = []; 
   var latLong =[];
   var selectedCity = '';
   var keys = {};
   
+  // Get api token on loading of the app (out of public view) 
+  $http.get('/keys', {})
+  .success(function(val){
+    keys.eventbrite = val.eventbrite;
+
+  });
+  
   var test = {};
+
   var imageData = {"data":[{"username":"madeinnortherncali","profile_picture":"https:\/\/scontent.cdninstagram.com\/t51.2885-19\/10831795_388678967957193_204111904_a.jpg","id":"570091600","full_name":"MiNC"},{"username":"singingbirdee07","profile_picture":"https:\/\/scontent.cdninstagram.com\/t51.2885-19\/10950463_352060958315107_253241323_a.jpg","id":"5008427","full_name":"\u2605gR\u03b1C\u212e \u029duMi P\u03b1Rk\u2606"},{"username":"its.syddles","profile_picture":"https:\/\/scontent.cdninstagram.com\/t51.2885-19\/s150x150\/12547406_1072230459507249_1097977922_a.jpg","id":"287810006","full_name":"Sydney Lipow"},{"username":"eclassss","profile_picture":"https:\/\/scontent.cdninstagram.com\/t51.2885-19\/s150x150\/12407377_946799155409542_1282280619_a.jpg","id":"348497807","full_name":"Erinn Brooks"}]};
 
+  var apiReq = 'https://www.eventbriteapi.com/v3/events/search/?sort_by=date&venue.city=Oakland&venue.region=CA&categories=103&expand=venue&token=' + keys.eventbrite
+
   test.search = function (argument) {
-     return imageData
+     var deferred = $q.defer();
+
+      $http.get(apiReq)
+            .success(function (data) {
+              console.log(data);
+               deferred.reslove(data);
+            })
+
+     return deferred.promise;
   }
 
   test.find = function (query) {
@@ -25,12 +43,6 @@ angular.module('soundGlomerate.searchFactory', [])
 
 
 
-  // Get api token on loading of the app (out of public view) 
-  $http.get('/keys', {})
-  .success(function(val){
-    keys.eventbrite = val.eventbrite;
-
-  });
 
   // Get data from Eventbrite
   function getEventBriteData(city, startDate, endDate) { 
