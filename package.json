@@ -74,6 +74,7 @@
     "karma": "^0.13.21",
     "karma-chrome-launcher": "^0.2.2",
     "karma-jasmine": "^0.3.7",
+    "karma-phantomjs-launcher": "^0.2.3",
     "karma-requirejs": "^0.2.5",
     "requirejs": "^2.1.22",
     "supertest": "^1.1.0"
