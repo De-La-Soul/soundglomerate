@@ -14,12 +14,12 @@ angular.module('soundGlomerate.searchFactory', [])
       testReq = eventBriteBaseUrl + '?sort_by=date&venue.city=Oakland&venue.region=CA&categories=103&expand=venue&token=',
       apiReq = eventBriteBaseUrl + '?sort_by=date&venue.city=Oakland&venue.region=CA&categories=103&expand=venue&token=' + keys.eventbrite;
   
-  // Get api token on loading of the app (out of public view) 
-  // $http.get('/keys', {})
-  // .success(function(val){
-  //   keys.eventbrite = val.eventbrite;
+  Get api token on loading of the app (out of public view) 
+  $http.get('/keys', {})
+  .success(function(val){
+    keys.eventbrite = val.eventbrite;
 
-  // });
+  });
 
   function httpPromise (url) {
      var deferred = $q.defer();
