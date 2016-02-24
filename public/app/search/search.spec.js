@@ -12,7 +12,7 @@
 //   });
 // });
 
-describe('Name of the group', function() {
+describe('Search Service', function() {
   var eventBriteData = {"pagination": {"object_count": 1400, "page_number": 1, "page_size": 50, "page_count": 28}}  
   var Search = {};
   var key = "TestingHTTPKeyService";
@@ -23,11 +23,12 @@ describe('Name of the group', function() {
      $httpBackend = _$httpBackend_;
   }));
 
-
-
-
-  it('should return all the api key ', function() {
+  it('should fetch and return the API token ', function() {
     var response;
+
+    var expectedUrl = function (url) {
+      return url.indexOf('/keys') !== -1;
+    }
 
     $httpBackend
       .when('GET', '/keys')
@@ -36,8 +37,6 @@ describe('Name of the group', function() {
     Search.test.getApiKey(key)
           .then(function (data) {
             response = data;
-            console.log('test', angular.mock.dump(response));
-
           })
 
     $httpBackend.flush();
@@ -45,10 +44,9 @@ describe('Name of the group', function() {
     expect(response).toEqual(jasmine.any(String));
   });
 
-  it('should return all the image data ', function() {
+  it('should fetch and return API data', function() {
     var response,
         eventbriteBaseUrl = 'https://www.eventbriteapi.com/v3/events/search/';
-
 
     var expectedUrl = function (url) {
       return url.indexOf(eventbriteBaseUrl) !== -1;
@@ -61,9 +59,6 @@ describe('Name of the group', function() {
     Search.test.search()
           .then(function (data) {
             response = data;
-            console.log('test', angular.mock.dump(response));
-
-
           })
 
     $httpBackend.flush();
@@ -71,7 +66,7 @@ describe('Name of the group', function() {
     expect(response.page_count).toEqual(28);
   });
 
-  it('should return an query value in the ', function() {    
+  it('should return a query value from an object ', function() {    
     expect(Search.test.find('pagination')).toEqual(jasmine.any(Object));
   });
 });
