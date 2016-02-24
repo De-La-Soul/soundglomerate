@@ -7,7 +7,7 @@
     <a href="#/results" ng-click="setCurrentGenre(key)">{{key}}</a>
   </div>
 </div> --> <!--  end of col-sm-4 -->
-
+<div id="search-results">
 <!-- //////////////////////////// -->
 <div id="resultsFilter" class="col-xs-2 pull-left" ng-controller="SearchController">
   <!-- Accordion style list angular bootstrap-->
@@ -81,8 +81,8 @@
 </div>
 <!-- /////////////////////////////// -->
 
-
-<spinner name="eventSpinner" img-src="http://i769.photobucket.com/albums/xx331/maclisa2/elephant/thPink_Elephant.gif" show="loading"></spinner>
+<!-- img-src="http://i769.photobucket.com/albums/xx331/maclisa2/elephant/thPink_Elephant.gif" -->
+<spinner name="eventSpinner" id="spinner" img-src="/../assets/Soundbars.gif" show="loading"></spinner>
 
  <!-- <div class="clearfix visible-xs-block"></div> -->
 <div class="col-xs-6"  style=" margin-left:10px" ng-animate" 'animate' "> 
@@ -97,7 +97,7 @@
 
       <div id="resultsEventLogo" class="col-xs-4">
         <a  ng-click="selectedEvent(event)">
-          <img-wit  id="resultsEventImage" src="{{(event.logo).url | trusted}}" w="200px" h="162px"></img-wit>
+          <img-wit  id="resultsEventImage" class="event-thumbnail" src="{{(event.logo).url | trusted}}" w="200px" h="162px"></img-wit>
         </a> <!-- EVENT IMAGE -->
       </div> <!-- end of col-xs-4 --> 
 
@@ -135,6 +135,6 @@
   [auto-hide=""]>
   </dir-pagination-controls>
 </div> <!-- end of dir-pagginate -->
-
+</div>
 <!-- end of ResultsController -->
 

@@ -6,6 +6,15 @@ body{
   background-attachment: fixed;
 }
 
+#search-results {
+  margin-left: 10%;
+}
+
+.wit {
+  margin-top: 10%;
+  vertical-align: center;
+}
+
 .container-fluid.footer{
   background-color: white;
   
@@ -125,7 +134,20 @@ button {
 
 /*************** SPINNER *****************/
 
-#resultsPagingate{}
+#spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    margin:-60px 0 0 -60px;
+    opacity: 0.5;
+    animation: spin 4s linear infinite;
+    -webkit-animation: spin 4s linear infinite;
+    -moz-animation: spin 4s linear infinite;
+
+
+}
 
 
 /*************** EVENTS ******************/
