@@ -14,7 +14,7 @@ angular.module('soundGlomerate.searchFactory', [])
       eventBriteBaseUrl = 'https://www.eventbriteapi.com/v3/events/search/',
       eventBriteCity = 'Oakland' || '';
       testReq = eventBriteBaseUrl + '?sort_by=date&venue.city=Oakland&venue.region=CA&categories=103&expand=venue&token=',
-      apiReq = eventBriteBaseUrl + '?sort_by=date&venue.city=Oakland&venue.region=CA&categories=103&expand=venue&token=' + dbAPIKeys[0];
+
 
   // Get api token on loading of the app (out of public view) 
   function httpPromise (url) {
