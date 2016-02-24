@@ -31,6 +31,7 @@
     "caseless": "^0.11.0",
     "chai": "^3.2.0",
     "combined-stream": "^1.0.5",
+    "dotenv": "^2.0.0",
     "eventbrite": "^0.1.6",
     "eventful-node": "^1.1.1",
     "express": "^4.13.3",
@@ -81,7 +82,9 @@
     "karma-mocha-reporter": "^1.2.1",
     "karma-phantomjs-launcher": "^0.2.3",
     "karma-requirejs": "^0.2.5",
+    "raw-loader": "^0.5.1",
     "requirejs": "^2.1.22",
+    "style-loader": "^0.13.0",
     "supertest": "^1.1.0",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"

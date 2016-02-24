@@ -8,11 +8,14 @@ angular.module('soundGlomerate.searchFactory', [])
       selectedCity = '',
       keys = {},
       test = {},
+      newKeys = null,
       eventBriteData = {"pagination": {"object_count": 1400, "page_number": 1, "page_size": 50, "page_count": 28}},
       eventBriteBaseUrl = 'https://www.eventbriteapi.com/v3/events/search/',
       eventBriteCity = 'Oakland' || '';
       testReq = eventBriteBaseUrl + '?sort_by=date&venue.city=Oakland&venue.region=CA&categories=103&expand=venue&token=',
       apiReq = eventBriteBaseUrl + '?sort_by=date&venue.city=Oakland&venue.region=CA&categories=103&expand=venue&token=' + keys.eventbrite;
+
+      
   
   // Get api token on loading of the app (out of public view) 
   $http.get('/keys', {})
@@ -21,14 +24,37 @@ angular.module('soundGlomerate.searchFactory', [])
 
   });
 
+  // $http.get('db/apikeys', {})
+  //   .success(function(val){
+  //     // newKeys = Object.keys(val);
+  //     console.log('db data:', val)
+  //   });
+  // 
+  
+
   function httpPromise (url) {
-     var deferred = $q.defer();
+    var deferred = $q.defer();
       $http.get(url)
-            .success(function (data) {              
-              deferred.resolve(data);
-            })
+      .success(function (data) {              
+        deferred.resolve(data);
+      })
     return deferred.promise; 
   }
+
+
+  function getKeys() {
+    var keysObj;
+    httpPromise('db/apikeys')
+    .then(function (data) {
+      keysObj = data;
+    })
+    return keysObj;
+  }
+
+  console.log(getKeys());
+
+
+
 
   // For testing the get API key
   test.getApiKey = function () {
