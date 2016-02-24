@@ -16,8 +16,6 @@ angular.module('soundGlomerate.searchFactory', [])
       testReq = eventBriteBaseUrl + '?sort_by=date&venue.city=Oakland&venue.region=CA&categories=103&expand=venue&token=',
       apiReq = eventBriteBaseUrl + '?sort_by=date&venue.city=Oakland&venue.region=CA&categories=103&expand=venue&token=' + dbAPIKeys[0];
 
-      
-  
   // Get api token on loading of the app (out of public view) 
   function httpPromise (url) {
     var deferred = $q.defer();
@@ -46,13 +44,6 @@ angular.module('soundGlomerate.searchFactory', [])
   test.find = function (query) {
     return eventBriteData[query];
   }
-
-
-  
-
-
-
-
 
   // Get data from Eventbrite
   function getEventBriteData(city, startDate, endDate, key) { 
