@@ -1,9 +1,14 @@
 "use strict";
 
-var express = require('express');
+var express = require('express'),
+    // dotenv = require('dotenv'),
+    app = express();
+
+  // dotenv.config({silent:true});
 
 
-var app = express();
+
+
 
 //require and initialize db here
 

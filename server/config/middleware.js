@@ -7,21 +7,18 @@
 var bodyParser = require('body-parser');
 var json = require('../../keys.json');
 
-module.exports = function(app, express){
+module.exports = function(app, express) {
+var eventsRouter = express.Router(),
+    events = require('../events/eventsRoutes.js');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static(__dirname + '/../../public'));
-app.use('/keys', function(req, res) {
- res.json(json);
-});
-
-
-var eventsRouter = express.Router();
-
-app.use('/api/results', eventsRouter)
-
-require('../events/eventsRoutes.js')(eventsRouter);
+  app.use('/api/results', eventsRouter)
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({extended: true}));
+  app.use(express.static(__dirname + '/../../public'));
+  app.use('/keys', function(req, res) {
+   res.json(json);
+  });
+  events(eventsRouter);
 
 }
 

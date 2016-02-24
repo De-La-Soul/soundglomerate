@@ -19,7 +19,6 @@ module.exports = {
     },
     module: { 
       loaders: [
-        { test: /\.js$/, exclude: /node_modules/, loader: 'babel', query: {presets: ['es2015']} },
         { test: /\.html$/, loader: 'raw' },
         { test: /\.scss$/, loaders: [ 'style', 'css', 'autoprefixer?browsers=last 3 versions', 'sass?outputStyle=expanded' ] },
         { test: /\.css/, loader: 'style!css' },
