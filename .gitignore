@@ -6,6 +6,4 @@ bower_components
 
 # API Keys #
 ######################
-config.json
-keys.json
 .env
