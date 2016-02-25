@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "./node_modules/.bin/karma start --single-run --browsers chrome",
+    "test": "karma start",
     "build": "webpack --progress --colors --config webpack.prod.config.js",
     "postinstall": "bower cache clean && bower install"
   },

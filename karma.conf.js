@@ -1,5 +1,9 @@
 // Karma configuration
 // Generated on Mon Feb 22 2016 23:51:31 GMT-0800 (PST)
+
+if(process.env.TRAVIS) {  
+  configuration.browsers = ['Chrome_travis_ci'];
+}
 module.exports = function(config) {
   config.set({
 
@@ -54,10 +58,13 @@ module.exports = function(config) {
       'karma-jasmine-html-reporter',
 
     ],
-    
-    
-
-
+    // Chrome launcher for Travis
+    customLaunchers: {  
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
 
     // web server port
     port: 9876,
