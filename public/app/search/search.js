@@ -10,7 +10,11 @@ angular.module('soundGlomerate.search', ['soundGlomerate.searchFactory', 'ui.boo
   // Get events, navigate to the results view
   $scope.getEvents = function() {
     $scope.selectedCity = $scope.search.location;
-    Search.getEventBriteData($scope.search.location, $scope.search.startDate, $scope.search.endDate);
+    Search.getKeys()
+    .then(function(data) {
+      Search.getEventBriteData($scope.search.location, $scope.search.startDate, $scope.search.endDate, data.eventbrite);
+    });
+    
     Search.scrappedData();
     $state.go('app.resultsDisplay.results');
   };

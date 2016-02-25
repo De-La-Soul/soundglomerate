@@ -8,12 +8,13 @@ angular.module('soundGlomerate.searchFactory', [])
       selectedCity = '',
       keys = {},
       test = {},
+      dbAPIKeys = [],
       newKeys = null,
       eventBriteData = {"pagination": {"object_count": 1400, "page_number": 1, "page_size": 50, "page_count": 28}},
       eventBriteBaseUrl = 'https://www.eventbriteapi.com/v3/events/search/',
       eventBriteCity = 'Oakland' || '';
       testReq = eventBriteBaseUrl + '?sort_by=date&venue.city=Oakland&venue.region=CA&categories=103&expand=venue&token=',
-      apiReq = eventBriteBaseUrl + '?sort_by=date&venue.city=Oakland&venue.region=CA&categories=103&expand=venue&token=' + keys.eventbrite;
+      apiReq = eventBriteBaseUrl + '?sort_by=date&venue.city=Oakland&venue.region=CA&categories=103&expand=venue&token=' + dbAPIKeys[0];
 
       
   
@@ -41,20 +42,9 @@ angular.module('soundGlomerate.searchFactory', [])
     return deferred.promise; 
   }
 
-
-  // function getKeys() {
-  //   var keysObj;
-  //   httpPromise('db/apikeys')
-  //   .then(function (data) {
-  //     keysObj = data;
-  //   })
-  //   return keysObj;
-  // }
-
-  // console.log(getKeys());
-
-
-
+  function getKeys() {   
+    return httpPromise('db/apikeys');
+  }
 
   // For testing the get API key
   test.getApiKey = function () {
@@ -79,7 +69,7 @@ angular.module('soundGlomerate.searchFactory', [])
 
 
   // Get data from Eventbrite
-  function getEventBriteData(city, startDate, endDate) { 
+  function getEventBriteData(city, startDate, endDate, key) { 
 
     angular.copy([], events);
     selectedCity = city;
@@ -103,7 +93,7 @@ angular.module('soundGlomerate.searchFactory', [])
 
     return $http({
       method: 'GET',
-      url: 'https://www.eventbriteapi.com/v3/events/search/?sort_by=date&venue.city=' + city + '&venue.region=CA'+startDate+endDate+'&categories=103&expand=venue&token=' + keys.eventbrite
+      url: 'https://www.eventbriteapi.com/v3/events/search/?sort_by=date&venue.city=' + city + '&venue.region=CA'+startDate+endDate+'&categories=103&expand=venue&token=' + key
     })
     .then(function(res) {
       res.data.events.forEach(function(evnt) {
@@ -134,6 +124,7 @@ angular.module('soundGlomerate.searchFactory', [])
     scrappedData: scrappedData,
     latLong: latLong,
     selectedCity: selectedCity,
+    getKeys: getKeys,
     test: test
   };
 }]);
