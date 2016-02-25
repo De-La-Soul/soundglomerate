@@ -42,16 +42,16 @@ angular.module('soundGlomerate.searchFactory', [])
   }
 
 
-  function getKeys() {
-    var keysObj;
-    httpPromise('db/apikeys')
-    .then(function (data) {
-      keysObj = data;
-    })
-    return keysObj;
-  }
+  // function getKeys() {
+  //   var keysObj;
+  //   httpPromise('db/apikeys')
+  //   .then(function (data) {
+  //     keysObj = data;
+  //   })
+  //   return keysObj;
+  // }
 
-  console.log(getKeys());
+  // console.log(getKeys());
 
 
 
