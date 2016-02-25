@@ -19,20 +19,6 @@ angular.module('soundGlomerate.searchFactory', [])
       
   
   // Get api token on loading of the app (out of public view) 
-  $http.get('/keys', {})
-  .success(function(val){
-    keys.eventbrite = val.eventbrite;
-
-  });
-
-  // $http.get('db/apikeys', {})
-  //   .success(function(val){
-  //     // newKeys = Object.keys(val);
-  //     console.log('db data:', val)
-  //   });
-  // 
-  
-
   function httpPromise (url) {
     var deferred = $q.defer();
       $http.get(url)
