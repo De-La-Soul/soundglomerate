@@ -8,22 +8,12 @@ angular.module('soundGlomerate.searchFactory', [])
       selectedCity = '',
       keys = {},
       test = {},
-<<<<<<< af125303a0b9a0648144ecf88a424cce086d34b3
-      dbAPIKeys = [],
-=======
->>>>>>> (feat) Fix up db
       newKeys = null,
       eventBriteData = {"pagination": {"object_count": 1400, "page_number": 1, "page_size": 50, "page_count": 28}},
       eventBriteBaseUrl = 'https://www.eventbriteapi.com/v3/events/search/',
       eventBriteCity = 'Oakland' || '';
       testReq = eventBriteBaseUrl + '?sort_by=date&venue.city=Oakland&venue.region=CA&categories=103&expand=venue&token=',
-<<<<<<< af125303a0b9a0648144ecf88a424cce086d34b3
       apiReq = eventBriteBaseUrl + '?sort_by=date&venue.city=Oakland&venue.region=CA&categories=103&expand=venue&token=';
-
-  // Get api token on loading of the app (out of public view) 
-=======
-      apiReq = eventBriteBaseUrl + '?sort_by=date&venue.city=Oakland&venue.region=CA&categories=103&expand=venue&token=' + keys.eventbrite;
-
       
   
   // Get api token on loading of the app (out of public view) 
