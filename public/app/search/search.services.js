@@ -16,8 +16,8 @@ angular.module('soundGlomerate.searchFactory', [])
       testReq = eventBriteBaseUrl + '?sort_by=date&venue.city=Oakland&venue.region=CA&categories=103&expand=venue&token=',
       apiReq = eventBriteBaseUrl + '?sort_by=date&venue.city=Oakland&venue.region=CA&categories=103&expand=venue&token=';
 
-  
-  // Get api token on loading of the app (out of public view) 
+
+  // Fetch promise needs to go in it's own service
   function httpPromise (url) {
     var deferred = $q.defer();
       $http.get(url)
@@ -27,6 +27,7 @@ angular.module('soundGlomerate.searchFactory', [])
     return deferred.promise; 
   }
 
+  // Get api token on loading of the app (out of public view) 
   function getKeys() {   
     return httpPromise('db/apikeys');
   }
