@@ -7,7 +7,7 @@ var app = require('./server/server.js'),
 var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Martial-One';
     // connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/CristianAvalos';
 
-var port = process.env.PORT || 8100,
+var port = process.env.PORT || 3000,
     key = process.env.EVENTBRITE_KEY || 'No key found',
     test,
     results = [],

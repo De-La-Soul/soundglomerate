@@ -55,7 +55,8 @@ module.exports = function(config) {
       'karma-jasmine', 
       'karma-mocha-reporter',
       'karma-chrome-launcher',
-      'karma-jasmine-html-reporter',
+      'karma-jasmine-html-reporter'
+      // 'karma-phantomjs-launcher'
 
     ],
     // Chrome launcher for Travis
@@ -85,7 +86,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: [ 'Chrome'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode
