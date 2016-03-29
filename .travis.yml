@@ -12,3 +12,6 @@ before_install:
  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
  - sudo dpkg -i google-chrome*.deb
 
+ notifications:
+  slack: de-la-soul:3jLfHjQvhvqY3fNZqDM4eGbf
+
